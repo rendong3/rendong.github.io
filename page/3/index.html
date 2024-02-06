@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://rendong3.github.io/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://rendong3.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-13-服务器管理平台（5）- 数据展示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/13-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%885%EF%BC%89-%20%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:00:55.566Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1><ol>
+<li><strong>Grafana</strong>导入MySQL数据源进行定制化数据展示，包括品牌分类饼图，详细数据列表等</li>
+<li><strong>LayUI</strong>为开源前端框架，对系统概览、登录日志等信息，划分不同页面使用表格展示详细数据</li>
+</ol>
+<h2 id="1、Grafana"><a href="#1、Grafana" class="headerlink" title="1、Grafana"></a>1、Grafana</h2><ul>
+<li><p>对品牌、CPU型号、内存等数据使用饼图展示分类比例，详细数据使用table表格展示，支持字段筛选搜索</p>
+</li>
+<li><p>系统概览显示简略信息，如需查看PCI设备、逻辑磁盘等详细信息，可以点击链接跳转界面查看</p>
+</li>
+</ul>
+<h3 id="1-1、导入MySQL数据源"><a href="#1-1、导入MySQL数据源" class="headerlink" title="1.1、导入MySQL数据源"></a>1.1、导入MySQL数据源</h3><ul>
+<li>添加MySQL数据源，填写数据库地址、用户名及密码等信息<br><img src="https://files.mdnice.com/user/17335/7755058b-fcb9-423b-b876-c6765640204c.png"></li>
+<li>填写完成后进行保存和测试</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/63176c51-ee2e-4ffa-a30c-8fb5f39179ab.png"></p>
+<h3 id="1-2、定制化"><a href="#1-2、定制化" class="headerlink" title="1.2、定制化"></a>1.2、定制化</h3><ul>
+<li>建立Panel进行定制化，选择图表形式，主题及SQL等，如下图为<strong>品牌分类饼状图</strong></li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/6d5d7a83-b488-49bc-b959-ed461bac1592.png"></p>
+<ul>
+<li>历史记录明细表</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d35fc133-fd32-4daf-a774-92af35425a25.png"></p>
+<h3 id="1-3、数据展示"><a href="#1-3、数据展示" class="headerlink" title="1.3、数据展示"></a>1.3、数据展示</h3><ul>
+<li><p>系统概览图<br><img src="https://files.mdnice.com/user/17335/97fe1552-ed3b-4910-aca5-1dfc22793f85.png"></p>
+</li>
+<li><p>PCI设备表<br><img src="https://files.mdnice.com/user/17335/2994b936-b101-4eb2-b30d-c8f9996c0cd1.png"></p>
+</li>
+<li><p>历史记录数据表</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/842206de-ebd9-419a-be11-6cc8406a9938.png"></p>
+<h2 id="2、LayUI前端服务"><a href="#2、LayUI前端服务" class="headerlink" title="2、LayUI前端服务"></a>2、LayUI前端服务</h2><ul>
+<li><p>对系统概览、PCI设备、登录日志等信息，划分不同页面使用表格展示详细数据</p>
+</li>
+<li><p>支持用户权限和密码修改，分为普通用户、系统管理员、超级管理员</p>
+</li>
+<li><p>支持业务IP筛选搜索、编辑、查询、删除、导出Excel、打印等功能</p>
+</li>
+<li><p>可参考LayUI框架官方文档进行操作</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LayUI官网地址：https://layui.dev/        </span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-1、认证登录流程"><a href="#2-1、认证登录流程" class="headerlink" title="2.1、认证登录流程"></a>2.1、认证登录流程</h3><p><img src="https://files.mdnice.com/user/17335/558d4c7d-cf96-416f-b965-e52a1826039e.png"></p>
+<h3 id="2-2、前端处理流程"><a href="#2-2、前端处理流程" class="headerlink" title="2.2、前端处理流程"></a>2.2、前端处理流程</h3><p><img src="https://files.mdnice.com/user/17335/aea86717-8bcd-4f2e-a689-0a26f18504a6.png"></p>
+<h3 id="2-3、登录界面"><a href="#2-3、登录界面" class="headerlink" title="2.3、登录界面"></a>2.3、登录界面</h3><p><img src="https://files.mdnice.com/user/17335/a5180f6c-a589-4bb2-b54f-63c6cd163280.png"></p>
+<h3 id="2-4、业务信息界面"><a href="#2-4、业务信息界面" class="headerlink" title="2.4、业务信息界面"></a>2.4、业务信息界面</h3><ul>
+<li><p>系统概览图<br><img src="https://files.mdnice.com/user/17335/97aa2788-0526-402f-87f6-16523cd2d985.png"></p>
+</li>
+<li><p>修改某条列表信息</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/3f6a80f3-6705-44ff-a5f4-19f8fa0bf15a.png"></p>
+<ul>
+<li>查看某条详细信息</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/78ed7673-bfaf-41a6-b547-6b838f654a5a.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
+<li>欢迎关注，感谢支持！</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/13-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%885%EF%BC%89-%20%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA/" data-id="cls9w8kdo0004dkvh581x3eqi" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-12-服务器管理平台（4）- 信息采集上报" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/12-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:00:55.548Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="信息采集上报"><a href="#信息采集上报" class="headerlink" title="信息采集上报"></a>信息采集上报</h1><ol>
+<li>通过Shell脚本实现服务器CPU、内存、PCI设备、登录日志等信息定时采集和自主上报</li>
+<li>Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知</li>
+</ol>
+<h2 id="1、定时上报"><a href="#1、定时上报" class="headerlink" title="1、定时上报"></a>1、定时上报</h2><blockquote>
+<p>搭建httpd文件服务器后，将采集脚本上传至对应目录，待采集服务器下载执行即可实现自主上报</p>
+</blockquote>
+<ul>
+<li>被采集服务器可使用curl或者wget进行脚本文件下载和执行</li>
+<li>被采集服务器可使用crontab进行定时任务，指定每天12点定时执行脚本，并把执行脚本的日志写入指定文件</li>
+<li>crontab使用方式可自行Google</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">脚本下载方式</span></span><br><span class="line">wget http://101.43.144.88/get_info.sh | bash</span><br><span class="line">或curl –O http://101.43.144.88/get_info.sh | bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开定时任务配置文件</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">指定每天12点定时执行脚本，并把执行脚本的日志写入对应文件 test.log</span></span><br><span class="line">0 12 * * * sh demo.sh &gt; result.log</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2、数据采集"><a href="#2、数据采集" class="headerlink" title="2、数据采集"></a>2、数据采集</h2><h3 id="2-1、系统基础信息采集"><a href="#2-1、系统基础信息采集" class="headerlink" title="2.1、系统基础信息采集"></a>2.1、系统基础信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用于开发测试环境操作系统相关信息采集</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取系统基础信息</span></span><br><span class="line">function getSystemInfo() &#123;</span><br><span class="line"></span><br><span class="line">    Brand=$(dmidecode -s system-manufacturer | tail -n 1)     # 品牌    Tencent Cloud</span><br><span class="line">    Model=$(dmidecode -s system-product-name | tail -n 1)     # 型号    CVM</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)       # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    #    UseFor=&quot;xxx产品&quot;                  # 用户填写</span><br><span class="line">    CpuModel=$(cat /proc/cpuinfo | grep -i &quot;model name&quot;| head -n 1 | awk -F&#x27;:&#x27; &#x27;&#123;print $2&#125;&#x27; | sed &#x27;s/ //g&#x27;)     # CPU型号 Intel(R)Xeon(R)Platinum8255CCPU@2.50GHz</span><br><span class="line">    CpuNumber=$(cat /proc/cpuinfo | grep -i &quot;model name&quot; | wc -l)                        # CPU数量 2</span><br><span class="line">    free -h</span><br><span class="line">    if [ $? -eq 0 ]; then</span><br><span class="line">        Memory=$(free -h |grep Mem| awk -F &quot;:  *&quot; &#x27;&#123;print $2&#125;&#x27;|awk -F &quot;  *&quot; &#x27;&#123;print $1&#125;&#x27;)       # 最大内存</span><br><span class="line">    else</span><br><span class="line">        # 适配Centos6</span><br><span class="line">        number=$(free | grep Mem| awk -F &quot;:  *&quot; &#x27;&#123;print $2&#125;&#x27;| awk -F &quot;  *&quot; &#x27;&#123;print $1&#125;&#x27;)       # 最大内存</span><br><span class="line">        Reverse $&#123;number&#125; &gt; temp.ini</span><br><span class="line">        Memory=$(cat temp.ini)</span><br><span class="line">    fi</span><br><span class="line">    dmidecode -s system-product-name | tail -n 1 | grep -i &quot;VM&quot;                          # 平台类型 KVM</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # 2. 上报基础环境信息</span><br><span class="line">    body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;Brand\&quot;:\&quot;$Brand\&quot;, \&quot;Model\&quot;:\&quot;$Model\&quot;, \&quot;Memory\&quot;:\&quot;$Memory\&quot;, \&quot;PlatformType\&quot;:\&quot;$PlatformType\&quot;, \&quot;CpuModel\&quot;:\&quot;$CpuModel\&quot;, \&quot;CpuNumber\&quot;:\&quot;$CpuNumber\&quot;&#125;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="built_in">echo</span> <span class="string">&quot;JSON body :&quot;</span> <span class="variable">$body</span></span></span><br><span class="line"></span><br><span class="line">    ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/meta/info&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="built_in">echo</span> <span class="string">&quot;MetaInfo result:&quot;</span> <span class="variable">$ret</span></span></span><br><span class="line"></span><br><span class="line">    # 错误码不是0就表示失败，0代表成功</span><br><span class="line">    ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">    if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">        echo &quot;error| up MetaInfo to server error $ret&quot;</span><br><span class="line">        exit 1</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-2、登陆日志采集"><a href="#2-2、登陆日志采集" class="headerlink" title="2.2、登陆日志采集"></a>2.2、登陆日志采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取设备登录日志</span></span><br><span class="line">function getLoginINfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)  # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    last -f /var/log/wtmp | head -3 | sed -e &#x27;/reboot/d&#x27; &gt; temp.ini          #  root  pts/1   123.149.240.130  Mon May 29 13:48 - 16:07  (02:18)</span><br><span class="line">    cat temp.ini | while read line</span><br><span class="line">    do</span><br><span class="line">        UserName=$(echo $&#123;line&#125; | awk &#x27;&#123;print $1&#125;&#x27;)                                     # 登录用户名</span><br><span class="line">        UserIp=$(echo $&#123;line&#125; | awk &#x27;&#123;print $3&#125;&#x27;)                                       # 登录源IP</span><br><span class="line">        StartTime=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5,$6,$7&#125;&#x27; | sed &#x27;s/:/ /g&#x27;)              # 登录时间</span><br><span class="line">        EndTime=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5,$6,$9&#125;&#x27; | sed &#x27;s/:/ /g&#x27;)                # 结束时间</span><br><span class="line">        Duration=$(echo $&#123;line&#125; | awk &#x27;&#123;print $10&#125;&#x27; | sed &#x27;s/(//g&#x27; | sed &#x27;s/)//g&#x27;)      # 持续时长</span><br><span class="line"></span><br><span class="line">        body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;UserName\&quot;:\&quot;$UserName\&quot;, \&quot;UserIp\&quot;:\&quot;$UserIp\&quot;, \&quot;StartTime\&quot;:\&quot;$StartTime\&quot;, \&quot;EndTime\&quot;:\&quot;$EndTime\&quot;, \&quot;Duration\&quot;:\&quot;$Duration\&quot;&#125;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">       <span class="built_in">echo</span> <span class="string">&quot;JSON body :&quot;</span> <span class="variable">$body</span></span></span><br><span class="line"></span><br><span class="line">        ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/loginInfo&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">       <span class="built_in">echo</span> <span class="string">&quot;result:&quot;</span> <span class="variable">$ret</span></span></span><br><span class="line"></span><br><span class="line">        ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">        if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">            echo &quot;error| up Login Info to server error $ret&quot;</span><br><span class="line">            exit 1</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3、PCI设备信息采集"><a href="#2-3、PCI设备信息采集" class="headerlink" title="2.3、PCI设备信息采集"></a>2.3、PCI设备信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取PCI设备信息</span></span><br><span class="line">function getPCINfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)   # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    lspci -nn</span><br><span class="line">    if [ $? -ne 0 ]; then</span><br><span class="line">        echo &quot;skip lspci info &quot;</span><br><span class="line">    else</span><br><span class="line">        lspci -nn &gt; temp.ini                      # PCI设备 00:00.0 Host bridge [0600]: Intel Corporation 440FX - 82441FX PMC [Natoma] [8086:1237] (rev 02)</span><br><span class="line">        cat temp.ini | while read line</span><br><span class="line">        do</span><br><span class="line">            PCIDevice=$&#123;line&#125;</span><br><span class="line">            body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;PCIDevice\&quot;:\&quot;$PCIDevice\&quot;&#125;&quot;</span><br><span class="line">    #        echo &quot;JSON body :&quot; $body</span><br><span class="line"></span><br><span class="line">            ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/pciDevice&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line">    #        echo &quot;result:&quot; $ret</span><br><span class="line"></span><br><span class="line">            ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">            if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">                echo &quot;error| up PCIDevice Info to server error $ret&quot;</span><br><span class="line">                exit 1</span><br><span class="line">            fi</span><br><span class="line">            sleep 0.1</span><br><span class="line">        done</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-4、逻辑磁盘信息采集"><a href="#2-4、逻辑磁盘信息采集" class="headerlink" title="2.4、逻辑磁盘信息采集"></a>2.4、逻辑磁盘信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取逻辑磁盘信息</span></span><br><span class="line">function getLogicDiskInfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)    # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    df -h</span><br><span class="line">    if [ $? -ne 0 ]; then</span><br><span class="line">        echo &quot;skip logicDisk info &quot;</span><br><span class="line">    else</span><br><span class="line">        df -h  &gt; temp.ini                          # 逻辑磁盘 /dev/vda1        59G   16G   42G  28% /</span><br><span class="line">        sed -i &#x27;1d&#x27; temp.ini</span><br><span class="line"></span><br><span class="line">        cat temp.ini | while read line</span><br><span class="line">        do</span><br><span class="line"></span><br><span class="line">            Filesystem=$(echo $&#123;line&#125; | awk &#x27;&#123;print $1&#125;&#x27;)</span><br><span class="line">            Size=$(echo $&#123;line&#125; | awk &#x27;&#123;print $2&#125;&#x27;)</span><br><span class="line">            Used=$(echo $&#123;line&#125; | awk &#x27;&#123;print $3&#125;&#x27;)</span><br><span class="line">            Avail=$(echo $&#123;line&#125; | awk &#x27;&#123;print $4&#125;&#x27;)</span><br><span class="line">            UsePercent=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5&#125;&#x27;)</span><br><span class="line">            Mounted=$(echo $&#123;line&#125; | awk &#x27;&#123;print $6&#125;&#x27;)</span><br><span class="line">            body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;Filesystem\&quot;:\&quot;$Filesystem\&quot;, \&quot;Size\&quot;:\&quot;$Size\&quot;, \&quot;Used\&quot;:\&quot;$Used\&quot;, \&quot;Avail\&quot;:\&quot;$Avail\&quot;, \&quot;UsePercent\&quot;:\&quot;$UsePercent\&quot;, \&quot;Mounted\&quot;:\&quot;$Mounted\&quot;&#125;&quot;</span><br><span class="line">    #        echo &quot;JSON body :&quot; $body</span><br><span class="line"></span><br><span class="line">            ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/logicDisk&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line">    #        echo &quot;result:&quot; $ret</span><br><span class="line"></span><br><span class="line">            ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">            if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">                echo &quot;error| up LogicalDisk Info to server error $ret&quot;</span><br><span class="line">                exit 1</span><br><span class="line">            fi</span><br><span class="line">            sleep 0.1</span><br><span class="line">        done</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-5、Centos6老旧系统适配"><a href="#2-5、Centos6老旧系统适配" class="headerlink" title="2.5、Centos6老旧系统适配"></a>2.5、Centos6老旧系统适配</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">dmidecode 显示格式适配</span></span><br><span class="line">dmidecode -s system-manufacturer | tail -n 1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">/dev/mem访问权限问题</span></span><br><span class="line">sudo chmod 777 /dev/mem</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">内存显示</span></span><br><span class="line">free 得到数值后进行换算</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3、功能测试"><a href="#3、功能测试" class="headerlink" title="3、功能测试"></a>3、功能测试</h2><ul>
+<li>sh执行采集脚本文件，出现success标志，同时数据库中多个表出现对应数据，create时间和脚本执行时间一致</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/4d245c3b-52ad-4e50-b976-ab37fbb711be.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/7728d36e-a176-4be2-9f1c-82614f5b64db.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/bf1170f4-b442-49c6-a598-37b6d68756a7.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/12-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" data-id="cls9w8kdn0003dkvh99pw8ptm" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-11-服务器管理平台（3）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/11-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:00:55.531Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Web服务端"><a href="#Web服务端" class="headerlink" title="Web服务端"></a>Web服务端</h1><blockquote>
+<p>整体架构采用前后端分离形式，后端使用Golang实现，参考Gin框架</p>
+</blockquote>
+<h2 id="1、后端服务"><a href="#1、后端服务" class="headerlink" title="1、后端服务"></a>1、后端服务</h2><h3 id="1-1、服务端架构"><a href="#1-1、服务端架构" class="headerlink" title="1.1、服务端架构"></a>1.1、服务端架构</h3><p><img src="https://files.mdnice.com/user/17335/45615db1-bf6d-449b-8c09-b6c5a168b563.png"></p>
+<ul>
+<li>代码可参考Github开源项目：<a target="_blank" rel="noopener" href="https://github.com/pbrong/hrms">https://github.com/pbrong/hrms</a></li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/aee7ec54-2ad3-4175-8460-dd0428fea35a.png"></p>
+<h3 id="1-2、服务地址"><a href="#1-2、服务地址" class="headerlink" title="1.2、服务地址"></a>1.2、服务地址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http://x.x.x.x:8000/api/v1/meta/info</span><br><span class="line">http://x.x.x.x:8000/api/v1/logicDisk</span><br><span class="line">http://x.x.x.x:8000/api/v1/pciDevice</span><br><span class="line">http://x.x.x.x:8000/api/v1/macAddress</span><br><span class="line">http://x.x.x.x:8000/api/v1/product</span><br><span class="line">http:// x.x.x.x:8000/api/v1/loginInfo</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>后端接口使用Token鉴权，shell脚本、web访问使用不同Token名称</p>
+</li>
+<li><p>为防止数据误删，Shell脚本、Web访问调用Delete接口，默认返回调用成功，但并不做删除操作，如需删除可由管理员操作（删除前需做备份，按照clone日期命名）</p>
+</li>
+</ul>
+<h2 id="2、代码架构"><a href="#2、代码架构" class="headerlink" title="2、代码架构"></a>2、代码架构</h2><p><img src="https://files.mdnice.com/user/17335/e30e5922-7500-46a0-91b2-8b14b6d2a4c5.png"></p>
+<h3 id="2-1、API目录"><a href="#2-1、API目录" class="headerlink" title="2.1、API目录"></a>2.1、API目录</h3><blockquote>
+<p>该目录功能为启动Http服务，暴露服务地址，并对各接口实现get、post、put、delete等功能</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/d23b7a38-4d78-4b1e-bd33-375f3e403981.png"></p>
+<h3 id="2-2、config目录"><a href="#2-2、config目录" class="headerlink" title="2.2、config目录"></a>2.2、config目录</h3><blockquote>
+<p>该目录功能为web后端服务配置，包括数据库地址、端口、密码、后端服务接口等信息</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/f8946940-69aa-4b12-b550-dcd7024c7c95.png"></p>
+<h3 id="2-3、model目录"><a href="#2-3、model目录" class="headerlink" title="2.3、model目录"></a>2.3、model目录</h3><blockquote>
+<p>该目录为实体层，功能为数据库结构解析，记录MySQL数据库表</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/6b0e782c-d660-4e66-8d0f-aac5d0be5b69.png"></p>
+<h3 id="2-4、其他目录"><a href="#2-4、其他目录" class="headerlink" title="2.4、其他目录"></a>2.4、其他目录</h3><p><img src="https://files.mdnice.com/user/17335/6287f9f5-8d28-41f8-9830-c7cdf66f2836.png"></p>
+<ul>
+<li>notify目录对接钉钉，实现告警检测及告警通知功能</li>
+<li>service为中间服务层</li>
+<li>shell目录则对应相关脚本，如CPU、内存等相关信息采集脚本、告警信息模版等</li>
+<li>ssh目录为ansible和expect进行批量服务器ssh登录，实现批量命令执行等</li>
+<li>util为工具包目录，提供时间戳转换、结构体差异对比等必要功能</li>
+<li>README.md 项目说明</li>
+<li>go.mod 为go依赖列表文件</li>
+<li>go.sum 为 go依赖校验文件</li>
+<li>sql 为所用到的sql文件</li>
+</ul>
+<h2 id="3、接口功能测试"><a href="#3、接口功能测试" class="headerlink" title="3、接口功能测试"></a>3、接口功能测试</h2><ol>
+<li>按照sql文件建立更新数据库，数据库表必须含有create_at、update_at、deleted_at三个字段</li>
+<li>更新conf配置文件</li>
+<li>sh build.sh 执行脚本编译可执行文件执行 或 直接启动main.go运行<br><img src="https://files.mdnice.com/user/17335/23b05b19-f910-4ab1-b4e8-64d11d1a6c0c.png"></li>
+</ol>
+<h3 id="3-1、GET"><a href="#3-1、GET" class="headerlink" title="3.1、GET"></a>3.1、GET</h3><p><img src="https://files.mdnice.com/user/17335/e7e66ca2-a0f1-4149-b565-1adfd9104995.png"></p>
+<h3 id="3-2、POST"><a href="#3-2、POST" class="headerlink" title="3.2、POST"></a>3.2、POST</h3><p><img src="https://files.mdnice.com/user/17335/93d0c004-3406-4d06-b04c-addf9b49291a.png"></p>
+<h3 id="3-3、PUT"><a href="#3-3、PUT" class="headerlink" title="3.3、PUT"></a>3.3、PUT</h3><p><img src="https://files.mdnice.com/user/17335/c7dd3da7-3d77-4faa-a03e-9d36e4286621.png"></p>
+<h3 id="3-4、DELETE"><a href="#3-4、DELETE" class="headerlink" title="3.4、DELETE"></a>3.4、DELETE</h3><p><img src="https://files.mdnice.com/user/17335/dc32b068-a2da-43dd-b3cc-5a759b63aa93.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/11-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/" data-id="cls9w8kdl0002dkvh7qso9uc2" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-10-服务器管理平台（2）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/10-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:00:55.510Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库表设计"><a href="#数据库表设计" class="headerlink" title="数据库表设计"></a>数据库表设计</h1><blockquote>
+<p>本篇文章主要对数据管理平台数据库表设计进行介绍，包括单库多表设计、SQL语句、视图构造等</p>
+</blockquote>
+<h2 id="1、整体设计"><a href="#1、整体设计" class="headerlink" title="1、整体设计"></a>1、整体设计</h2><ul>
+<li><p>设备品牌、序列号、型号等使用业务主表进行记录，逻辑磁盘、PCI设备可能出现1对N的情况，分别使用PCI设备表、Mac地址表、逻辑磁盘表、应用程序表、登录日志表进行记录</p>
+</li>
+<li><p>构建虚拟视图统一查询，多表联合，使用业务IP+SN序列号作为设备唯一标识</p>
+</li>
+<li><p>增加历史记录表，对所有表数据的更新删除操作进行记录，方便回溯</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/e0222c2d-2e89-4b64-b141-d6caf5f03208.png"></p>
+<h2 id="2、库表设计"><a href="#2、库表设计" class="headerlink" title="2、库表设计"></a>2、库表设计</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分表结构设计</p>
+</blockquote>
+<h3 id="2-1、业务主表"><a href="#2-1、业务主表" class="headerlink" title="2.1、业务主表"></a>2.1、业务主表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>int</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>Brand</td>
+<td>string</td>
+<td>品牌</td>
+</tr>
+<tr>
+<td>Model</td>
+<td>string</td>
+<td>型号</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>timestamp</td>
+<td>CPU</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>timestamp</td>
+<td>内存</td>
+</tr>
+<tr>
+<td>PlatformType</td>
+<td>string</td>
+<td>平台类型</td>
+</tr>
+<tr>
+<td>UseFor</td>
+<td>string</td>
+<td>用途</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h3 id="2-2、PCI设备表"><a href="#2-2、PCI设备表" class="headerlink" title="2.2、PCI设备表"></a>2.2、PCI设备表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>string</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>PCIDevice</td>
+<td>string</td>
+<td>PCI设备表</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h3 id="2-3、MAC地址表"><a href="#2-3、MAC地址表" class="headerlink" title="2.3、MAC地址表"></a>2.3、MAC地址表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>string</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>MacAddress</td>
+<td>string</td>
+<td>MAC地址</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h2 id="3、SQL设计"><a href="#3、SQL设计" class="headerlink" title="3、SQL设计"></a>3、SQL设计</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分建表SQL，作为参考</p>
+</blockquote>
+<h3 id="3-1、历史记录表"><a href="#3-1、历史记录表" class="headerlink" title="3.1、历史记录表"></a>3.1、历史记录表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_history` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `Object` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `PK` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `Key` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `OpKind` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `PrevModify` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `NextModify` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `Version` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `Operator` <span class="type">varchar</span>(<span class="number">64</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2、系统信息表"><a href="#3-2、系统信息表" class="headerlink" title="3.2、系统信息表"></a>3.2、系统信息表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_meta_info` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `BusinessIp` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;业务IP&#x27;</span>,</span><br><span class="line">    `SN` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;序列号&#x27;</span>,</span><br><span class="line">    `Brand` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;品牌&#x27;</span>,</span><br><span class="line">    `Model` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;型号&#x27;</span>,</span><br><span class="line">    `CpuModel` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;CPU型号&#x27;</span>,</span><br><span class="line">    `CpuNumber` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;CPU数量&#x27;</span>,</span><br><span class="line">    `Memory` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;内存&#x27;</span>,</span><br><span class="line">    `PlatformType` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;平台类型&#x27;</span>,</span><br><span class="line">    `UseFor` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;用途&#x27;</span>,</span><br><span class="line">    `MacAddress` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;MAC地址&#x27;</span>,</span><br><span class="line">    `LogicDisk` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;逻辑磁盘&#x27;</span>,</span><br><span class="line">    `PCIDevices` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;PCI设备&#x27;</span>,</span><br><span class="line">    `Program` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;应用程序&#x27;</span>,</span><br><span class="line">    `LoginInfo` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;登录日志&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`),</span><br><span class="line">    <span class="keyword">UNIQUE</span> KEY `business` (`BusinessIp`,`SN`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+<h3 id="3-3、逻辑磁盘表"><a href="#3-3、逻辑磁盘表" class="headerlink" title="3.3、逻辑磁盘表"></a>3.3、逻辑磁盘表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_logicaldisk` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `BusinessIp` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;业务IP&#x27;</span>,</span><br><span class="line">    `SN` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;序列号&#x27;</span>,</span><br><span class="line">    `Filesystem` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;系统盘&#x27;</span>,</span><br><span class="line">    `Size` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;大小&#x27;</span>,</span><br><span class="line">    `Used` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;已使用&#x27;</span>,</span><br><span class="line">    `Avail` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;可使用&#x27;</span>,</span><br><span class="line">    `UsePercent` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;使用百分比&#x27;</span>,</span><br><span class="line">    `Mounted` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;挂载点&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+<h3 id="3-4、视图表"><a href="#3-4、视图表" class="headerlink" title="3.4、视图表"></a>3.4、视图表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> es_meatinfoview <span class="keyword">AS</span> <span class="keyword">SELECT</span></span><br><span class="line">    es_meta_info.BusinessIp,</span><br><span class="line">    es_meta_info.SN,</span><br><span class="line">    es_meta_info.Brand,</span><br><span class="line">    es_meta_info.Model,</span><br><span class="line">    es_meta_info.CPUModel,</span><br><span class="line">    es_meta_info.CPUNumber,</span><br><span class="line">    es_meta_info.Memory,</span><br><span class="line">    es_meta_info.PlatformType,</span><br><span class="line">    es_meta_info.UseFor,</span><br><span class="line">    CONCAT_WS(<span class="string">&#x27;---&#x27;</span>,es_logicaldisk.Filesystem, es_logicaldisk.Size, es_logicaldisk.UsePercent, es_logicaldisk.Mounted) <span class="keyword">as</span> FileSystem,</span><br><span class="line">    es_macaddress.MacAddress,</span><br><span class="line">    es_pcidevice.PCIDevice,</span><br><span class="line">    es_product.Program,</span><br><span class="line">    es_product.PORT,</span><br><span class="line">    es_meta_info.CreatedAt</span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">    es_meta_info</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_logicaldisk <span class="keyword">ON</span> es_logicaldisk.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_logicaldisk.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_macaddress <span class="keyword">ON</span> es_macaddress.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_macaddress.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_pcidevice <span class="keyword">ON</span> es_pcidevice.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_pcidevice.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_product <span class="keyword">ON</span> es_product.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_product.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">    es_logicaldisk.Filesystem <span class="keyword">NOT</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%tmpfs%&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4、数据展示"><a href="#4、数据展示" class="headerlink" title="4、数据展示"></a>4、数据展示</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分表数据，作为参考，数据IP为之前腾讯云测试公网IP，现已弃用，请勿访问！</p>
+</blockquote>
+<h3 id="4-1、PCI设备信息"><a href="#4-1、PCI设备信息" class="headerlink" title="4.1、PCI设备信息"></a>4.1、PCI设备信息</h3><p><img src="https://files.mdnice.com/user/17335/bf1170f4-b442-49c6-a598-37b6d68756a7.png"></p>
+<h3 id="4-2、逻辑磁盘信息"><a href="#4-2、逻辑磁盘信息" class="headerlink" title="4.2、逻辑磁盘信息"></a>4.2、逻辑磁盘信息</h3><p><img src="https://files.mdnice.com/user/17335/405c7c37-eabc-4a20-acc4-ecc472fa8f41.png"></p>
+<h3 id="4-3、历史记录信息"><a href="#4-3、历史记录信息" class="headerlink" title="4.3、历史记录信息"></a>4.3、历史记录信息</h3><p><img src="https://files.mdnice.com/user/17335/47d67db9-e72b-45bc-9a55-1cf60000908c.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/10-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/" data-id="cls9w8kdh0001dkvh8g5tasi3" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-9-服务器管理平台（1）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/9-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:00:55.494Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="什么是SRE"><a href="#什么是SRE" class="headerlink" title="什么是SRE?"></a>什么是SRE?</h2><blockquote>
+<p>SRE即Site Reliability Engineering（网站可靠性工程），是一种源于Google的工作理念和方法。它旨在确保产品和服务的高可用性和可靠性。</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/c1ff8726-7b7e-46fc-8c3b-74a387376a9f.png"></p>
+<ul>
+<li><p>SRE团队的成员通常是拥有软件开发背景的工程师，他们不仅设计和实施自动化工具和流程，还参与构建、部署和运行大规模复杂系统。SRE需要同时具备运维能力和开发能力</p>
+</li>
+<li><p>运维方面：之前文章已经介绍过服务器基础 、CPU、内存、硬盘等相关的硬件知识，感兴趣可以去看下历史文章，其他运维实例将在后续文章发布</p>
+</li>
+<li><p>开发方面：本人之前在某某云厂商用Go开发过数据平台，用于对批量云计算服务器进行全流程信息统计；因此计划更新简化版服务器管理平台开发实战教程，本篇文章会先对该平台进行整体介绍</p>
+</li>
+</ul>
+<h1 id="1、背景需求"><a href="#1、背景需求" class="headerlink" title="1、背景需求"></a>1、背景需求</h1><ul>
+<li>针对机房服务器采集操作系统等相关数据，如CPU、内存、PCI设备、登录日志、机器位置等信息，解决故障服务器定位难、服务器信息监控不完善等痛点</li>
+<li>实现定时采集、自主上报、落地存储、报表展示、界面可视化curd的全链路流程一体化，构建自动化运维告警监控工具，即服务器数据管理平台</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/bd5dd2e6-23fb-4f89-a6b2-d4607f4f82c3.png"></p>
+<h1 id="2、整体架构"><a href="#2、整体架构" class="headerlink" title="2、整体架构"></a>2、整体架构</h1><h2 id="2-1、架构图"><a href="#2-1、架构图" class="headerlink" title="2.1、架构图"></a>2.1、架构图</h2><p><img src="https://files.mdnice.com/user/17335/032fa5b7-7112-4978-b0d0-48c86c822b75.png"></p>
+<h3 id="2-2、设计思路"><a href="#2-2、设计思路" class="headerlink" title="2.2、设计思路"></a>2.2、设计思路</h3><ol>
+<li><p><strong>定时上报：</strong>Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知</p>
+</li>
+<li><p><strong>稳定后端</strong>：Go-web后端借鉴Gin框架，后台服务更稳定、更轻量</p>
+</li>
+<li><p><strong>落地存储</strong>：MySQL单库多表进行永久化数据存储</p>
+</li>
+<li><p><strong>报表展示</strong>：Grafana定制化模版多样数据展示</p>
+</li>
+<li><p><strong>可视化curd：</strong>layUI框架搭建前端系统，界面可视化增删改查操作</p>
+</li>
+<li><p><strong>钉钉告警：</strong>SQL配置告警规则，定时轮询进行钉钉告警</p>
+</li>
+<li><p><strong>文件存储</strong>：HTTPD文件服务器稳定上传下载</p>
+</li>
+</ol>
+<h2 id="2-3、选型指南"><a href="#2-3、选型指南" class="headerlink" title="2.3、选型指南"></a>2.3、选型指南</h2><h3 id="Gin框架"><a href="#Gin框架" class="headerlink" title="Gin框架"></a><a target="_blank" rel="noopener" href="https://gin-gonic.com/">Gin框架</a></h3><ul>
+<li><p>Go开源轻量级Web框架、简单易用</p>
+</li>
+<li><p>官方文档齐全、社区活跃</p>
+</li>
+<li><p>支持中间件、路由分组</p>
+</li>
+<li><p>支持JSON验证、错误分级管理</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/7442dbf3-95d0-4ff6-bc57-6e723f9a62d7.png"></p>
+<h3 id="LayUI"><a href="#LayUI" class="headerlink" title="LayUI"></a><a target="_blank" rel="noopener" href="https://layui.itze.cn/">LayUI</a></h3><ul>
+<li><p>开源模块化前端UI框架、拿来即用</p>
+</li>
+<li><p>遵循原生态的 HTML&#x2F;CSS&#x2F;JavaScript 开发模式</p>
+</li>
+<li><p>只需面向浏览器本身、无需涉足各类构建工具</p>
+</li>
+<li><p>文档齐全、示例众多</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/73fe051b-0ec6-482e-992e-dcd48fc76b67.png"></p>
+<h3 id="Postman调试工具"><a href="#Postman调试工具" class="headerlink" title="Postman调试工具"></a><a target="_blank" rel="noopener" href="https://www.postman.com/">Postman调试工具</a></h3><ul>
+<li><p>自动化API接口调试工具</p>
+</li>
+<li><p>模拟HTTP Request如GET、POST 、DELETE等请求</p>
+</li>
+<li><p>模拟发送文件(图片、TXT等) 等特定接口测试</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/57355918-c034-4ea3-9744-0b4810b72d25.png"></p>
+<h1 id="3、环境准备"><a href="#3、环境准备" class="headerlink" title="3、环境准备"></a>3、环境准备</h1><h2 id="3-1、环境参数"><a href="#3-1、环境参数" class="headerlink" title="3.1、环境参数"></a>3.1、环境参数</h2><figure class="highlight plaintext"><figcaption><span>Text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Centos7.9</span><br><span class="line">MySQL8.0.20</span><br><span class="line">go1.19.3</span><br><span class="line">Gin</span><br><span class="line">Grafana8.3.3</span><br><span class="line">httpd</span><br><span class="line">LayUI2.8.11</span><br><span class="line">GoLand2022.2</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3-2、安装教程"><a href="#3-2、安装教程" class="headerlink" title="3.2、安装教程"></a>3.2、安装教程</h2><h3 id="HTTPD文件服务器"><a href="#HTTPD文件服务器" class="headerlink" title="HTTPD文件服务器"></a>HTTPD文件服务器</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/stalin_/article/details/90200173">https://blog.csdn.net/stalin_&#x2F;article&#x2F;details&#x2F;90200173</a></p>
+<h3 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/super_xyo/article/details/128210788">https://blog.csdn.net/super_xyo&#x2F;article&#x2F;details&#x2F;128210788</a></p>
+<h3 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h3><p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15735145/5546596">https://blog.51cto.com/u_15735145/5546596</a></p>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36539042/article/details/125385002">https://blog.csdn.net/qq_36539042&#x2F;article&#x2F;details&#x2F;125385002</a></p>
+<h3 id="LayUI-1"><a href="#LayUI-1" class="headerlink" title="LayUI"></a>LayUI</h3><p><a target="_blank" rel="noopener" href="https://layui.dev/">https://layui.dev/</a></p>
+<h3 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Shyllin/article/details/123690458">https://blog.csdn.net/Shyllin/article/details/123690458</a></p>
+<h1 id="4、成品简介"><a href="#4、成品简介" class="headerlink" title="4、成品简介"></a>4、成品简介</h1><h2 id="Grafana-1"><a href="#Grafana-1" class="headerlink" title="Grafana"></a>Grafana</h2><p><img src="https://files.mdnice.com/user/17335/97fe1552-ed3b-4910-aca5-1dfc22793f85.png"></p>
+<h2 id="LayUI-2"><a href="#LayUI-2" class="headerlink" title="LayUI"></a>LayUI</h2><p><img src="https://files.mdnice.com/user/17335/a5180f6c-a589-4bb2-b54f-63c6cd163280.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/97aa2788-0526-402f-87f6-16523cd2d985.png"></p>
+<h2 id="钉钉"><a href="#钉钉" class="headerlink" title="钉钉"></a>钉钉</h2><p><img src="https://files.mdnice.com/user/17335/e0c85da8-e16e-4436-ae43-a996312eed46.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/9-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/" data-id="cls9w8kea000odkvh1bx39m3e" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-8-服务器操作系统介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/8-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:00:55.476Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h1><blockquote>
+<p>OS ( operating system，操作系统)是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。</p>
+</blockquote>
+<ol>
+<li>操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。</li>
+<li>操作系统也提供一个让用户与系统交互的操作界面。它提供了一系列功能和工具，用于管理服务器的硬件资源、网络连接、安全性和应用程序的运行。</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/a333fda3-e123-4760-ac66-967100f42142.png"></p>
+<h2 id="1-1、操作系统特点"><a href="#1-1、操作系统特点" class="headerlink" title="1.1、操作系统特点"></a>1.1、操作系统特点</h2><ol>
+<li><p>高性能：服务器操作系统被设计用于处理大量的并发请求和数据处理。它们通常具有优化的内核和文件系统，以提供更高的性能和响应速度。</p>
+</li>
+<li><p>可靠性：服务器操作系统需要具备高可靠性，以确保服务器的稳定运行。它们通常具有故障恢复机制和监控工具，可以及时检测和解决问题。</p>
+</li>
+<li><p>安全性：服务器操作系统需要提供强大的安全性功能，以保护服务器和其中存储的数据。它们通常具有防火墙、访问控制和加密等安全机制，以防止未经授权的访问和数据泄露。</p>
+</li>
+<li><p>管理性：服务器操作系统提供了一系列管理工具，用于配置和管理服务器的硬件和软件资源。管理员可以通过这些工具进行远程管理、监控和故障排除。</p>
+</li>
+</ol>
+<h2 id="1-2、常见服务器OS"><a href="#1-2、常见服务器OS" class="headerlink" title="1.2、常见服务器OS"></a>1.2、常见服务器OS</h2><p><img src="https://files.mdnice.com/user/17335/91f94076-0c64-41c1-801b-76e308611c26.png"></p>
+<ol>
+<li><p>Windows Server：微软开发的服务器操作系统，具有友好的图形界面和广泛的应用支持。每3-5年发布一个LTS长期版本</p>
+</li>
+<li><p>Linux：开源的操作系统，具有高度的可定制性和安全性。常见的Linux发行版包括Ubuntu、CentOS和Red Hat Enterprise Linux等。</p>
+</li>
+<li><p>Unix：一种类Unix操作系统，具有稳定性和安全性。常见的Unix操作系统包括Solaris和FreeBSD等。</p>
+</li>
+<li><p>macOS Server：苹果公司开发的服务器操作系统，适用于苹果硬件环境下的服务器部署。</p>
+</li>
+<li><p>Red Hat Enterprise Linux（RHEL）是一个由Red Hat开发的商业市场导向的Linux发行版。红帽公司从Red Hat Enterprise Linux 5开始对企业版Linux的每个版本提供10年支持。</p>
+</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/83f7b97e-9eec-4415-af9c-6152d06a2bf2.png"></p>
+<h1 id="2、OS简介"><a href="#2、OS简介" class="headerlink" title="2、OS简介"></a>2、OS简介</h1><h2 id="2-1、Windows-Server"><a href="#2-1、Windows-Server" class="headerlink" title="2.1、Windows Server"></a>2.1、Windows Server</h2><p><img src="https://files.mdnice.com/user/17335/e6e1469f-6b1d-41af-8575-b123d03ad215.png"></p>
+<h2 id="2-2、RedHat"><a href="#2-2、RedHat" class="headerlink" title="2.2、RedHat"></a>2.2、RedHat</h2><p><img src="https://files.mdnice.com/user/17335/17145400-45f7-4b16-87cd-95e20b84dc62.png"></p>
+<h2 id="2-3、SUSE"><a href="#2-3、SUSE" class="headerlink" title="2.3、SUSE"></a>2.3、SUSE</h2><p><img src="https://files.mdnice.com/user/17335/b4513de2-491d-446b-beec-d68b68c41393.png"></p>
+<h1 id="3、Linux-VS-Windows"><a href="#3、Linux-VS-Windows" class="headerlink" title="3、Linux VS Windows"></a>3、Linux VS Windows</h1><p><img src="https://files.mdnice.com/user/17335/be5bdce5-4782-4740-bedb-678d7e79fe42.png"></p>
+<h3 id="Linux优势"><a href="#Linux优势" class="headerlink" title="Linux优势"></a>Linux优势</h3><ul>
+<li>系统开源，使用成本低</li>
+<li>多任务多用户</li>
+<li>内核稳定，系统资源占用小</li>
+<li>模块化设计</li>
+<li>可裁剪性强</li>
+</ul>
+<h3 id="Linux劣势"><a href="#Linux劣势" class="headerlink" title="Linux劣势"></a>Linux劣势</h3><ul>
+<li>桌面端生态较差，推广有难度</li>
+<li>上手难度稍高</li>
+</ul>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/8-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/" data-id="cls9w8kea000pdkvhftst2gmk" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T01:04:09.355Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/06/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/hello-world/" data-id="cls9p9wz80001gkvh0qcd9dfz" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/02/06/6-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/06/5-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/06/4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/06/3-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/06/2-%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
