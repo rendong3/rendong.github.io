@@ -73,619 +73,91 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-6-服务器网卡介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-龙芯--自主架构先驱者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/02/06/6-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.878Z" itemprop="datePublished">2024-02-06</time>
+    <a href="/2024/02/13/%E9%BE%99%E8%8A%AF--%E8%87%AA%E4%B8%BB%E6%9E%B6%E6%9E%84%E5%85%88%E9%A9%B1%E8%80%85/" class="article-date">
+  <time class="dt-published" datetime="2024-02-13T05:08:13.000Z" itemprop="datePublished">2024-02-13</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/13/%E9%BE%99%E8%8A%AF--%E8%87%AA%E4%B8%BB%E6%9E%B6%E6%9E%84%E5%85%88%E9%A9%B1%E8%80%85/">龙芯--自主架构先驱者</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>本篇文章对服务器网卡进行基础介绍，包括基本概念、网卡厂商及网卡绑定策略等。</p>
+<p>这是ren_dong的第<strong>23</strong>篇原创</p>
 </blockquote>
-<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器网卡（Network Interface Card）是一种用于连接服务器与网络之间的硬件设备。它允许服务器通过网络与其他设备进行通信，包括传输数据、接收数据和处理网络请求。</p>
-<p>以下是一些关于服务器网卡的重要概念和特点：</p>
+<h1 id="龙芯–自主架构先驱者"><a href="#龙芯–自主架构先驱者" class="headerlink" title="龙芯–自主架构先驱者"></a>龙芯–自主架构先驱者</h1><h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><blockquote>
+<p><strong>自主可控最高的 MIPS 架构 CPU</strong></p>
+</blockquote>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010959962.png"></p>
+<ul>
+<li>龙芯是我国最早研制的高性能通用处理器系列，拥有 MIPS 指令的永久授权，并拓展出了自己的指令集loong ISA。</li>
+<li>龙芯采用<strong>自主 Loong ISA 指令系统</strong>，兼容 MIPS 指令，所有 IP 模块皆为自主设计，拥有片内安全机制</li>
+<li>龙芯处理器以 32 位核、 64 位单核及多核 CPU&#x2F;SOC 为主，主要面向高端嵌入式、个人电脑、服务器和高性能机等应用</li>
+</ul>
+<h2 id="2、发展历程"><a href="#2、发展历程" class="headerlink" title="2、发展历程"></a>2、发展历程</h2><blockquote>
+<p>从MIPS授权到自主研发LoongArch</p>
+</blockquote>
 <ol>
-<li><p>速度和带宽：服务器网卡的速度指的是其数据传输速率，通常以千兆位每秒（Gbps）或万兆位每秒（10 Gbps）为单位。较高的速度可以提供更快的数据传输和响应速度。带宽指的是网卡能够处理的数据量，通常以每秒传输的数据量（Mbps或Gbps）来衡量。</p>
-</li>
-<li><p>接口类型：服务器网卡通常使用不同类型的接口来连接到服务器主板。常见的接口类型包括PCIe（Peripheral Component Interconnect Express）和PCI（Peripheral Component Interconnect）。PCIe接口通常提供更高的带宽和更快的数据传输速度。</p>
-</li>
-<li><p>支持的协议：服务器网卡通常支持多种网络协议，如Ethernet、TCP&#x2F;IP、UDP等。这些协议允许服务器与其他设备进行通信，并实现数据传输和网络连接。</p>
-</li>
-<li><p>冗余和负载均衡：一些服务器网卡支持冗余配置，即在一个网卡故障时，其他网卡可以继续工作，确保服务器的稳定性和可靠性。此外，一些服务器网卡还支持负载均衡，即将网络流量分配到多个网卡上，以提高网络性能和可靠性。</p>
-</li>
-<li><p>硬件加速：一些高级服务器网卡具有硬件加速功能，可以在网卡上处理一些网络任务，如数据包过滤、数据包分析和加密解密等。这可以减轻服务器的负担，提高网络性能。</p>
-</li>
-<li><p>远程管理：一些服务器网卡具有远程管理功能，允许管理员通过远程访问服务器网卡来监控和管理服务器。这对于远程维护和故障排除非常有用。</p>
-</li>
+<li>2008年公司成立，前身出自中科院计算机所</li>
+<li>2009年一次性买断，获得MIPS32和MIPS64架构的永久授权</li>
+<li>2020前一直基于MIPS，此后在MIPS固有指令集添加自主研发指令集，研发出自主知识产权的<strong>龙芯指令集（LoogISA）</strong></li>
+<li>2021年信息技术应用创新主论坛发布<strong>龙芯自主指令系统架构（LoongArch）</strong></li>
+<li>2021年开始市场化运作，2022年6月在科创板上市</li>
 </ol>
-<p><img src="https://files.mdnice.com/user/17335/3bcca0ba-7482-475f-98bd-7f93cab544e9.png"></p>
-<h3 id="1-1、网卡分类"><a href="#1-1、网卡分类" class="headerlink" title="1.1、网卡分类"></a>1.1、网卡分类</h3><p><img src="https://files.mdnice.com/user/17335/281cae61-6c16-409d-99ac-799ee13eb11a.png"></p>
-<h3 id="1-2、网卡功能"><a href="#1-2、网卡功能" class="headerlink" title="1.2、网卡功能"></a>1.2、网卡功能</h3><p><img src="https://files.mdnice.com/user/17335/d18184bd-e7ed-430a-98da-06ec85d68a21.png"></p>
-<h3 id="1-3、网卡接口"><a href="#1-3、网卡接口" class="headerlink" title="1.3、网卡接口"></a>1.3、网卡接口</h3><p><img src="https://files.mdnice.com/user/17335/33d96b6a-c7fc-42c5-b7a2-fce0b14af995.png"></p>
-<h2 id="2、服务器网卡"><a href="#2、服务器网卡" class="headerlink" title="2、服务器网卡"></a>2、服务器网卡</h2><p><img src="https://files.mdnice.com/user/17335/4e247fdd-d8d9-47d1-8eb5-f6f71f087e98.png"></p>
-<h3 id="2-1、服务器专用网卡-VS-普通网卡"><a href="#2-1、服务器专用网卡-VS-普通网卡" class="headerlink" title="2.1、服务器专用网卡 VS 普通网卡"></a>2.1、服务器专用网卡 VS 普通网卡</h3><p><img src="https://files.mdnice.com/user/17335/3d04a0bd-e96e-48d8-9c2b-f74d117e1104.png"></p>
-<h3 id="2-3、网卡主流厂商"><a href="#2-3、网卡主流厂商" class="headerlink" title="2.3、网卡主流厂商"></a>2.3、网卡主流厂商</h3><p><img src="https://files.mdnice.com/user/17335/5026838f-2dee-4816-953f-54cfd48d566d.png"></p>
-<h2 id="3、网卡绑定（bond）"><a href="#3、网卡绑定（bond）" class="headerlink" title="3、网卡绑定（bond）"></a>3、网卡绑定（bond）</h2><p>服务器bond是一种网络连接聚合技术，通过将多个网络接口绑定在一起，形成一个虚拟的网络接口，提供更高的带宽和冗余。服务器bond可以提高服务器的网络性能和可靠性。</p>
-<p><img src="https://files.mdnice.com/user/17335/e434395f-866b-4b02-8470-4f61ece4afc5.png"></p>
-<blockquote>
-<p>这里仅简单介绍下bond0和bond1这两种最常用的网卡绑定方式，其他方式如有需要可自行Google</p>
-</blockquote>
-<p><img src="https://files.mdnice.com/user/17335/0907ccf5-cb21-4721-a658-01958a180615.png"></p>
-<h3 id="3-1、Bond0-轮询策略"><a href="#3-1、Bond0-轮询策略" class="headerlink" title="3.1、Bond0 轮询策略"></a>3.1、Bond0 轮询策略</h3><p><img src="https://files.mdnice.com/user/17335/ea604609-9a04-48b9-82a6-66f4197774c4.png"></p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E9%93%BE%E8%B7%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">链路负载均衡</a>，增加带宽，支持容错，一条链路故障会自动切换正常链路。交换机需要配置聚合口，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%80%9D%E7%A7%91&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">思科</a>叫port channel</p>
-</li>
-<li><p>特点：传输数据包顺序是依次传输（即：第1个包走<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=eth0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">eth0</a>，下一个包就走eth1….一直循环下去，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%9B%B4%E5%88%B0%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">直到最后一个</a>传输完毕），此模式提供<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B4%9F%E8%BD%BD%E5%B9%B3%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">负载平衡</a>和容错能力；但是我们知道如果一个连接 或者会话的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%95%B0%E6%8D%AE%E5%8C%85&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">数据包</a>从不同的接口发出的话，中途再经过不同的链路，在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%AE%A2%E6%88%B7%E7%AB%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">客户端</a>很有可能会出现数据包<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%97%A0%E5%BA%8F%E5%88%B0%E8%BE%BE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">无序到达</a>的问题，而无序到达的数据包需要重新要求被发送，这样网络的吞吐量就会下降</p>
-</li>
-</ul>
-<h3 id="3-2、Bond1-主备策略"><a href="#3-2、Bond1-主备策略" class="headerlink" title="3.2、Bond1 主备策略"></a>3.2、Bond1 主备策略</h3><p><img src="https://files.mdnice.com/user/17335/e3785d34-8bb4-42e4-961c-f3e9be597f26.png"></p>
-<ul>
-<li><p>主备模式，只有一块网卡是active，另一块是备用的standby，所有流量都在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=active%E9%93%BE%E8%B7%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">active链路</a>上处理，交换机配置的是捆绑的话将不能工作，因为交换机往两块<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E5%8D%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网卡</a>发包，有一半包是丢弃的。</p>
-</li>
-<li><p>特点：只有一个设备处于活动状态，当一个宕掉另一个马上由备份转换为主设备。mac地址是外部可见得，从外面看来，bond的MAC地址是唯一的，以避免switch(交换机)发生混乱。此模式只提供了容错能力；由此可见此<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%AE%97%E6%B3%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">算法</a>的优点是可以提供高<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络连接</a>的可用性，但是它的资源利用率较低，只有一个接口处于工作状态，在有 N 个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络接口</a>的情况下，资源利用率为1&#x2F;N</p>
-</li>
-</ul>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
-<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
-<li>点“在看”支持我吧!</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/6-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/" data-id="cls9w8ke9000ndkvh7d3ihyjj" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-5-服务器基础介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/5-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.863Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="服务器基础介绍"><a href="#服务器基础介绍" class="headerlink" title="服务器基础介绍"></a>服务器基础介绍</h1><blockquote>
-<p>介绍服务器相关基础知识，如服务器分类、组成、机箱内部构造等</p>
-</blockquote>
-<h2 id="1、什么是服务器？"><a href="#1、什么是服务器？" class="headerlink" title="1、什么是服务器？"></a>1、什么是服务器？</h2><ol>
-<li><p>服务器品牌有惠普、戴尔、浪潮、华为、华三、曙光等，各厂商服务器型号存在差异，惠普DL380G10、戴尔PowerEdge R750、浪潮NF5280M5、华为2288HV5、曙光R6230HA</p>
-</li>
-<li><p>一般用SN序列号和资产编号来对服务器进行标识，其中SN为唯一标识</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/c07e3428-9a31-49ae-ba6b-b9508933cef5.png"></p>
-<h2 id="2、服务器演进"><a href="#2、服务器演进" class="headerlink" title="2、服务器演进"></a>2、服务器演进</h2><p><img src="https://files.mdnice.com/user/17335/5fea500a-57ef-48a5-9bd3-623a1353dd26.png"></p>
-<h3 id="2-1、外形结构演化"><a href="#2-1、外形结构演化" class="headerlink" title="2.1、外形结构演化"></a>2.1、外形结构演化</h3><p><img src="https://files.mdnice.com/user/17335/417bae9f-220e-4e4a-b727-4284bd57ce95.png"></p>
-<ul>
-<li><p><strong>大型机</strong>：普通人很少接触，用于大规模计算的计算机系统.大型机通常用于政府、银行、交通、保险公司和大型制造企业。特点是处理数据能力强大、稳定性和安全性又非常高</p>
-</li>
-<li><p><strong>小型机</strong>：往往应用于金融、电力、电信等行业，这些用户看重的是Unix操作系统和专用服务器RAS特性、纵向扩展性和高并发访问下的出色处理能力。这些特性是普通的X86服务器很难达到的，所以在数据库等关键应用一般都采用“高大贵”的小型机方案。</p>
-</li>
-</ul>
-<h3 id="2-2、服务器发展方向"><a href="#2-2、服务器发展方向" class="headerlink" title="2.2、服务器发展方向"></a>2.2、服务器发展方向</h3><p><img src="https://files.mdnice.com/user/17335/ac20f5a9-260a-4d5d-add0-215121aa9f52.png"></p>
-<h3 id="2-3、服务器应用部署架构"><a href="#2-3、服务器应用部署架构" class="headerlink" title="2.3、服务器应用部署架构"></a>2.3、服务器应用部署架构</h3><p><img src="https://files.mdnice.com/user/17335/6dfd5c3c-c347-458c-9d54-a5cba6be2e0b.png"></p>
-<h3 id="2-4、服务器上层软件架构"><a href="#2-4、服务器上层软件架构" class="headerlink" title="2.4、服务器上层软件架构"></a>2.4、服务器上层软件架构</h3><p><img src="https://files.mdnice.com/user/17335/c9320dbe-e26f-4335-86e3-b5387b9b05a0.png"></p>
-<h2 id="3、服务器组成"><a href="#3、服务器组成" class="headerlink" title="3、服务器组成"></a>3、服务器组成</h2><p><img src="https://files.mdnice.com/user/17335/a8f909b4-68d5-4b68-bd7a-403ec82f27d1.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/ef66384d-1327-461a-b58b-10ce664fa426.png"></p>
-<h3 id="3-1、服务器前面板"><a href="#3-1、服务器前面板" class="headerlink" title="3.1、服务器前面板"></a>3.1、服务器前面板</h3><ol>
-<li><p>指示灯一般分为健康灯和指示灯，指示灯用来标记服务器，一般为UID标识；<strong>有心跳标识的一般为健康灯</strong>，用来展示服务器状态是否正常</p>
-</li>
-<li><p>电源按钮短按开机、长按关机，一般黄色代表没有开机、绿色或蓝色代表已经开机</p>
-</li>
-<li><p>前面板通风进气，机箱内部有导流槽和散热板，从后面板出气，所以一般前面板凉风习习，后面板热浪滚滚</p>
-</li>
-<li><p>服务器光驱可选，目前一般不配置光驱，空间阉割改造为硬盘使用</p>
-</li>
-<li><p>服务器硬盘一般需要做Raid后，保障冗余和安全性后进行格式化使用，按对应的按钮可以对硬盘进行插板，服务器硬盘一般为热插拔</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/7bd96ed7-c065-450e-82ec-08cfb4c217d3.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/3295b6e8-cb91-49fb-8b19-aac6e0d5b624.png"></p>
-<h3 id="3-2、服务器后面板"><a href="#3-2、服务器后面板" class="headerlink" title="3.2、服务器后面板"></a>3.2、服务器后面板</h3><ol>
-<li><p>服务器一般为双电源，即使单路掉电不影响正常使用</p>
-</li>
-<li><p>ILO口一般为带外管理口，可以远程对服务器进行开关机、重装系统等操作</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/f90faafa-bfb7-44a3-b791-5896cbbc613c.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/2ea84899-dc31-45f0-af43-0399e492f8d0.png"></p>
-<h3 id="3-3、机箱内部"><a href="#3-3、机箱内部" class="headerlink" title="3.3、机箱内部"></a>3.3、机箱内部</h3><ol>
-<li>机箱内部主要包括风扇、导流板、内存条、CPU、Raid卡、BMC纽扣电池等</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/47f079b1-c2a7-48a9-aec9-962e3c53238a.png"></p>
-<h2 id="4、服务器分类"><a href="#4、服务器分类" class="headerlink" title="4、服务器分类"></a>4、服务器分类</h2><p><img src="https://files.mdnice.com/user/17335/4be73f8f-d7c1-4fc5-9a49-68c71ac240e2.png"></p>
-<h3 id="4-1、外观分类"><a href="#4-1、外观分类" class="headerlink" title="4.1、外观分类"></a>4.1、外观分类</h3><ol>
-<li><p>服务器按照外观可以分为机架式服务器、塔式服务器、机柜式服务器、刀片式服务器</p>
-</li>
-<li><p>机架式服务器则以U高度来划分，有1U、2U、3U、4U、7U、8U等高度，1U一般为4.445CM</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/eb061326-f4ea-4d12-b98a-83b27e27840f.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/568f25ac-124b-4f84-87b9-e449c35d05e6.png"></p>
-<h3 id="4-2、架构分类"><a href="#4-2、架构分类" class="headerlink" title="4.2、架构分类"></a>4.2、架构分类</h3><ol>
-<li><p>目前架构分为X86和非X86两种，X86为CISC复杂指令集，价格便宜、兼容性好，但是稳定性和安全性差，主要用在中小企业和非关键业务中；而非X86为RISC精简指令集，价格昂贵，体系封闭，但是稳定性和安全性好，主要用于金融服务、电信等行业。</p>
-</li>
-<li><p>X86服务器厂商为Intel和AMD，非X86一般为ARM架构，生产厂商为华为、苹果等，苹果M1芯片为ARM架构</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/478b574f-8a97-41fa-86d6-286efd97d368.png"></p>
-<ul>
-<li><p><strong>x86服务器</strong>：采用CISC架构处理器。1978年6月8日，Intel发布了一款新型的<a target="_blank" rel="noopener" href="https://www.eefocus.com/baike/506860.html">微处理器</a>8086，意味着x86架构的诞生，而x86作为特定微处理器执行计算机语言的<a target="_blank" rel="noopener" href="https://www.eefocus.com/baike/511008.html">指令集</a>，定义了<a target="_blank" rel="noopener" href="https://www.eefocus.com/tag/%E8%8A%AF%E7%89%87/">芯片</a>的基本使用规则。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.eefocus.com/baike/481548.html">ARM</a>服务器</strong>：ARM全称为Advanced RISC Machine，即进阶精简指令集机器。ARM是RISC微处理器的代表作之一，最大的特点在于节能。</p>
-</li>
-</ul>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
-<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
-<li>点“在看”支持我吧!</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/5-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/" data-id="cls9w8ke8000mdkvhaqt6gi24" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-4-服务器内存介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.847Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>本篇文章用于介绍服务器内存，包括基本概念、内存演进、规格识别、内存条配置规则等</p>
-</blockquote>
-<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器内存是指安装在服务器主板上的用于存储和处理数据的硬件组件。它是服务器中的主要性能关键因素之一，对于服务器的运行速度、多任务处理能力和数据处理效率起着至关重要的作用。以下是一些关于服务器内存的重要概念和特点：</p>
-<ul>
-<li><p>容量：服务器内存的容量决定了服务器可以同时存储和处理的数据量。较大的内存容量可以支持更多的应用程序和用户同时访问服务器，提供更高的性能和响应速度。</p>
-</li>
-<li><p>类型：服务器内存通常使用ECC（Error-Correcting Code）内存，它具有纠错功能，可以检测和修复内存中的错误。常见的服务器内存类型包括DDR4、DDR3等。</p>
-</li>
-<li><p>速度：服务器内存的速度指的是内存模块的数据传输速率。较高的内存速度可以提供更快的数据读写和处理能力，从而提高服务器的性能。</p>
-</li>
-<li><p>扩展性：服务器内存通常具有较高的扩展性，可以通过添加更多的内存模块来扩大内存容量。这对于满足不断增长的业务需求和提高服务器性能非常重要。</p>
-</li>
-<li><p>通道和插槽：服务器内存通常分为多个通道和插槽，以支持多通道内存架构。多通道内存可以提供更高的数据传输带宽，提高服务器的性能。</p>
-</li>
-<li><p>冗余和热插拔：一些服务器支持冗余内存配置，即在一个内存模块故障时，其他内存模块可以继续工作，确保服务器的稳定性和可靠性。此外，一些服务器还支持热插拔内存，即可以在服务器运行时添加或移除内存模块，而无需关闭服务器</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/939d2631-d531-42c8-b0e1-07b91df42b5a.png"></p>
-<h3 id="1-1、存储功能分类"><a href="#1-1、存储功能分类" class="headerlink" title="1.1、存储功能分类"></a>1.1、存储功能分类</h3><p><img src="https://files.mdnice.com/user/17335/00cedc4a-b6a1-48a9-9002-6e12675369b1.png"></p>
-<h3 id="1-2、DRAM分类"><a href="#1-2、DRAM分类" class="headerlink" title="1.2、DRAM分类"></a>1.2、DRAM分类</h3><p><img src="https://files.mdnice.com/user/17335/09dda3bf-2240-462f-a077-0e8b602f902e.png"></p>
-<h3 id="1-3、DRAM在系统中位置"><a href="#1-3、DRAM在系统中位置" class="headerlink" title="1.3、DRAM在系统中位置"></a>1.3、DRAM在系统中位置</h3><ul>
-<li><p>早期内存通过存储器总线和北桥（MCH）相连，北桥通过前段总线与CPU通信</p>
-</li>
-<li><p>从Intel Nehalem起，北桥被集成到CPU内部，内存直接通过存储器总线与CPU相连</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d86fa7c4-4252-4da2-bffe-0e6eebd2f016.png"></p>
-<h2 id="2、内存演进"><a href="#2、内存演进" class="headerlink" title="2、内存演进"></a>2、内存演进</h2><p><img src="https://files.mdnice.com/user/17335/9b364bac-61b2-4f79-9bfc-dc2313a95958.png"></p>
-<h3 id="2-1、内存演进的指标：容量、功耗、性能"><a href="#2-1、内存演进的指标：容量、功耗、性能" class="headerlink" title="2.1、内存演进的指标：容量、功耗、性能"></a>2.1、内存演进的指标：容量、功耗、性能</h3><p><img src="https://files.mdnice.com/user/17335/56126915-6294-4952-904d-fa36e9a92435.png"></p>
-<h3 id="2-2、内存条类型介绍"><a href="#2-2、内存条类型介绍" class="headerlink" title="2.2、内存条类型介绍"></a>2.2、内存条类型介绍</h3><p><img src="https://files.mdnice.com/user/17335/53ef00d9-b63f-448e-ac34-ec75737a9fb1.png"></p>
-<h3 id="2-3、主流内存条生产厂家"><a href="#2-3、主流内存条生产厂家" class="headerlink" title="2.3、主流内存条生产厂家"></a>2.3、主流内存条生产厂家</h3><p><img src="https://files.mdnice.com/user/17335/4f3f2d67-91bd-41f6-81e8-ba80156dc912.png"></p>
-<h2 id="3、常用功能"><a href="#3、常用功能" class="headerlink" title="3、常用功能"></a>3、常用功能</h2><h3 id="3-1、内存插槽类型"><a href="#3-1、内存插槽类型" class="headerlink" title="3.1、内存插槽类型"></a>3.1、内存插槽类型</h3><p><img src="https://files.mdnice.com/user/17335/2dac040b-e57a-438d-9206-428b1fb5cd2c.png"></p>
-<h3 id="3-2、内存条组成"><a href="#3-2、内存条组成" class="headerlink" title="3.2、内存条组成"></a>3.2、内存条组成</h3><p><img src="https://files.mdnice.com/user/17335/41c69653-df33-4c65-bd74-63f14f678f86.png"></p>
-<h3 id="3-3、内存条规格识别"><a href="#3-3、内存条规格识别" class="headerlink" title="3.3、内存条规格识别"></a>3.3、内存条规格识别</h3><p><img src="https://files.mdnice.com/user/17335/5b2b7081-ea81-474b-85bf-0686999209e5.png"></p>
-<h3 id="3-4、服务器内存条配置原则"><a href="#3-4、服务器内存条配置原则" class="headerlink" title="3.4、服务器内存条配置原则"></a>3.4、服务器内存条配置原则</h3><p><img src="https://files.mdnice.com/user/17335/489e4970-2c41-437b-ad10-1aced3601c4d.png"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
-<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
-<li>点“在看”支持我吧!</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/" data-id="cls9w8ke7000kdkvhbyqk9fqu" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-3-服务器硬盘介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/3-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.830Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="服务器硬盘"><a href="#服务器硬盘" class="headerlink" title="服务器硬盘"></a>服务器硬盘</h1><h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器硬盘是一种专门用于存储和读取数据的硬件设备。它通常具有较大的存储容量和高速的数据传输速度，以满足服务器对大量数据的处理需求。服务器硬盘可以根据不同的特性和用途进行分类。以下是几种常见的服务器硬盘分类：</p>
-<ol>
-<li><p><strong>SATA硬盘</strong>：SATA（Serial ATA）硬盘是最常见的<strong>机械硬盘HDD</strong>。它们通常具有较低的成本和较大的存储容量，适用于需要大容量存储但对性能要求不高的应用场景。</p>
-</li>
-<li><p><strong>SAS硬盘</strong>：SAS（Serial Attached SCSI）硬盘是一种高性能的<strong>机械硬盘HDD</strong>。它们具有更高的转速和更快的数据传输速度，适用于需要较高性能和可靠性的应用场景，如数据库、虚拟化和企业级应用。</p>
-</li>
-<li><p><strong>SSD硬盘</strong>：SSD（Solid State Drive）硬盘是一种基于<strong>闪存存储技术</strong>的服务器硬盘。它们具有更快的读写速度、更低的延迟和较高的耐用性，适用于需要高性能和快速响应的应用场景，如虚拟化、云计算和大数据分析。</p>
-</li>
-<li><p><strong>NVMe硬盘</strong>：NVMe（Non-Volatile Memory Express）硬盘是一种基于<strong>PCIe接口</strong>的高性能存储设备。它们具有更高的带宽和更低的延迟，适用于需要极高性能和低延迟的应用场景，如高性能计算、人工智能和大规模数据库。</p>
-</li>
-<li><p>Nearline硬盘：Nearline硬盘是一种介于传统硬盘和磁带之间的存储介质。它们具有较大的存储容量和较低的成本，适用于需要长期存储和备份的应用场景。</p>
-</li>
-<li><p>光纤通道硬盘：光纤通道硬盘是一种使用光纤通道技术连接的高性能存储设备。它们具有更高的带宽和更低的延迟，适用于需要高性能和可靠性的大规模存储系统。</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/f0d97d94-e6b8-4247-9987-d4b485d62096.png"></p>
-<h3 id="1-1、硬盘尺寸"><a href="#1-1、硬盘尺寸" class="headerlink" title="1.1、硬盘尺寸"></a>1.1、硬盘尺寸</h3><p><img src="https://files.mdnice.com/user/17335/188096fe-06c0-405f-a551-ac1cefd79632.png"></p>
-<h3 id="1-2、硬盘关键指标"><a href="#1-2、硬盘关键指标" class="headerlink" title="1.2、硬盘关键指标"></a>1.2、硬盘关键指标</h3><ul>
-<li>硬盘<strong>10k</strong>和<strong>15k</strong>是指硬盘的转速，分别为每分钟10000转和15000转</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/cc12a52f-3680-4312-8950-70c703ef75de.png"></p>
-<h3 id="1-3、容量差异对比"><a href="#1-3、容量差异对比" class="headerlink" title="1.3、容量差异对比"></a>1.3、容量差异对比</h3><p><img src="https://files.mdnice.com/user/17335/b8648a59-e328-4c55-9fc5-896f2fe3e4e4.png"></p>
-<h3 id="1-4、功耗差异对比"><a href="#1-4、功耗差异对比" class="headerlink" title="1.4、功耗差异对比"></a>1.4、功耗差异对比</h3><p><img src="https://files.mdnice.com/user/17335/4b550667-0f99-4212-b0af-baee119eb081.png"></p>
-<h3 id="1-5、性能差异对比"><a href="#1-5、性能差异对比" class="headerlink" title="1.5、性能差异对比"></a>1.5、性能差异对比</h3><p><img src="https://files.mdnice.com/user/17335/a3672e3b-d69e-41d6-bf9f-cb7f1f11a85c.png"></p>
-<h3 id="1-6、寿命及可靠性分析"><a href="#1-6、寿命及可靠性分析" class="headerlink" title="1.6、寿命及可靠性分析"></a>1.6、寿命及可靠性分析</h3><p><img src="https://files.mdnice.com/user/17335/8e044e84-2b23-45c5-a03e-9a7dd48767cd.png"></p>
-<h2 id="2、选型指南"><a href="#2、选型指南" class="headerlink" title="2、选型指南"></a>2、选型指南</h2><h3 id="2-1、业务类型"><a href="#2-1、业务类型" class="headerlink" title="2.1、业务类型"></a>2.1、业务类型</h3><p><img src="https://files.mdnice.com/user/17335/33e9b9b8-553d-4645-99ab-f6687b624bda.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/fde59083-624a-474a-a104-4f9e5c8e3a2d.png"></p>
-<h3 id="2-2、主流硬盘类型"><a href="#2-2、主流硬盘类型" class="headerlink" title="2.2、主流硬盘类型"></a>2.2、主流硬盘类型</h3><p><img src="https://files.mdnice.com/user/17335/ead86f2a-3994-46e9-967a-3c71ff0a00cd.png"></p>
-<h3 id="2-3、硬盘关键指标"><a href="#2-3、硬盘关键指标" class="headerlink" title="2.3、硬盘关键指标"></a>2.3、硬盘关键指标</h3><p><img src="https://files.mdnice.com/user/17335/8df213f4-adce-4501-9d9d-fb89bc1b3cd3.png"></p>
-<h2 id="3、RAID"><a href="#3、RAID" class="headerlink" title="3、RAID"></a>3、RAID</h2><p>RAID（Redundant Array of Independent Disks）是一种通过<strong>将多个独立的硬盘组合在一起来提供数据冗余、性能提升或两者兼备</strong>的技术。服务器RAID是在服务器中使用RAID技术来提供更高的数据可靠性、性能和存储容量。</p>
-<h3 id="3-1、RAID级别"><a href="#3-1、RAID级别" class="headerlink" title="3.1、RAID级别"></a>3.1、RAID级别</h3><p>以下是几种常见的服务器RAID级别：</p>
-<ol start="7">
-<li><p><strong>RAID 0</strong>：RAID 0将数据分散存储在多个硬盘上，以提高读写性能。它通过并行读写操作来提高数据吞吐量，但没有冗余备份，因此如果其中一个硬盘故障，所有数据都会丢失。</p>
-</li>
-<li><p><strong>RAID 1</strong>：RAID 1<strong>使用两个硬盘来实现数据镜像。所有数据同时写入两个硬盘，因此如果其中一个硬盘故障，数据仍然可从另一个硬盘中恢复</strong>。RAID 1提供了较高的数据可靠性，但存储容量只能达到一个硬盘的容量。</p>
-</li>
-<li><p><strong>RAID 5</strong>：RAID 5<strong>使用三个或更多硬盘来实现数据分布和冗余</strong>。它将数据和奇偶校验信息分散存储在多个硬盘上，以提供冗余备份和读写性能的提升。<strong>如果其中一个硬盘故障，数据可以通过奇偶校验信息从其他硬盘中重建</strong>。RAID 5提供了较高的数据可靠性和存储容量。</p>
-</li>
-<li><p><strong>RAID 6</strong>：RAID 6与RAID 5类似，但使用两个奇偶校验信息来提供更高的冗余备份。它<strong>需要至少四个硬盘，并且可以同时容忍两个硬盘的故障</strong>。RAID 6提供了更高的数据可靠性，但写入性能相对较低。</p>
-</li>
-<li><p><strong>RAID 10</strong>：<strong>RAID 10是RAID 1和RAID 0的组合</strong>。它将<strong>多个硬盘分为两组，每组中的硬盘进行数据镜像，然后将数据分散存储在两组之间</strong>以提高性能。RAID 10提供了较高的数据可靠性和读写性能，但存储容量只能达到总容量的一半。</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/0ccf28a4-507f-442f-ad7a-bf2353c75981.png"></p>
-<h3 id="3-2、数据存取方式"><a href="#3-2、数据存取方式" class="headerlink" title="3.2、数据存取方式"></a>3.2、数据存取方式</h3><p><img src="https://files.mdnice.com/user/17335/18fcf80a-54bd-41d9-ba3e-2e7b9fad66e6.png"></p>
-<h3 id="3-3、热备-重构"><a href="#3-3、热备-重构" class="headerlink" title="3.3、热备 &amp; 重构"></a>3.3、热备 &amp; 重构</h3><p><img src="https://files.mdnice.com/user/17335/4a135217-ff4e-4210-b750-5124f55670be.png"></p>
-<h3 id="3-4、逻辑卷"><a href="#3-4、逻辑卷" class="headerlink" title="3.4、逻辑卷"></a>3.4、逻辑卷</h3><p><img src="https://files.mdnice.com/user/17335/057a247c-2b7a-4e11-9557-4c0960748e2f.png"></p>
-<h3 id="3-5、RAID卡"><a href="#3-5、RAID卡" class="headerlink" title="3.5、RAID卡"></a>3.5、RAID卡</h3><p><img src="https://files.mdnice.com/user/17335/a2206f54-3bc4-486b-9231-57afad6f9125.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/991e8dd7-fea9-466f-b9f4-0cfedb15f774.png"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>欢迎大家关注我，公众号会分享个人日常运维记录，欢迎点赞和在看！</p>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/3-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/" data-id="cls9w8ke8000ldkvh991mfdjf" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2-服务器CPU介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/2-%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.814Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>本篇文章主要介绍服务器CPU，包括基础概念、常用功能及国产CPU简介等</p>
-</blockquote>
-<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><ul>
-<li><p>CPU（Central Processing Unit，中央处理器）是一块超大规模的集成电路，通常被称为计算机的大脑，是一台计算机的运算核心（Core）和控制核心（Control Unit）,也是整个计算机系统最重要的组成部件</p>
-</li>
-<li><p>中央处理器主要包括运算器（算数逻辑运算单元，ALU，Arithmetic Logic Unit）和高速缓冲器（Cache）及实现他们之间联系的数据（Data）、控制及状态的总线（Bus）</p>
-</li>
-<li><p><strong>CPU与存储器（Memory）和输入&#x2F;输出（I&#x2F;O</strong>）设备合称为电子计算机三大核心部件</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/5fc60f1b-c631-4cbd-b62b-a778dc2f3e4c.png"></p>
-<h3 id="CPU分类"><a href="#CPU分类" class="headerlink" title="CPU分类"></a>CPU分类</h3><p>CPU目前有两种指令集，即CISC复杂指令集和RISC精简指令集，一般按照指令集对CPU进行分类</p>
-<ul>
-<li><p>CISC（Complex Instruction Set Computer），复杂指令集，早期的CPU全都是CISC架构，设计目的主要是用最少的机器语言指令来完成所需的计算任务，这种架构会增加CPU结构的复杂性和对CPU工艺的要求，但对于编译器开发十分有利</p>
-</li>
-<li><p>RISC（Reduced Instruction Set Computer），精简指令集。RISC架构要求软件来指定各个操作步骤，这种架构可以降低CPU的复杂性以及允许在同样的工艺水平下生产出功能更强大的CPU，但对于编译器的设计有更高的要求</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/94047b35-ba3e-4af8-a87d-aefb3a8cf23e.png"></p>
-<h2 id="2、X86处理器"><a href="#2、X86处理器" class="headerlink" title="2、X86处理器"></a>2、X86处理器</h2><h3 id="2-1、发展历史"><a href="#2-1、发展历史" class="headerlink" title="2.1、发展历史"></a>2.1、发展历史</h3><p><img src="https://files.mdnice.com/user/17335/dc33a12a-71e9-4f38-9f90-ab7376a9aac9.png"></p>
-<h3 id="2-2、Intel-CPU路标"><a href="#2-2、Intel-CPU路标" class="headerlink" title="2.2、Intel CPU路标"></a>2.2、Intel CPU路标</h3><p><img src="https://files.mdnice.com/user/17335/7f731931-95fe-4e7a-aa2d-99a3d9cd51f0.png"></p>
-<h3 id="2-3、Intel命名规则"><a href="#2-3、Intel命名规则" class="headerlink" title="2.3、Intel命名规则"></a>2.3、Intel命名规则</h3><p><img src="https://files.mdnice.com/user/17335/cb6d834a-7fe5-43c0-8108-eddd736992b5.png"></p>
-<h2 id="3、常用功能"><a href="#3、常用功能" class="headerlink" title="3、常用功能"></a>3、常用功能</h2><h3 id="3-1、缓存"><a href="#3-1、缓存" class="headerlink" title="3.1、缓存"></a>3.1、缓存</h3><ul>
-<li>缓存（Cache Memory）是位于CPU和内存之间的临时存储器，目前的CPU拥有一级、二级和三级缓存（L1 L2 L3 Cache）</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/eb087875-8f03-4f82-ab7c-1aa9e30f29ef.png"></p>
-<h3 id="3-2、频率"><a href="#3-2、频率" class="headerlink" title="3.2、频率"></a>3.2、频率</h3><ul>
-<li><p>CPU 的频率主要包括主频、外频和倍频三部分。<strong>主频&#x3D;外频*倍频</strong>，这是X86架构CPU计算频率的公式，CPU主频为CPU 的额定工作频率，当内核数目和缓存大小一样时，主频越高的CPU性能越好</p>
-</li>
-<li><p><strong>Intel Turbo Boost</strong>技术为Intel睿频加速技术，此技术运行Intel CPU在标称频率（TSC）之上，性能分配上实现按需分配</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d38b3fe5-8f0e-47d0-9211-16a20294e0ce.png"></p>
-<h3 id="3-3、多核和超线程"><a href="#3-3、多核和超线程" class="headerlink" title="3.3、多核和超线程"></a>3.3、多核和超线程</h3><ul>
-<li><p><strong>多核处理器</strong>把多个CPU（核心）集成到单个集成电路芯片中</p>
-</li>
-<li><p><strong>超线程（Hyper-Threading）</strong>其实就是同时多线程（simultaneous multi-theading），是一项允许一个CPU执行多个控制流的技术</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/2f97991b-c63b-4bfc-a0b0-798b4cf87eb1.png"></p>
-<h3 id="3-4、CPU参数说明"><a href="#3-4、CPU参数说明" class="headerlink" title="3.4、CPU参数说明"></a>3.4、CPU参数说明</h3><p><img src="https://files.mdnice.com/user/17335/47b9c98a-da41-41a9-bc36-80e4597af00b.png"></p>
-<h2 id="4、国产CPU"><a href="#4、国产CPU" class="headerlink" title="4、国产CPU"></a>4、国产CPU</h2><p>目前都在主推信创，即信息技术应用创新产业，旨在实现信息技术领域的自主可控，保障国家信息安全，主打的是国产化替代。国产 CPU 和操作系统是信创产业的根基，也是信创产业中技术壁垒最高的环节。 没有CPU 和操作系统的安全可控，整个信创产业就是无根之木、无源之水</p>
-<p><img src="https://files.mdnice.com/user/17335/ecaeed46-2826-4f38-956d-105a6f59deab.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/264b60b4-40d0-4ce7-80c0-47e980e362cf.png"></p>
-<h2 id="4-1、举例"><a href="#4-1、举例" class="headerlink" title="4.1、举例"></a>4.1、举例</h2><p>前不久接触过一个银河麒麟的国产操作系统，用着不是那么好用，简单放一个桌面截图吧</p>
-<p><img src="https://files.mdnice.com/user/17335/d9f4d3fd-a7a8-4b30-91bf-806a7819c3ca.png"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>欢迎大家关注我，公众号会分享个人日常运维记录，欢迎点赞和在看！</p>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/2-%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/" data-id="cls9w8kdz000cdkvh08y4586s" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-1-2023总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/1-2023%E6%80%BB%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.797Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="2023总结"><a href="#2023总结" class="headerlink" title="2023总结"></a>2023总结</h2><p>2023即将结束，过得好快呀，按照惯例写一下自己的年终总结吧。</p>
-<ul>
-<li><p>换工作（深圳→郑州）</p>
-</li>
-<li><p>喜提新车</p>
-</li>
-<li><p>恋爱5周年</p>
-</li>
-<li><p>跑步累计里程突破1000KM</p>
-</li>
-<li><p>读书《明朝那些事儿》、《大明王朝1566》</p>
-</li>
-</ul>
-<h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>  从2020年11月在深圳实习，算起来在深圳工作了两年多，今年3月份选择换城市，回到郑州，这里是女友的家乡，双方离父母都更近些。骑驴找马阶段也收获了几个offer，在对象建议下选择了其中一家国企，虽然工资腰斩，岗位也从开发转为运维，但是整体感觉良好，也认识了非常nice的领导和同事，算是不错的跳槽体验。自己也很幸运能够在招聘冻结前成功入职，希望可以干到退休吧。</p>
-<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>  其实回到郑州来生活，对于我和对象而言是必然的，只是时间早晚而已，本来计划今年能够订婚，所以3月份我先来郑州探探路，对象后遂而至。离开深圳前转租房子、售卖电动车一切顺利，对象找工作也是有惊无险，也成功入职一家国企，相对稳定一些。说回我自己，来到大郑州之后，马不停蹄的办理了户口转移，成功从深圳人切换到了郑州人。来到郑州之后，感受最深的是郑州道路规划的乱和无序，尽管非机动车道非常之豪华，又宽又长，体验很棒，比起深圳来好了太多，但是各种路边乱停车，4车道”升级”为2车道甚至1车道的骚操作也让我直呼666，惊呆了老铁。自从对象回来之后，我们的生活比较规律，也认识了一些朋友，工作日正常工作，双休日回家或者朋友聚餐，感觉提前过起了退休生活，还不错！</p>
-<h2 id="健康"><a href="#健康" class="headerlink" title="健康"></a>健康</h2><p>  健康是我比较在意的一点，现在体重算是标准和偏重之间左右摇摆，这不是我想要的结果，希望能够克制自己，自律，体重恢复到155斤，步入标准健康体重，拥有腹肌！</p>
-<p>  跑步对于我来说，有必要单起一段，以示尊重。19年为了追求对象，开始大体重跑步减肥，早上操场跑步5公里，晚上宿舍腹部燃脂半小时，刻意减少食量，晚餐不吃，成功减重50斤，从那时候开始喜欢跑步。深圳工作以后，零零星星也跑了几次，但可以忽略不计，回到郑州后，单位独立的健身房重新燃起了我跑步的想法，双11入手强风SE后，迫不及待进行了路跑评测，不得不感慨科技的强大，这双鞋很激进，推进力很强，会不由自主的加速，很喜欢。目前悦跑圈累计跑量突破1000KM，希望2024年能达到累计里程2000KM，一直坚持下去，身体健康，远离疾病！</p>
-<p><img src="https://files.mdnice.com/user/17335/f4d71c0f-73d2-415f-acd8-62568303fc5b.png"></p>
-<h2 id="恋爱"><a href="#恋爱" class="headerlink" title="恋爱"></a>恋爱</h2><p>  现在想来，找到现在的对象，可能是我此生最幸运的事，没有之一！因为对象严格要求减肥，自己才能一直坚持运动，成功减重的同时培养了自己跑步的爱好；因为对象义无反顾随我去深圳，外地工作没有了孤独和无聊，即便是狭小的出租房也充满了温馨和幸福；因为对象的坚决，我卖掉了股票和基金，才没有在理财赔钱的绝路上越走越远，及时止损，落袋为安；因为对象的坚持，我从已有的offer里面选择了国企，虽然工资腰斩，但是拥有了朝九晚五的规律生活；因为对象选了郑州定居，才能双休日到处happy，年纪轻轻就过上了退休的生活。诸如此类，不胜枚举，不得不感慨自己真的是很幸运。</p>
-<p>  本来打算今年买房、订婚一条龙，在郑州安定下来，不过计划总是赶不上变化，7月份喜提新车，也算是步入有车一族，出行回对象家也方便了很多，不用公交、地铁来回换乘才能回到郑州，时间从一下午缩短为半小时，实现了质的飞跃。关于买房，目前郑州楼市并不乐观，大家都在观望，虽然期房宣传推广看起来非常好，但是“烂尾楼”还是让我放弃了期房的想法，在2023之前买到烂尾楼可能是不幸，但是2023之后还买到烂尾楼就是活该。印象中，看房看了好久，中介换了一波又一波，电话也在不停被轰炸，不过目前为止还没有找到自己心仪的房子，双方家长都在催买房，希望自己在2024年上半年能够成功买到属于自己的房子，期待装修属于自己的小家！</p>
-<p><img src="https://files.mdnice.com/user/17335/2b49cd03-04f0-4c29-b237-acf51390a31e.png"></p>
-<h2 id="2024目标"><a href="#2024目标" class="headerlink" title="2024目标"></a>2024目标</h2><ul>
-<li><p>买房、订婚、结婚</p>
-</li>
-<li><p>跑步累计里程2000KM</p>
-</li>
-<li><p>发表原创运维笔记10篇</p>
-</li>
-<li><p>阿里云认证</p>
-</li>
-<li><p>软考认证</p>
-</li>
-<li><p>随缘读书</p>
-</li>
-</ul>
-<p> 2023即将结束，希望大家都能在2024身体健康，一切顺遂！</p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/1-2023%E6%80%BB%E7%BB%93/" data-id="cls9w8kcz0000dkvh20a5akxf" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-27-兆芯-合资CPU探路者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/27-%E5%85%86%E8%8A%AF-%E5%90%88%E8%B5%84CPU%E6%8E%A2%E8%B7%AF%E8%80%85/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.783Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是ren_dong的第<strong>27</strong>篇原创</p>
-</blockquote>
-<h1 id="兆芯–合资CPU探路者"><a href="#兆芯–合资CPU探路者" class="headerlink" title="兆芯–合资CPU探路者"></a>兆芯–合资CPU探路者</h1><h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010923010.png"></p>
-<ul>
-<li>兆芯是合资CPU的探路者。由台湾威盛电子和上海市国资委的上海联和投资公司合资成立 ，拥有<strong>部分X86技术产权</strong></li>
-<li>兆芯坚持自主创新与兼容主流的发展路线，同时掌握<strong>中央处理器、 图形处理器、芯片组</strong>三大核心技术 ，具备相关IP自主设计研发的能力</li>
-</ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010948550.png" alt="image-20240201094821449"></p>
-<h2 id="2、发展历程"><a href="#2、发展历程" class="headerlink" title="2、发展历程"></a>2、发展历程</h2><ol>
-<li>2013年4月由台湾威盛与隶属于上海市国资委的上海联和投资公司所合资成立 </li>
-<li>2020年10月26日 ，威盛作价2.57亿美元将部分X86技术出售给兆芯 ，兆芯拥有了部分X86技术产权</li>
-</ol>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010934835.jpeg" alt="公司简介"></p>
-<h2 id="3、产品体系"><a href="#3、产品体系" class="headerlink" title="3、产品体系"></a>3、产品体系</h2><p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010937899.png" alt="image-20240201093736799"></p>
-<ol>
-<li>兆芯自主创新研发的通用处理器产品涵盖<strong>“开先”、“开胜”</strong>两大系列，开先用于PC、嵌入式设备，开胜用于服务器设备</li>
-</ol>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010942182.png" alt="image-20240201094237074"></p>
-<h2 id="4、产品介绍"><a href="#4、产品介绍" class="headerlink" title="4、产品介绍"></a>4、产品介绍</h2><h3 id="4-1、KH-40000"><a href="#4-1、KH-40000" class="headerlink" title="4.1、KH-40000"></a>4.1、KH-40000</h3><ul>
-<li>兆芯开胜® KH-40000系列服务器处理器，采用“永丰”自主内核微架构，支持自主互连技术ZPI 3.0，单颗处理器集成最高32核心，具备64MB高速缓存，支持8通道DDR4内存</li>
-<li>开胜® KH-40000系列处理器适用于云计算、大数据分析、视频处理、数据库备份、高性能存储，以及超融合一体机等解决方案的搭建和部署</li>
-</ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010951877.jpeg" alt="开胜® KH-40000系列处理器"></p>
-<h3 id="4-2、KX-7000"><a href="#4-2、KX-7000" class="headerlink" title="4.2、KX-7000"></a>4.2、KX-7000</h3><ul>
-<li>兆芯开先® KX-7000系列处理器采用全新“世纪大道”自主内核微架构和先进的Chiplet互连架构，与上一代产品相比，计算性能提升至2倍</li>
-<li>开先® KX-7000系列处理器支持构建丰富的桌面整机产品，如台式机、笔记本、一体机、云终端以及嵌入式计算平台等</li>
-</ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010952007.jpeg" alt="开先® KX-7000系列处理器"></p>
-<h3 id="4-3、ZX-200-IO扩展芯片"><a href="#4-3、ZX-200-IO扩展芯片" class="headerlink" title="4.3、ZX-200 IO扩展芯片"></a>4.3、ZX-200 IO扩展芯片</h3><ul>
-<li>ZX-200 IO扩展芯片，是兆芯自主创新研发的新一代、高性能IO扩展芯片产品，主要适用于对扩展性要求较高的桌面及服务器等解决方案。</li>
-</ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010953980.jpeg" alt="ZX-200 IO扩展芯片"></p>
-<h2 id="5、优劣势"><a href="#5、优劣势" class="headerlink" title="5、优劣势"></a>5、优劣势</h2><p>目前公司产品覆盖CPU、芯片组、手机SOC，机顶盒SOC等各个领域。</p>
-<ul>
-<li>优势：兆芯本质是X86芯片，且团队研发经验已有16年时间，因此在性能和应用生态上具有较<br>强优势。</li>
-<li>劣势：兆芯通过股权关系实现了与Intel、AMD的X86专利交叉授权，但目前在产品性能和市场<br>定位上处于相对尴尬的境地；</li>
-<li>兆芯目前在信创领域份额较小，主要在<strong>上海地区具有相对优势</strong></li>
-</ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010955749.png" alt="image-20240201095511643"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/27-%E5%85%86%E8%8A%AF-%E5%90%88%E8%B5%84CPU%E6%8E%A2%E8%B7%AF%E8%80%85/" data-id="cls9w8ke6000idkvh9a4j50v4" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-26-飞腾--PK生态主导者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/26-%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.769Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是ren_dong的第<strong>26</strong>篇原创</p>
-</blockquote>
-<h1 id="飞腾–PK生态主导者"><a href="#飞腾–PK生态主导者" class="headerlink" title="飞腾–PK生态主导者"></a>飞腾–PK生态主导者</h1><h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><blockquote>
-<p><strong>基于ARM架构的国产CPU</strong></p>
-</blockquote>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011001020.png" alt="image-20240201100148425"></p>
-<ul>
-<li>飞腾信息技术有限公司是国内领先的自主核心芯片提供商 ，是PK生态的主导者。<strong>PK系统</strong>，指的是中国电子所开发的具有完全自主知识产权的中国架构——<strong>飞腾CPU（Phytium）+麒麟操作系统（Kylin）</strong></li>
-<li>飞腾的主要股东包括<strong>中国电子CEC、国防科大、天津市国资委</strong>等，中国长城持有31.5%的股权，是飞腾第一大股东。</li>
-</ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011002909.png" alt="image-20240201100256828"></p>
-<h2 id="2、发展历程"><a href="#2、发展历程" class="headerlink" title="2、发展历程"></a>2、发展历程</h2><ol>
-<li>2014年 ，飞腾公司由中国电子信息产业集团、 天津市滨海新区政府和天津先进技术研究院联合支持成立</li>
-<li>2017年，飞腾推出FT-2000+&#x2F;64高性能服务器CPU</li>
-<li>2020年，飞腾发布新一代高可扩展多路服务器CPU腾云S2500</li>
-<li>2022年，飞腾发布新一代嵌入式CPU飞腾腾珑E2000</li>
-</ol>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011009968.png" alt="image-20240201100901853"></p>
+<p><img src="https://files.mdnice.com/user/17335/1606c911-e0fc-42f5-a89f-1fb70d721753.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/5b5a714d-4117-4911-9a1c-08c9e0a18111.png"></p>
 <h2 id="3、产品体系"><a href="#3、产品体系" class="headerlink" title="3、产品体系"></a>3、产品体系</h2><ol>
-<li>飞腾CPU产品主要包括<strong>高性能服务器 CPU、高效能桌面CPU和高端嵌入式CPU</strong>三大系列，为从端到云的各型设备提供核心算力支撑</li>
+<li>公司经营主要采用Fabless模式：公司主要负责芯片的设计工作，形成集成电路设计版图 ，将晶圆制造、封装、部分测试等环节委托给相关制造企业及代工厂商加工完成。</li>
+<li>龙芯产品均基于<strong>自研的LoongArch 架构</strong>，主要包括面向行业应用的“<strong>龙芯 1 号</strong>”小 CPU、面向工控和终端类应用的“<strong>龙芯 2 号</strong>”中 CPU、以及面向桌面与服务器类应用的“<strong>龙芯 3 号</strong>”大 CPU</li>
 </ol>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011115747.png" alt="image-20240201111527317"></p>
-<h2 id="4、产品介绍"><a href="#4、产品介绍" class="headerlink" title="4、产品介绍"></a>4、产品介绍</h2><h3 id="4-1、飞腾腾云®S2500"><a href="#4-1、飞腾腾云®S2500" class="headerlink" title="4.1、飞腾腾云®S2500"></a>4.1、飞腾腾云®S2500</h3><ul>
-<li>飞腾腾云S2500 集成新一代飞腾自主研发的高性能处理器核心FTC663，兼容ARMv8 指令集，支持硬件虚拟化</li>
-<li>飞腾腾云S2500 拥有4 个直连接口，总带宽800Gbps，支持2~8 路直连，Cache 一致性协议从单路64 核心扩展到8 路512 核心</li>
+<p><img src="https://files.mdnice.com/user/17335/6b29c888-baf3-42f8-9a3c-4a7a0325f4b7.png"></p>
+<h2 id="4、产品介绍"><a href="#4、产品介绍" class="headerlink" title="4、产品介绍"></a>4、产品介绍</h2><h3 id="4-1、龙芯3A-3B5000"><a href="#4-1、龙芯3A-3B5000" class="headerlink" title="4.1、龙芯3A&#x2F;3B5000"></a>4.1、龙芯3A&#x2F;3B5000</h3><ul>
+<li>龙芯3A5000是龙芯中科最新款桌面CPU，基于LoongArch指令集，基于龙芯3A4000引脚兼容，频率提升至2.5GHz，功耗降低30%，性能提升50%以上</li>
+<li>龙芯3B5000在龙芯3A5000基础上支持多路互联</li>
 </ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011019659.png" alt="image-20240201101836016"></p>
-<h3 id="4-2、FT-2000-64"><a href="#4-2、FT-2000-64" class="headerlink" title="4.2、FT-2000+&#x2F;64"></a>4.2、FT-2000+&#x2F;64</h3><ul>
-<li>FT-2000+&#x2F;64芯片集成64个飞腾自主研发的高能效处理器内核FTC662，采用乱序四发射超标量流水线，芯片采用片上并行系统（PSoC）体系结构</li>
-<li>芯片兼容64位ARMV8指令集。 该产品适用于高性能、高吞吐率的服务器领域，如对处理能力和吞吐力要求很高的行业大型业务主机、高性能服务器系统和大型互联网数据中心等。</li>
+<p><img src="https://files.mdnice.com/user/17335/9b7acc46-8d8d-49e2-954a-5b7a5cb4bb8f.png"></p>
+<h3 id="4-2、龙芯3C5000L"><a href="#4-2、龙芯3C5000L" class="headerlink" title="4.2、龙芯3C5000L"></a>4.2、龙芯3C5000L</h3><ul>
+<li>龙芯3C5000L封装集成4个3A5000，形成16核处理器<br><img src="https://files.mdnice.com/user/17335/c466a51c-4dac-4f5a-9781-e215ca07e2a2.png"></li>
 </ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011020805.png" alt="image-20240201101922051"></p>
-<h3 id="4-3、FT-1500A-16"><a href="#4-3、FT-1500A-16" class="headerlink" title="4.3、FT-1500A&#x2F;16"></a>4.3、FT-1500A&#x2F;16</h3><ul>
-<li>FT-1500A&#x2F;16芯片集成16个飞腾自主研发的高能效处理器内核FTC660，芯片采用片上并行系统（PSoC）体系结构，兼容64位ARMV8指令集，支持硬件虚拟化。 </li>
-<li>该产品适用于构建较高计算能力和较高吞吐率的服务器产品，如办公业务系统应用&#x2F;事务处理器、数据库服务器、存储服务器、物联网&#x2F;云计算服务器等</li>
+<h3 id="4-3、龙芯3A6000"><a href="#4-3、龙芯3A6000" class="headerlink" title="4.3、龙芯3A6000"></a>4.3、龙芯3A6000</h3><ul>
+<li>龙芯第四代微架构首款处理器，面向高端嵌入式计算机、桌面、服务器等应用。</li>
+<li>采用自主龙芯指令集（LoongArch™），基于全新研制的LA664处理器核，较龙芯3A5000单核定&#x2F;浮点性能分别提升60%和90%，多核定&#x2F;浮点性能分别提升100%和90%。</li>
+<li>龙芯3A6000处理器 SPEC CPU 2006 Base单线程定&#x2F;浮点分值分别达到43.1&#x2F;54.6分，达到国际市场主流水平</li>
 </ul>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011021728.png" alt="image-20240201102102656"></p>
-<h2 id="5、优劣势"><a href="#5、优劣势" class="headerlink" title="5、优劣势"></a>5、优劣势</h2><h3 id="5-1、致力打造PK生态"><a href="#5-1、致力打造PK生态" class="headerlink" title="5.1、致力打造PK生态"></a>5.1、致力打造PK生态</h3><ol>
-<li>飞腾致力于打造PK生态，飞腾CPU+麒麟OS，已与超过400家企业达成合作。</li>
-<li>依托飞腾全新的硬件级安全机制， 以相关可信技术为支撑， PK 体系融合“S-Security”的立体防护安全链，升级为 <strong>PKS 体系</strong>，并全球首创将“可信计算 3.0”技术融入到 CPU、操作系统和存储控制器中， 实现底层构架的本质安全，并成为国内首个计算机软硬件基础体系标准。</li>
-<li>对比鲲鹏与飞腾的生态构建可以发现， <strong>鲲鹏技术路线比 PKS 路线有较明显的技术和产品优势， PKS 技术路线比鲲鹏技术路线有较明显的安全优势</strong>。</li>
+<p><img src="https://files.mdnice.com/user/17335/4308b39c-d059-4a6e-9fad-8b4fcaad90ba.png"></p>
+<h2 id="5、劣势"><a href="#5、劣势" class="headerlink" title="5、劣势"></a>5、劣势</h2><ol>
+<li><p><strong>多核性能弱</strong>：龙芯CPU是我国最早的国产CPU厂商，但其更集中于专用类、嵌入式 CPU，通用类 CPU 单核性能较高，但多核能力较弱</p>
+</li>
+<li><p><strong>生态差</strong>：龙芯是国内唯一基于 MIPS 架构的国产 CPU，在生态构建方面劣势明显</p>
+</li>
 </ol>
-<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011022581.png" alt="image-20240201102240465"></p>
-<h3 id="5-2、未来5年总体规划"><a href="#5-2、未来5年总体规划" class="headerlink" title="5.2、未来5年总体规划"></a>5.2、未来5年总体规划</h3><p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011023042.png" alt="image-20240201102327941"></p>
-<h3 id="5-3、劣势"><a href="#5-3、劣势" class="headerlink" title="5.3、劣势"></a>5.3、劣势</h3><ol>
-<li>兼容性和生态需要进一步打造</li>
-<li>商用性能需要进一步提升</li>
-</ol>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
+<li>码字不易，欢迎<strong>关注、点赞</strong>，感谢支持！</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/26-%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/" data-id="cls9w8ke6000jdkvh1b6r0bxs" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://rendong3.github.io/2024/02/13/%E9%BE%99%E8%8A%AF--%E8%87%AA%E4%B8%BB%E6%9E%B6%E6%9E%84%E5%85%88%E9%A9%B1%E8%80%85/" data-id="cls9wmzl80010mcvh4ypw9gzf" data-title="龙芯--自主架构先驱者" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li></ul>
+
     </footer>
   </div>
   
@@ -694,15 +166,25 @@
 
 
   
-    <article id="post-25-鲲鹏--垂直生态领导者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-鲲鹏--垂直生态领导者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/02/06/25-%E9%B2%B2%E9%B9%8F--%E5%9E%82%E7%9B%B4%E7%94%9F%E6%80%81%E9%A2%86%E5%AF%BC%E8%80%85/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.754Z" itemprop="datePublished">2024-02-06</time>
+    <a href="/2024/02/12/%E9%B2%B2%E9%B9%8F--%E5%9E%82%E7%9B%B4%E7%94%9F%E6%80%81%E9%A2%86%E5%AF%BC%E8%80%85/" class="article-date">
+  <time class="dt-published" datetime="2024-02-12T05:08:13.000Z" itemprop="datePublished">2024-02-12</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/12/%E9%B2%B2%E9%B9%8F--%E5%9E%82%E7%9B%B4%E7%94%9F%E6%80%81%E9%A2%86%E5%AF%BC%E8%80%85/">鲲鹏--垂直生态领导者</a>
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -778,10 +260,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/25-%E9%B2%B2%E9%B9%8F--%E5%9E%82%E7%9B%B4%E7%94%9F%E6%80%81%E9%A2%86%E5%AF%BC%E8%80%85/" data-id="cls9w8ke5000hdkvhegfchlpb" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://rendong3.github.io/2024/02/12/%E9%B2%B2%E9%B9%8F--%E5%9E%82%E7%9B%B4%E7%94%9F%E6%80%81%E9%A2%86%E5%AF%BC%E8%80%85/" data-id="cls9wmzl7000ymcvh6yodhavc" data-title="鲲鹏--垂直生态领导者" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li></ul>
+
     </footer>
   </div>
   
@@ -790,15 +274,114 @@
 
 
   
-    <article id="post-24-海光-性能领先实干者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-飞腾--PK生态主导者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/02/06/24-%E6%B5%B7%E5%85%89-%E6%80%A7%E8%83%BD%E9%A2%86%E5%85%88%E5%AE%9E%E5%B9%B2%E8%80%85/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.740Z" itemprop="datePublished">2024-02-06</time>
+    <a href="/2024/02/11/%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/" class="article-date">
+  <time class="dt-published" datetime="2024-02-11T05:08:13.000Z" itemprop="datePublished">2024-02-11</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/11/%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/">腾--PK生态主导者</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这是ren_dong的第<strong>26</strong>篇原创</p>
+</blockquote>
+<h1 id="飞腾–PK生态主导者"><a href="#飞腾–PK生态主导者" class="headerlink" title="飞腾–PK生态主导者"></a>飞腾–PK生态主导者</h1><h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><blockquote>
+<p><strong>基于ARM架构的国产CPU</strong></p>
+</blockquote>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011001020.png" alt="image-20240201100148425"></p>
+<ul>
+<li>飞腾信息技术有限公司是国内领先的自主核心芯片提供商 ，是PK生态的主导者。<strong>PK系统</strong>，指的是中国电子所开发的具有完全自主知识产权的中国架构——<strong>飞腾CPU（Phytium）+麒麟操作系统（Kylin）</strong></li>
+<li>飞腾的主要股东包括<strong>中国电子CEC、国防科大、天津市国资委</strong>等，中国长城持有31.5%的股权，是飞腾第一大股东。</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011002909.png" alt="image-20240201100256828"></p>
+<h2 id="2、发展历程"><a href="#2、发展历程" class="headerlink" title="2、发展历程"></a>2、发展历程</h2><ol>
+<li>2014年 ，飞腾公司由中国电子信息产业集团、 天津市滨海新区政府和天津先进技术研究院联合支持成立</li>
+<li>2017年，飞腾推出FT-2000+&#x2F;64高性能服务器CPU</li>
+<li>2020年，飞腾发布新一代高可扩展多路服务器CPU腾云S2500</li>
+<li>2022年，飞腾发布新一代嵌入式CPU飞腾腾珑E2000</li>
+</ol>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011009968.png" alt="image-20240201100901853"></p>
+<h2 id="3、产品体系"><a href="#3、产品体系" class="headerlink" title="3、产品体系"></a>3、产品体系</h2><ol>
+<li>飞腾CPU产品主要包括<strong>高性能服务器 CPU、高效能桌面CPU和高端嵌入式CPU</strong>三大系列，为从端到云的各型设备提供核心算力支撑</li>
+</ol>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011115747.png" alt="image-20240201111527317"></p>
+<h2 id="4、产品介绍"><a href="#4、产品介绍" class="headerlink" title="4、产品介绍"></a>4、产品介绍</h2><h3 id="4-1、飞腾腾云®S2500"><a href="#4-1、飞腾腾云®S2500" class="headerlink" title="4.1、飞腾腾云®S2500"></a>4.1、飞腾腾云®S2500</h3><ul>
+<li>飞腾腾云S2500 集成新一代飞腾自主研发的高性能处理器核心FTC663，兼容ARMv8 指令集，支持硬件虚拟化</li>
+<li>飞腾腾云S2500 拥有4 个直连接口，总带宽800Gbps，支持2~8 路直连，Cache 一致性协议从单路64 核心扩展到8 路512 核心</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011019659.png" alt="image-20240201101836016"></p>
+<h3 id="4-2、FT-2000-64"><a href="#4-2、FT-2000-64" class="headerlink" title="4.2、FT-2000+&#x2F;64"></a>4.2、FT-2000+&#x2F;64</h3><ul>
+<li>FT-2000+&#x2F;64芯片集成64个飞腾自主研发的高能效处理器内核FTC662，采用乱序四发射超标量流水线，芯片采用片上并行系统（PSoC）体系结构</li>
+<li>芯片兼容64位ARMV8指令集。 该产品适用于高性能、高吞吐率的服务器领域，如对处理能力和吞吐力要求很高的行业大型业务主机、高性能服务器系统和大型互联网数据中心等。</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011020805.png" alt="image-20240201101922051"></p>
+<h3 id="4-3、FT-1500A-16"><a href="#4-3、FT-1500A-16" class="headerlink" title="4.3、FT-1500A&#x2F;16"></a>4.3、FT-1500A&#x2F;16</h3><ul>
+<li>FT-1500A&#x2F;16芯片集成16个飞腾自主研发的高能效处理器内核FTC660，芯片采用片上并行系统（PSoC）体系结构，兼容64位ARMV8指令集，支持硬件虚拟化。 </li>
+<li>该产品适用于构建较高计算能力和较高吞吐率的服务器产品，如办公业务系统应用&#x2F;事务处理器、数据库服务器、存储服务器、物联网&#x2F;云计算服务器等</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011021728.png" alt="image-20240201102102656"></p>
+<h2 id="5、优劣势"><a href="#5、优劣势" class="headerlink" title="5、优劣势"></a>5、优劣势</h2><h3 id="5-1、致力打造PK生态"><a href="#5-1、致力打造PK生态" class="headerlink" title="5.1、致力打造PK生态"></a>5.1、致力打造PK生态</h3><ol>
+<li>飞腾致力于打造PK生态，飞腾CPU+麒麟OS，已与超过400家企业达成合作。</li>
+<li>依托飞腾全新的硬件级安全机制， 以相关可信技术为支撑， PK 体系融合“S-Security”的立体防护安全链，升级为 <strong>PKS 体系</strong>，并全球首创将“可信计算 3.0”技术融入到 CPU、操作系统和存储控制器中， 实现底层构架的本质安全，并成为国内首个计算机软硬件基础体系标准。</li>
+<li>对比鲲鹏与飞腾的生态构建可以发现， <strong>鲲鹏技术路线比 PKS 路线有较明显的技术和产品优势， PKS 技术路线比鲲鹏技术路线有较明显的安全优势</strong>。</li>
+</ol>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011022581.png" alt="image-20240201102240465"></p>
+<h3 id="5-2、未来5年总体规划"><a href="#5-2、未来5年总体规划" class="headerlink" title="5.2、未来5年总体规划"></a>5.2、未来5年总体规划</h3><p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402011023042.png" alt="image-20240201102327941"></p>
+<h3 id="5-3、劣势"><a href="#5-3、劣势" class="headerlink" title="5.3、劣势"></a>5.3、劣势</h3><ol>
+<li>兼容性和生态需要进一步打造</li>
+<li>商用性能需要进一步提升</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/11/%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/" data-id="cls9wmzl6000wmcvh37afhbpj" data-title="腾--PK生态主导者" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-海光-性能领先实干者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/10/%E6%B5%B7%E5%85%89-%E6%80%A7%E8%83%BD%E9%A2%86%E5%85%88%E5%AE%9E%E5%B9%B2%E8%80%85/" class="article-date">
+  <time class="dt-published" datetime="2024-02-10T05:08:13.000Z" itemprop="datePublished">2024-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/10/%E6%B5%B7%E5%85%89-%E6%80%A7%E8%83%BD%E9%A2%86%E5%85%88%E5%AE%9E%E5%B9%B2%E8%80%85/">海光--性能领先实干者</a>
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -862,7 +445,548 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/24-%E6%B5%B7%E5%85%89-%E6%80%A7%E8%83%BD%E9%A2%86%E5%85%88%E5%AE%9E%E5%B9%B2%E8%80%85/" data-id="cls9w8ke4000gdkvhgi6055ql" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://rendong3.github.io/2024/02/10/%E6%B5%B7%E5%85%89-%E6%80%A7%E8%83%BD%E9%A2%86%E5%85%88%E5%AE%9E%E5%B9%B2%E8%80%85/" data-id="cls9wmzl4000tmcvhb0ee9cdy" data-title="海光--性能领先实干者" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-信创发展之路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/09/%E4%BF%A1%E5%88%9B%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2024-02-09T05:08:13.000Z" itemprop="datePublished">2024-02-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/09/%E4%BF%A1%E5%88%9B%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/">信创发展之路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1、什么是信创"><a href="#1、什么是信创" class="headerlink" title="1、什么是信创"></a>1、什么是信创</h2><blockquote>
+<p>信创，即<strong>信息技术应用创新</strong>，以前也被称为“安可“（安全可控）</p>
+</blockquote>
+<h3 id="1-1、基本概念"><a href="#1-1、基本概念" class="headerlink" title="1.1、基本概念"></a>1.1、基本概念</h3><p>信创产业主要包括<strong>四大领域</strong>：</p>
+<ol>
+<li><strong>基础设施</strong>，包括芯片（CPU、GPU等）、存储、服务器、云计算等；</li>
+<li><strong>基础软件</strong>，包括操作系统、数据库、中间件等；</li>
+<li><strong>应用软件</strong>，包括基础办公软件、企业管理软件（ERP、营销管理、人力资源管理、财务管理、合同管理等）、工业软件、流程优化软件等</li>
+<li><strong>信息安全</strong>，包括安全软件、安全硬件、安全服务等。</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/46d4a3c9-2289-40c0-a2f2-8fe2f9f802d0.png"></p>
+<h3 id="1-2、发展背景"><a href="#1-2、发展背景" class="headerlink" title="1.2、发展背景"></a>1.2、发展背景</h3><ol>
+<li><strong>国际威胁</strong>及关键事件警示</li>
+</ol>
+<ul>
+<li>2003 微软黑屏事件</li>
+<li>2013 美国“棱镜门”事件</li>
+<li>2018 中兴、华为事件；实体清单事件</li>
+</ul>
+<ol start="2">
+<li><strong>国内政策驱动</strong></li>
+</ol>
+<ul>
+<li>2015 颁布《网络安全法》</li>
+<li>2016 “十三五”规划</li>
+<li>2021 “十四五”规划</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/baf6546d-66a4-41d8-baab-4000ce1a19a7.png"></p>
+<h3 id="1-3、发展目标"><a href="#1-3、发展目标" class="headerlink" title="1.3、发展目标"></a>1.3、发展目标</h3><ul>
+<li>信创的核心目的即实现<strong>信息技术产业的完全自主可控</strong></li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/31656ff4-cc74-4eff-87f3-5e85634d4913.png"></p>
+<ul>
+<li>自主可控<strong>终端全景架构</strong>图：</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/18030e2f-2d6f-4e93-9478-1922f4786bc3.png"></p>
+<ul>
+<li><strong>云计算全景架构</strong>图：</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/42a5ec8f-ed0a-4bd8-a183-d2d5b690db04.png"></p>
+<h3 id="1-4、发展历程"><a href="#1-4、发展历程" class="headerlink" title="1.4、发展历程"></a>1.4、发展历程</h3><ol>
+<li><strong>第一阶段</strong>：863、核高基时代</li>
+<li><strong>第二阶段</strong>：“棱镜门”事件与去IOE</li>
+<li><strong>第三阶段</strong>：应用试点阶段，飞腾、龙芯、兆芯、海光推出新一代处理器</li>
+<li><strong>第四阶段</strong>：核心关键行业稳步推进技术创新，全面建设自主IT体系</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/154185b5-3c5f-4f9e-9ff6-094257df6fb8.png"></p>
+<h2 id="2、信创产业概况"><a href="#2、信创产业概况" class="headerlink" title="2、信创产业概况"></a>2、信创产业概况</h2><h3 id="2-1、信创体系"><a href="#2-1、信创体系" class="headerlink" title="2.1、信创体系"></a>2.1、信创体系</h3><ol>
+<li>信创体系覆盖<strong>2+8+N</strong>个领域：</li>
+</ol>
+<ul>
+<li><strong>2</strong>：党、政</li>
+<li><strong>8</strong>：金融、电力、电信、石油、交通、教育、医疗、航空航天8个关于国计民生的重要行业</li>
+<li><strong>N</strong>：N个消费市场，如汽车、电子、家居等</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/a0fb55a3-8507-4993-a867-104bc50efb81.png"><br>2. 信创建设节奏：</p>
+<ul>
+<li>2023年已经从“关键环节、非核心业务、部分市场的局部试点”阶段走向“<strong>多环节、核心业务、多行业的全面覆盖</strong>”阶段<br><img src="https://files.mdnice.com/user/17335/c3f6c1a5-0f98-4b05-b018-89d5da573dcb.png"></li>
+</ul>
+<h3 id="2-2、信创产业链图谱"><a href="#2-2、信创产业链图谱" class="headerlink" title="2.2、信创产业链图谱"></a>2.2、信创产业链图谱</h3><p><img src="https://files.mdnice.com/user/17335/3faa4931-3af6-419b-bda5-73191e9e6469.png"></p>
+<h3 id="2-3、-信创市场规模"><a href="#2-3、-信创市场规模" class="headerlink" title="2.3、 信创市场规模"></a>2.3、 信创市场规模</h3><ol>
+<li>2023年信创产业市场规模预计为18710.59亿元，<strong>2025年将接近3.5万亿</strong>，2020年-2025年复合增长率达到 26.99%</li>
+<li>2022年信创市场规模中，<strong>基础设施的市场规模占比54.54%，</strong>应用软件的市场规模占比37.08%，基础软件的市场规模占比6.49%，信息安全的市场规模占比1.89%</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/3646bc46-9dad-4019-9db5-9349108aab27.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/754a340b-a608-4be3-8d39-8ca213c9b178.png"></p>
+<h2 id="3、信创发展趋势"><a href="#3、信创发展趋势" class="headerlink" title="3、信创发展趋势"></a>3、信创发展趋势</h2><h3 id="3-1、适配加速、生态裂变"><a href="#3-1、适配加速、生态裂变" class="headerlink" title="3.1、适配加速、生态裂变"></a>3.1、适配加速、生态裂变</h3><ul>
+<li>厂商加速适配，生态快速裂变，未来3-5年信创产业将迎来爆发式增长：</li>
+</ul>
+<ol>
+<li><strong>党政机关进入全面铺开阶段</strong>，未来3-5年内市场需求将持续放大；</li>
+<li><strong>央国企市场进入加速采购期</strong>：以金融、电信、电力、交通等多行业加速进行国产厂商采购与替换，市场订单爆发式增长；</li>
+<li><strong>采购顺序</strong>：<strong>硬件</strong>（包括基础设施、信息安全硬件）<strong>＞软件</strong>（包括基础软件、应用软件、信息安全软件）<blockquote>
+<p>由于近年来芯片半导体等领域“卡脖子”的因素，硬件产品的替换紧迫性更强</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/75a6a078-7c30-405f-9e78-b265f5e0bf1a.png"></p>
+<h3 id="3-2、多领域并购整合"><a href="#3-2、多领域并购整合" class="headerlink" title="3.2、多领域并购整合"></a>3.2、多领域并购整合</h3><ul>
+<li>由于相关政策扶持，信创相关细分行业的厂商开始大量出现，<strong>质量参差不齐</strong></li>
+<li>随着未来3~5年市场需求趋于稳定，格局清晰，行业将逐渐进入整合期，<strong>优胜劣汰</strong></li>
+<li>以数据库为例，未来3-5年，行业将会形成<strong>领导者+挑战者</strong>的格局，共同替换海外厂商的市场份额<br><img src="https://files.mdnice.com/user/17335/b94a19a5-4d5b-42e4-bf04-e6820befc41f.png"></li>
+</ul>
+<h3 id="3-3、AI大模型重塑生产力"><a href="#3-3、AI大模型重塑生产力" class="headerlink" title="3.3、AI大模型重塑生产力"></a>3.3、AI大模型重塑生产力</h3><ul>
+<li>2022年11月ChatGPT问世，尤其是<strong>Chat GPT4.0引发国内“百模大战”</strong>，如阿里巴巴的通义大模型，百度的文心大模型、腾讯的混元大模型、华为的盘古大模型等</li>
+<li>通过AI技术进行<strong>安全赋能、提升安全隐患检测能力、漏洞自动化修复</strong>等可以解决传统技术难以解决的安全问题</li>
+<li>未来AI大模型将会广泛应用于<strong>司法机关、能源、金融、先进制造</strong>等行业，也将会为信创产业的发展，打开全新的空间</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/5e29b194-5a32-4103-b80d-ad397b758169.png"></p>
+<h3 id="3-4、政策驱动变为市场驱动"><a href="#3-4、政策驱动变为市场驱动" class="headerlink" title="3.4、政策驱动变为市场驱动"></a>3.4、政策驱动变为市场驱动</h3><ul>
+<li>信创的目的不是替代，而是自主、创新</li>
+<li><strong>过去</strong>，以科研力量为导向促进国产关键技术自研能力的提升</li>
+<li><strong>现阶段</strong>，信创发展驱动力为政策主导，各省政府通过财政补贴，促进供给端快速发展</li>
+<li><strong>未来</strong>，信创产业的发展将以<strong>市场需求+技术赋能为主推动</strong>。</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/b69e8afe-ffec-486e-8ee1-54af6dd99bed.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
+<li>码字不易，欢迎<strong>关注、点赞</strong>，感谢支持！</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/09/%E4%BF%A1%E5%88%9B%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/" data-id="cls9wmzkk0004mcvh2w2ig0ij" data-title="信创发展之路" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-兆芯-合资CPU探路者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/09/%E5%85%86%E8%8A%AF-%E5%90%88%E8%B5%84CPU%E6%8E%A2%E8%B7%AF%E8%80%85/" class="article-date">
+  <time class="dt-published" datetime="2024-02-09T05:08:13.000Z" itemprop="datePublished">2024-02-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/09/%E5%85%86%E8%8A%AF-%E5%90%88%E8%B5%84CPU%E6%8E%A2%E8%B7%AF%E8%80%85/">兆芯--合资CPU探路者</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这是ren_dong的第<strong>27</strong>篇原创</p>
+</blockquote>
+<h1 id="兆芯–合资CPU探路者"><a href="#兆芯–合资CPU探路者" class="headerlink" title="兆芯–合资CPU探路者"></a>兆芯–合资CPU探路者</h1><h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010923010.png"></p>
+<ul>
+<li>兆芯是合资CPU的探路者。由台湾威盛电子和上海市国资委的上海联和投资公司合资成立 ，拥有<strong>部分X86技术产权</strong></li>
+<li>兆芯坚持自主创新与兼容主流的发展路线，同时掌握<strong>中央处理器、 图形处理器、芯片组</strong>三大核心技术 ，具备相关IP自主设计研发的能力</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010948550.png" alt="image-20240201094821449"></p>
+<h2 id="2、发展历程"><a href="#2、发展历程" class="headerlink" title="2、发展历程"></a>2、发展历程</h2><ol>
+<li>2013年4月由台湾威盛与隶属于上海市国资委的上海联和投资公司所合资成立 </li>
+<li>2020年10月26日 ，威盛作价2.57亿美元将部分X86技术出售给兆芯 ，兆芯拥有了部分X86技术产权</li>
+</ol>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010934835.jpeg" alt="公司简介"></p>
+<h2 id="3、产品体系"><a href="#3、产品体系" class="headerlink" title="3、产品体系"></a>3、产品体系</h2><p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010937899.png" alt="image-20240201093736799"></p>
+<ol>
+<li>兆芯自主创新研发的通用处理器产品涵盖<strong>“开先”、“开胜”</strong>两大系列，开先用于PC、嵌入式设备，开胜用于服务器设备</li>
+</ol>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010942182.png" alt="image-20240201094237074"></p>
+<h2 id="4、产品介绍"><a href="#4、产品介绍" class="headerlink" title="4、产品介绍"></a>4、产品介绍</h2><h3 id="4-1、KH-40000"><a href="#4-1、KH-40000" class="headerlink" title="4.1、KH-40000"></a>4.1、KH-40000</h3><ul>
+<li>兆芯开胜® KH-40000系列服务器处理器，采用“永丰”自主内核微架构，支持自主互连技术ZPI 3.0，单颗处理器集成最高32核心，具备64MB高速缓存，支持8通道DDR4内存</li>
+<li>开胜® KH-40000系列处理器适用于云计算、大数据分析、视频处理、数据库备份、高性能存储，以及超融合一体机等解决方案的搭建和部署</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010951877.jpeg" alt="开胜® KH-40000系列处理器"></p>
+<h3 id="4-2、KX-7000"><a href="#4-2、KX-7000" class="headerlink" title="4.2、KX-7000"></a>4.2、KX-7000</h3><ul>
+<li>兆芯开先® KX-7000系列处理器采用全新“世纪大道”自主内核微架构和先进的Chiplet互连架构，与上一代产品相比，计算性能提升至2倍</li>
+<li>开先® KX-7000系列处理器支持构建丰富的桌面整机产品，如台式机、笔记本、一体机、云终端以及嵌入式计算平台等</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010952007.jpeg" alt="开先® KX-7000系列处理器"></p>
+<h3 id="4-3、ZX-200-IO扩展芯片"><a href="#4-3、ZX-200-IO扩展芯片" class="headerlink" title="4.3、ZX-200 IO扩展芯片"></a>4.3、ZX-200 IO扩展芯片</h3><ul>
+<li>ZX-200 IO扩展芯片，是兆芯自主创新研发的新一代、高性能IO扩展芯片产品，主要适用于对扩展性要求较高的桌面及服务器等解决方案。</li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010953980.jpeg" alt="ZX-200 IO扩展芯片"></p>
+<h2 id="5、优劣势"><a href="#5、优劣势" class="headerlink" title="5、优劣势"></a>5、优劣势</h2><p>目前公司产品覆盖CPU、芯片组、手机SOC，机顶盒SOC等各个领域。</p>
+<ul>
+<li>优势：兆芯本质是X86芯片，且团队研发经验已有16年时间，因此在性能和应用生态上具有较<br>强优势。</li>
+<li>劣势：兆芯通过股权关系实现了与Intel、AMD的X86专利交叉授权，但目前在产品性能和市场<br>定位上处于相对尴尬的境地；</li>
+<li>兆芯目前在信创领域份额较小，主要在<strong>上海地区具有相对优势</strong></li>
+</ul>
+<p><img src="https://gitee.com/dognren/typora-image/raw/master/Image/202402010955749.png" alt="image-20240201095511643"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/09/%E5%85%86%E8%8A%AF-%E5%90%88%E8%B5%84CPU%E6%8E%A2%E8%B7%AF%E8%80%85/" data-id="cls9wmzkm0005mcvh7iuo6bb9" data-title="兆芯--合资CPU探路者" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-CPU相关专业名词" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/08/CPU%E7%9B%B8%E5%85%B3%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D/" class="article-date">
+  <time class="dt-published" datetime="2024-02-08T05:08:13.000Z" itemprop="datePublished">2024-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/08/CPU%E7%9B%B8%E5%85%B3%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D/">CPU相关专业名词</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1、CPU"><a href="#1、CPU" class="headerlink" title="1、CPU"></a>1、CPU</h2><ol>
+<li><strong>中央处理器CPU（Central Processing Unit）是计算机的运算和控制核心</strong>，可以理解为PC及服务器的大脑 </li>
+<li>CPU与内部存储器和输入&#x2F;输出设备合称为电子计算机三大核心部件</li>
+<li>CPU的本质是一块超大规模的集成电路，主要功能是解释计算机指令以及处理计算机软件中的数据<br><img src="https://files.mdnice.com/user/17335/6d2a022d-eb8f-4833-902e-f3658f0c2d84.png" alt="结构及工作原理"></li>
+<li>CPU的内部结构可分为<strong>控制单元，运算单元和存储单元</strong>三大部分。  </li>
+<li>CPU的工作原理：控制单元根据指令，将存储器中的数据发送至运算单元，经运算单元处理后的数据再存储在存储单元中，最后交由应用程序使用</li>
+</ol>
+<h2 id="2、指令集"><a href="#2、指令集" class="headerlink" title="2、指令集"></a>2、指令集</h2><ul>
+<li><strong>指令集是CPU性能体现的重要标志</strong>，CPU要有较好的性能，需要具备功能齐全、通用性强、内含丰富的指令集</li>
+<li>指令集一般被整合在操作系统内核最底层的硬件抽象层中。<strong>指令集属于计算机中硬件与软件的接口</strong>，它向操作系统定义了CPU的基本功能。指令集包括指令格式、寻址方式和数据形式</li>
+</ul>
+<h3 id="2-1、指令集分类"><a href="#2-1、指令集分类" class="headerlink" title="2.1、指令集分类"></a>2.1、指令集分类</h3><p>CPU指令集分为复杂和精简两类</p>
+<ul>
+<li><p><strong>复杂指令集CISC</strong>：<strong>由一条指令完成一个复杂的基本功能</strong>；单条指令集功能强，指令类型丰富完善，编译后指令数量较少，通用场景下性能具有优势。复杂指令集以x86架构为代表，主要用于桌面PC及服务器领域，配套软硬件丰富完善。</p>
+</li>
+<li><p><strong>精简指令集RISC</strong>：由<strong>一条指令完成一个基本动作，多条指令组合完成一个复杂的基本功能</strong>；译码效率高，偏向低功 耗领域优化。精简指令集以ARM架构为代表，主要用于手机、平板等移动终端，软硬件生态逐步建设完善。</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/bd641c50-143b-4cf2-b431-f5f17ee9334d.png"></p>
+<h2 id="3、架构"><a href="#3、架构" class="headerlink" title="3、架构"></a>3、架构</h2><ol>
+<li>架构一般指的是某类CPU使用的某一具体指令集，大部分情况下，架构等同于指令集</li>
+<li>当前<strong>主流芯片架构为ARM和X86</strong>，除此之外还有MIPS、POWER、RISC-V等架构。<br><img src="https://files.mdnice.com/user/17335/478b574f-8a97-41fa-86d6-286efd97d368.png"></li>
+</ol>
+<h3 id="3-1、架构对比"><a href="#3-1、架构对比" class="headerlink" title="3.1、架构对比"></a>3.1、架构对比</h3><ol>
+<li><strong>X86架构</strong>起步较早，生态环境完善，占领了服务器、桌面和PC电脑市场绝大部分份额。</li>
+<li><strong>ARM架构</strong>占领了绝大多数移动终端。因为在移动设备行业，X86架构下的复杂指令集会使得移动设备温度过高、耗电过快，难以放入移动设备体积较小的处理器中。</li>
+<li><strong>MIPS架构</strong>由MIPS科技公司开发并授权，广泛被使用在许多电子产品、网络设备、个人装置与商业装置上。  </li>
+<li><strong>POWER架构</strong>：由IBM公司设计开发，具有高度通用、高 性能等特性，支持从嵌入式系统到超级计算机等平台，在汽车、医疗设备、军事、航空航天等领域都有一席之地。</li>
+<li><strong>RISC-V架构</strong>：RISC系列指令集的第五代产品。</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/e8af4202-e55d-4649-83a9-599b032934c4.png"></p>
+<h2 id="4、其他概念"><a href="#4、其他概念" class="headerlink" title="4、其他概念"></a>4、其他概念</h2><p>其他概念如<strong>系统架构、芯片版图</strong>等参考B站视频，感谢大佬们的视频分享！</p>
+<p><img src="https://files.mdnice.com/user/17335/66d25c93-0efe-4f74-8075-09deb7a450ab.png"></p>
+<h2 id="5、指令集到成品CPU"><a href="#5、指令集到成品CPU" class="headerlink" title="5、指令集到成品CPU"></a>5、指令集到成品CPU</h2><ol>
+<li>通过<strong>授权或自研</strong>获取某个指令集架构</li>
+<li>根据指令集手册完成微架构设计，形成设计文档</li>
+<li>通过工程开发形成RTL代码</li>
+<li>用EDA软件进行编译和解析，生成芯片版图，交给中芯国际、台积电等工厂进行流片</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/0804af9b-5be8-4918-8a81-5155cd87318a.png"></p>
+<h2 id="6、信创国产化"><a href="#6、信创国产化" class="headerlink" title="6、信创国产化"></a>6、信创国产化</h2><ol>
+<li>如今CPU行业在全球形成了<strong>Wintel和AA</strong>两大信息化生态体系：<ul>
+<li><strong>Wintel即“Windows+Intel”</strong>，由Windows操作系统与X86指令集组成，其实质是Microsoft与Intel的商业联盟。  </li>
+<li><strong>AA即“Android+ARM”</strong>，由Android操作系统与ARM指令集组成。</li>
+</ul>
+</li>
+<li>CPU行业具备寡头垄断性质，主流指令集和jia go架构均为美国主导，随着中美两国科技博弈加剧，面对美国不断升级的制裁手段，国内持续加速国产替代进程，目前国内主要有<strong>鲲鹏、飞腾、龙芯、兆芯、海光、申威</strong>，六大国产CPU厂商<br><img src="https://files.mdnice.com/user/17335/ecaeed46-2826-4f38-956d-105a6f59deab.png"></li>
+<li>六大厂商发展模式和技术路线也存在差异，后面会有文章进行专门介绍，敬请期待！</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/fec2a7f5-a984-4c53-8e35-cd453142c3db.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
+<li>码字不易，欢迎<strong>关注、点赞</strong>，感谢支持！</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/08/CPU%E7%9B%B8%E5%85%B3%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D/" data-id="cls9wmzk60001mcvhdk3be5k5" data-title="CPU相关专业名词" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-阶段性总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/07/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-02-07T05:08:13.000Z" itemprop="datePublished">2024-02-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/07/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="阶段性总结"><a href="#阶段性总结" class="headerlink" title="阶段性总结"></a>阶段性总结</h1><h2 id="1、发布原创文章10篇"><a href="#1、发布原创文章10篇" class="headerlink" title="1、发布原创文章10篇"></a>1、发布原创文章10篇</h2><ul>
+<li>2024年初立过flag，本年度在要公众号发布原创文章10篇，目前已发表<strong>17</strong>篇，目标达成</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/544e722d-ef26-443b-83f1-4837371c1076.png"></p>
+<ul>
+<li>公众号主要用来分享个人日常服务器运维笔记，目前已发布文章主要分为两个主题：<ul>
+<li><strong>服务器硬件科普系列</strong></li>
+<li><strong>服务器管理平台开发系列</strong></li>
+</ul>
+</li>
+<li>日前公司采购验收了大批信创国产服务器，如鲲鹏arm和海光X86，近期比较忙，后面计划整理发布一些关于<strong>信创服务器相关的科普知识</strong></li>
+<li>目前关于服务器运维方面还是小学生水平，如文章中存在错误或不当之处，<strong>敬请批评指正</strong>！！！</li>
+</ul>
+<h2 id="2、完成一次半马"><a href="#2、完成一次半马" class="headerlink" title="2、完成一次半马"></a>2、完成一次半马</h2><ul>
+<li>2024年初立过flag，本年度需要完成一次半马，目标达成</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/023ab81c-40bd-4fee-a214-140d5c8ba108.png"></p>
+<blockquote>
+<p>郑开马拉松已经开始报名，欢迎参加</p>
+</blockquote>
+<ul>
+<li>友情提示：赛道途径郑开大道，虽然路途平坦，坡度爬升很小，但是前面<strong>27公里几乎没有任何遮荫，起跑时间相对较晚</strong>，如果当天温度较高，很容易跑崩，请注意！！！</li>
+</ul>
+<h2 id="3、Fit超过6000分钟"><a href="#3、Fit超过6000分钟" class="headerlink" title="3、Fit超过6000分钟"></a>3、Fit超过6000分钟</h2><ul>
+<li>Fit健身app用了挺长时间了，个人感觉fit健身课程整体难度会比keep高一些，中间停歇时间也短，会更累！<br><img src="https://files.mdnice.com/user/17335/03792fbb-02a3-42e9-aaf5-d249e0eed3f3.png"></li>
+</ul>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
+<li>欢迎关注，感谢支持！</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/07/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/" data-id="cls9wmzl5000umcvhhvfjasl8" data-title="阶段性总结" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2023总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/2023%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:08:13.000Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/06/2023%E6%80%BB%E7%BB%93/">2023总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>2023即将结束，过得好快呀，按照惯例写一下自己的年终总结吧。</p>
+<ul>
+<li><p>换工作（深圳→郑州）</p>
+</li>
+<li><p>喜提新车</p>
+</li>
+<li><p>恋爱5周年</p>
+</li>
+<li><p>跑步累计里程突破1000KM</p>
+</li>
+<li><p>读书《明朝那些事儿》、《大明王朝1566》</p>
+</li>
+</ul>
+<h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>  从2020年11月在深圳实习，算起来在深圳工作了两年多，今年3月份选择换城市，回到郑州，这里是女友的家乡，双方离父母都更近些。骑驴找马阶段也收获了几个offer，在对象建议下选择了其中一家国企，虽然工资腰斩，岗位也从开发转为运维，但是整体感觉良好，也认识了非常nice的领导和同事，算是不错的跳槽体验。自己也很幸运能够在招聘冻结前成功入职，希望可以干到退休吧。</p>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>  其实回到郑州来生活，对于我和对象而言是必然的，只是时间早晚而已，本来计划今年能够订婚，所以3月份我先来郑州探探路，对象后遂而至。离开深圳前转租房子、售卖电动车一切顺利，对象找工作也是有惊无险，也成功入职一家国企，相对稳定一些。说回我自己，来到大郑州之后，马不停蹄的办理了户口转移，成功从深圳人切换到了郑州人。来到郑州之后，感受最深的是郑州道路规划的乱和无序，尽管非机动车道非常之豪华，又宽又长，体验很棒，比起深圳来好了太多，但是各种路边乱停车，4车道”升级”为2车道甚至1车道的骚操作也让我直呼666，惊呆了老铁。自从对象回来之后，我们的生活比较规律，也认识了一些朋友，工作日正常工作，双休日回家或者朋友聚餐，感觉提前过起了退休生活，还不错！</p>
+<h2 id="健康"><a href="#健康" class="headerlink" title="健康"></a>健康</h2><p>  健康是我比较在意的一点，现在体重算是标准和偏重之间左右摇摆，这不是我想要的结果，希望能够克制自己，自律，体重恢复到155斤，步入标准健康体重，拥有腹肌！</p>
+<p>  跑步对于我来说，有必要单起一段，以示尊重。19年为了追求对象，开始大体重跑步减肥，早上操场跑步5公里，晚上宿舍腹部燃脂半小时，刻意减少食量，晚餐不吃，成功减重50斤，从那时候开始喜欢跑步。深圳工作以后，零零星星也跑了几次，但可以忽略不计，回到郑州后，单位独立的健身房重新燃起了我跑步的想法，双11入手强风SE后，迫不及待进行了路跑评测，不得不感慨科技的强大，这双鞋很激进，推进力很强，会不由自主的加速，很喜欢。目前悦跑圈累计跑量突破1000KM，希望2024年能达到累计里程2000KM，一直坚持下去，身体健康，远离疾病！</p>
+<p><img src="https://files.mdnice.com/user/17335/f4d71c0f-73d2-415f-acd8-62568303fc5b.png"></p>
+<h2 id="恋爱"><a href="#恋爱" class="headerlink" title="恋爱"></a>恋爱</h2><p>  现在想来，找到现在的对象，可能是我此生最幸运的事，没有之一！因为对象严格要求减肥，自己才能一直坚持运动，成功减重的同时培养了自己跑步的爱好；因为对象义无反顾随我去深圳，外地工作没有了孤独和无聊，即便是狭小的出租房也充满了温馨和幸福；因为对象的坚决，我卖掉了股票和基金，才没有在理财赔钱的绝路上越走越远，及时止损，落袋为安；因为对象的坚持，我从已有的offer里面选择了国企，虽然工资腰斩，但是拥有了朝九晚五的规律生活；因为对象选了郑州定居，才能双休日到处happy，年纪轻轻就过上了退休的生活。诸如此类，不胜枚举，不得不感慨自己真的是很幸运。</p>
+<p>  本来打算今年买房、订婚一条龙，在郑州安定下来，不过计划总是赶不上变化，7月份喜提新车，也算是步入有车一族，出行回对象家也方便了很多，不用公交、地铁来回换乘才能回到郑州，时间从一下午缩短为半小时，实现了质的飞跃。关于买房，目前郑州楼市并不乐观，大家都在观望，虽然期房宣传推广看起来非常好，但是“烂尾楼”还是让我放弃了期房的想法，在2023之前买到烂尾楼可能是不幸，但是2023之后还买到烂尾楼就是活该。印象中，看房看了好久，中介换了一波又一波，电话也在不停被轰炸，不过目前为止还没有找到自己心仪的房子，双方家长都在催买房，希望自己在2024年上半年能够成功买到属于自己的房子，期待装修属于自己的小家！</p>
+<p><img src="https://files.mdnice.com/user/17335/2b49cd03-04f0-4c29-b237-acf51390a31e.png"></p>
+<h2 id="2024目标"><a href="#2024目标" class="headerlink" title="2024目标"></a>2024目标</h2><ul>
+<li><p>买房、订婚、结婚</p>
+</li>
+<li><p>跑步累计里程2000KM</p>
+</li>
+<li><p>发表原创运维笔记10篇</p>
+</li>
+<li><p>阿里云认证</p>
+</li>
+<li><p>软考认证</p>
+</li>
+<li><p>随缘读书</p>
+</li>
+</ul>
+<p> 2023即将结束，希望大家都能在2024身体健康，一切顺遂！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/2023%E6%80%BB%E7%BB%93/" data-id="cls9wmzjv0000mcvhharia3ty" data-title="2023总结" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-服务器网卡介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2024-02-06T05:00:55.878Z" itemprop="datePublished">2024-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>本篇文章对服务器网卡进行基础介绍，包括基本概念、网卡厂商及网卡绑定策略等。</p>
+</blockquote>
+<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器网卡（Network Interface Card）是一种用于连接服务器与网络之间的硬件设备。它允许服务器通过网络与其他设备进行通信，包括传输数据、接收数据和处理网络请求。</p>
+<p>以下是一些关于服务器网卡的重要概念和特点：</p>
+<ol>
+<li><p>速度和带宽：服务器网卡的速度指的是其数据传输速率，通常以千兆位每秒（Gbps）或万兆位每秒（10 Gbps）为单位。较高的速度可以提供更快的数据传输和响应速度。带宽指的是网卡能够处理的数据量，通常以每秒传输的数据量（Mbps或Gbps）来衡量。</p>
+</li>
+<li><p>接口类型：服务器网卡通常使用不同类型的接口来连接到服务器主板。常见的接口类型包括PCIe（Peripheral Component Interconnect Express）和PCI（Peripheral Component Interconnect）。PCIe接口通常提供更高的带宽和更快的数据传输速度。</p>
+</li>
+<li><p>支持的协议：服务器网卡通常支持多种网络协议，如Ethernet、TCP&#x2F;IP、UDP等。这些协议允许服务器与其他设备进行通信，并实现数据传输和网络连接。</p>
+</li>
+<li><p>冗余和负载均衡：一些服务器网卡支持冗余配置，即在一个网卡故障时，其他网卡可以继续工作，确保服务器的稳定性和可靠性。此外，一些服务器网卡还支持负载均衡，即将网络流量分配到多个网卡上，以提高网络性能和可靠性。</p>
+</li>
+<li><p>硬件加速：一些高级服务器网卡具有硬件加速功能，可以在网卡上处理一些网络任务，如数据包过滤、数据包分析和加密解密等。这可以减轻服务器的负担，提高网络性能。</p>
+</li>
+<li><p>远程管理：一些服务器网卡具有远程管理功能，允许管理员通过远程访问服务器网卡来监控和管理服务器。这对于远程维护和故障排除非常有用。</p>
+</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/3bcca0ba-7482-475f-98bd-7f93cab544e9.png"></p>
+<h3 id="1-1、网卡分类"><a href="#1-1、网卡分类" class="headerlink" title="1.1、网卡分类"></a>1.1、网卡分类</h3><p><img src="https://files.mdnice.com/user/17335/281cae61-6c16-409d-99ac-799ee13eb11a.png"></p>
+<h3 id="1-2、网卡功能"><a href="#1-2、网卡功能" class="headerlink" title="1.2、网卡功能"></a>1.2、网卡功能</h3><p><img src="https://files.mdnice.com/user/17335/d18184bd-e7ed-430a-98da-06ec85d68a21.png"></p>
+<h3 id="1-3、网卡接口"><a href="#1-3、网卡接口" class="headerlink" title="1.3、网卡接口"></a>1.3、网卡接口</h3><p><img src="https://files.mdnice.com/user/17335/33d96b6a-c7fc-42c5-b7a2-fce0b14af995.png"></p>
+<h2 id="2、服务器网卡"><a href="#2、服务器网卡" class="headerlink" title="2、服务器网卡"></a>2、服务器网卡</h2><p><img src="https://files.mdnice.com/user/17335/4e247fdd-d8d9-47d1-8eb5-f6f71f087e98.png"></p>
+<h3 id="2-1、服务器专用网卡-VS-普通网卡"><a href="#2-1、服务器专用网卡-VS-普通网卡" class="headerlink" title="2.1、服务器专用网卡 VS 普通网卡"></a>2.1、服务器专用网卡 VS 普通网卡</h3><p><img src="https://files.mdnice.com/user/17335/3d04a0bd-e96e-48d8-9c2b-f74d117e1104.png"></p>
+<h3 id="2-3、网卡主流厂商"><a href="#2-3、网卡主流厂商" class="headerlink" title="2.3、网卡主流厂商"></a>2.3、网卡主流厂商</h3><p><img src="https://files.mdnice.com/user/17335/5026838f-2dee-4816-953f-54cfd48d566d.png"></p>
+<h2 id="3、网卡绑定（bond）"><a href="#3、网卡绑定（bond）" class="headerlink" title="3、网卡绑定（bond）"></a>3、网卡绑定（bond）</h2><p>服务器bond是一种网络连接聚合技术，通过将多个网络接口绑定在一起，形成一个虚拟的网络接口，提供更高的带宽和冗余。服务器bond可以提高服务器的网络性能和可靠性。</p>
+<p><img src="https://files.mdnice.com/user/17335/e434395f-866b-4b02-8470-4f61ece4afc5.png"></p>
+<blockquote>
+<p>这里仅简单介绍下bond0和bond1这两种最常用的网卡绑定方式，其他方式如有需要可自行Google</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/0907ccf5-cb21-4721-a658-01958a180615.png"></p>
+<h3 id="3-1、Bond0-轮询策略"><a href="#3-1、Bond0-轮询策略" class="headerlink" title="3.1、Bond0 轮询策略"></a>3.1、Bond0 轮询策略</h3><p><img src="https://files.mdnice.com/user/17335/ea604609-9a04-48b9-82a6-66f4197774c4.png"></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E9%93%BE%E8%B7%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">链路负载均衡</a>，增加带宽，支持容错，一条链路故障会自动切换正常链路。交换机需要配置聚合口，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%80%9D%E7%A7%91&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">思科</a>叫port channel</p>
+</li>
+<li><p>特点：传输数据包顺序是依次传输（即：第1个包走<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=eth0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">eth0</a>，下一个包就走eth1….一直循环下去，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%9B%B4%E5%88%B0%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">直到最后一个</a>传输完毕），此模式提供<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B4%9F%E8%BD%BD%E5%B9%B3%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">负载平衡</a>和容错能力；但是我们知道如果一个连接 或者会话的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%95%B0%E6%8D%AE%E5%8C%85&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">数据包</a>从不同的接口发出的话，中途再经过不同的链路，在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%AE%A2%E6%88%B7%E7%AB%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">客户端</a>很有可能会出现数据包<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%97%A0%E5%BA%8F%E5%88%B0%E8%BE%BE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">无序到达</a>的问题，而无序到达的数据包需要重新要求被发送，这样网络的吞吐量就会下降</p>
+</li>
+</ul>
+<h3 id="3-2、Bond1-主备策略"><a href="#3-2、Bond1-主备策略" class="headerlink" title="3.2、Bond1 主备策略"></a>3.2、Bond1 主备策略</h3><p><img src="https://files.mdnice.com/user/17335/e3785d34-8bb4-42e4-961c-f3e9be597f26.png"></p>
+<ul>
+<li><p>主备模式，只有一块网卡是active，另一块是备用的standby，所有流量都在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=active%E9%93%BE%E8%B7%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">active链路</a>上处理，交换机配置的是捆绑的话将不能工作，因为交换机往两块<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E5%8D%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网卡</a>发包，有一半包是丢弃的。</p>
+</li>
+<li><p>特点：只有一个设备处于活动状态，当一个宕掉另一个马上由备份转换为主设备。mac地址是外部可见得，从外面看来，bond的MAC地址是唯一的，以避免switch(交换机)发生混乱。此模式只提供了容错能力；由此可见此<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%AE%97%E6%B3%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">算法</a>的优点是可以提供高<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络连接</a>的可用性，但是它的资源利用率较低，只有一个接口处于工作状态，在有 N 个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络接口</a>的情况下，资源利用率为1&#x2F;N</p>
+</li>
+</ul>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
+<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
+<li>点“在看”支持我吧!</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzl3000qmcvhe7pe2efa" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -889,9 +1013,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E4%BF%A1%E5%88%9B/" style="font-size: 20px;">信创</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -910,23 +1048,23 @@
       <ul>
         
           <li>
-            <a href="/2024/02/06/6-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/">(no title)</a>
+            <a href="/2024/02/13/%E9%BE%99%E8%8A%AF--%E8%87%AA%E4%B8%BB%E6%9E%B6%E6%9E%84%E5%85%88%E9%A9%B1%E8%80%85/">龙芯--自主架构先驱者</a>
           </li>
         
           <li>
-            <a href="/2024/02/06/5-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/">(no title)</a>
+            <a href="/2024/02/12/%E9%B2%B2%E9%B9%8F--%E5%9E%82%E7%9B%B4%E7%94%9F%E6%80%81%E9%A2%86%E5%AF%BC%E8%80%85/">鲲鹏--垂直生态领导者</a>
           </li>
         
           <li>
-            <a href="/2024/02/06/4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/">(no title)</a>
+            <a href="/2024/02/11/%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/">腾--PK生态主导者</a>
           </li>
         
           <li>
-            <a href="/2024/02/06/3-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/">(no title)</a>
+            <a href="/2024/02/10/%E6%B5%B7%E5%85%89-%E6%80%A7%E8%83%BD%E9%A2%86%E5%85%88%E5%AE%9E%E5%B9%B2%E8%80%85/">海光--性能领先实干者</a>
           </li>
         
           <li>
-            <a href="/2024/02/06/2-%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/">(no title)</a>
+            <a href="/2024/02/09/%E4%BF%A1%E5%88%9B%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/">信创发展之路</a>
           </li>
         
       </ul>
