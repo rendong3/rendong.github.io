@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>服务器带外管理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="带外管理 服务器带外管理（Out-of-Band Management）是指在服务器正常运行时，通过专门的管理通道对服务器进行监控、配置和控制，而无需依赖服务器的主操作系统   管理通道是独立于服务器主处理器和操作系统的，通常是通过专门的硬件或固件实现的。  带外管理的一个主要目的是提供对服务器的远程访问和控制，即使服务器的主操作系统处于关机、崩溃或其他异常状态。  通过带外管理，管理员可以远程执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器带外管理">
+<meta property="og:url" content="https://rendong3.github.io/2023/12/14/%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%A6%E5%A4%96%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="带外管理 服务器带外管理（Out-of-Band Management）是指在服务器正常运行时，通过专门的管理通道对服务器进行监控、配置和控制，而无需依赖服务器的主操作系统   管理通道是独立于服务器主处理器和操作系统的，通常是通过专门的硬件或固件实现的。  带外管理的一个主要目的是提供对服务器的远程访问和控制，即使服务器的主操作系统处于关机、崩溃或其他异常状态。  通过带外管理，管理员可以远程执">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/94d8fb2d-e148-4762-b951-afcbbab14cfa.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/1a682ee2-f006-43a0-97c7-33251e48b031.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/c7f3f598-8a30-475d-b3e9-c53f8ffeac34.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/7c040f36-ce5a-4ad3-b651-e3e9a73eff18.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/187c2862-bf22-4c17-9b87-c907515e9b48.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/574d8332-1ff9-4413-9e85-45d2729a5dc3.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/2460609f-9f9f-4485-bc26-374ec4562aae.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/f475c267-e277-4220-9c8c-ec26191a543c.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/a6b7671c-9816-4c90-a642-a3c11c88fc2e.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/7de34a14-4511-4d66-9ce1-d6654cdf90e7.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/e0d6b0f5-c63e-48ec-8f7c-231b89e612a3.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/0b28b08b-0b36-4014-ab42-e5ecadb69a45.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/3129f386-46c2-41f3-ab4a-5ff57753380a.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/216fd5b1-608d-4c77-be83-c10971a80b78.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/819fe3eb-c51e-4f04-8fdd-04cf61f8d08b.png">
+<meta property="og:image" content="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png">
+<meta property="article:published_time" content="2023-12-14T05:08:13.000Z">
+<meta property="article:modified_time" content="2024-02-06T05:21:34.486Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="服务器硬件科普">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://files.mdnice.com/user/17335/94d8fb2d-e148-4762-b951-afcbbab14cfa.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://rendong3.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-一文读懂服务器带外管理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/14/%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%A6%E5%A4%96%E7%AE%A1%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished">2023-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      服务器带外管理
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="带外管理"><a href="#带外管理" class="headerlink" title="带外管理"></a>带外管理</h1><blockquote>
+<p>服务器带外管理（Out-of-Band Management）是指在服务器正常运行时，通过专门的管理通道对服务器进行监控、配置和控制，而无需依赖服务器的主操作系统</p>
+</blockquote>
+<ul>
+<li><p>管理通道是独立于服务器主处理器和操作系统的，通常是通过专门的硬件或固件实现的。</p>
+</li>
+<li><p>带外管理的一个主要目的是提供对服务器的远程访问和控制，即使服务器的主操作系统处于关机、崩溃或其他异常状态。</p>
+</li>
+<li><p>通过带外管理，管理员可以<strong>远程执行诸如电源控制、系统重启、BIOS设置修改、操作系统安装和故障排除等任务，而无需物理接触服务器</strong>。</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/94d8fb2d-e148-4762-b951-afcbbab14cfa.png"></p>
+<h2 id="1、BMC"><a href="#1、BMC" class="headerlink" title="1、BMC"></a>1、BMC</h2><p>BMC: Baseboard Management Controller</p>
+<ul>
+<li><p>板级管理控制器；</p>
+</li>
+<li><p>服务器带外管理的核心部件；</p>
+</li>
+<li><p>使用 IPMI 协议对外提供访问接口；</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/1a682ee2-f006-43a0-97c7-33251e48b031.png"></p>
+<h3 id="1-1、BMC特点"><a href="#1-1、BMC特点" class="headerlink" title="1.1、BMC特点"></a>1.1、BMC特点</h3><ul>
+<li><p>BMC自有硬件接口（LAN&#x2F;Serial）和软件（Firmware&#x2F;Linux）；</p>
+</li>
+<li><p>遵循 IPMI 协议，对外提供统一的访问接口；</p>
+</li>
+<li><p>作为服务器特有模块，提供温度，电压，风扇，总线监控；提供管理接口，便于进行远程管理服务器;</p>
+</li>
+<li><p>BMC使用独立的Power，在系统关机时依然处于工作状态</p>
+</li>
+</ul>
+<h3 id="1-2、BMC基本功能"><a href="#1-2、BMC基本功能" class="headerlink" title="1.2、BMC基本功能"></a>1.2、BMC基本功能</h3><ul>
+<li><p>电源控制：状态、开启&#x2F;关闭&#x2F;循环电源、重启、NMI（不可屏蔽中断）；</p>
+</li>
+<li><p>监控：传感器数值；</p>
+</li>
+<li><p>库存：可更换部件 (FRU)；</p>
+</li>
+<li><p>日志：系统事件日志；</p>
+</li>
+<li><p>恢复：BMC对接收到的事件采取措施；</p>
+</li>
+<li><p>警报：SNMP陷阱格式通过局域网传输；</p>
+</li>
+<li><p>串行控制台重定向：通过串行&#x2F;调制解调器连接进行分页。</p>
+</li>
+</ul>
+<h2 id="2、BIOS"><a href="#2、BIOS" class="headerlink" title="2、BIOS"></a>2、BIOS</h2><p><strong>Basic Input Output System</strong></p>
+<ul>
+<li><p>硬件与软件程序间的“转换器”；</p>
+</li>
+<li><p>对硬件提供最底层的支持；</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/c7f3f598-8a30-475d-b3e9-c53f8ffeac34.png"></p>
+<h3 id="2-1、CMOS"><a href="#2-1、CMOS" class="headerlink" title="2.1、CMOS"></a>2.1、<strong>CMOS</strong></h3><p><strong>Complementary Metal Oxide Semiconductor</strong></p>
+<ul>
+<li><p>互补金属氧化物半导体，一块存储器；</p>
+</li>
+<li><p>用来存储BIOS的设置等信息，系统加电启动时读取CMOS信息；</p>
+</li>
+<li><p>主板无供电情况下，有纽扣电池供电，用户BIOS设置不丢失；</p>
+</li>
+</ul>
+<p><strong>Clear CMOS：【放电】</strong></p>
+<ul>
+<li><p>跳线短接</p>
+</li>
+<li><p>纽扣电池</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/7c040f36-ce5a-4ad3-b651-e3e9a73eff18.png"></p>
+<h3 id="2-2、基础功能"><a href="#2-2、基础功能" class="headerlink" title="2.2、基础功能"></a>2.2、<strong>基础功能</strong></h3><h4 id="2-2-1、Enter-Setup"><a href="#2-2-1、Enter-Setup" class="headerlink" title="2.2.1、Enter Setup"></a>2.2.1、<strong>Enter Setup</strong></h4><p>服务器开机进到POST界面，会显示Enter Setup，按下相关按键进到BIOS.</p>
+<p><img src="https://files.mdnice.com/user/17335/187c2862-bf22-4c17-9b87-c907515e9b48.png"></p>
+<hr>
+<h4 id="2-2-2、Main"><a href="#2-2-2、Main" class="headerlink" title="2.2.2、Main"></a>2.2.2、<strong>Main</strong></h4><p>该页面主要显示BIOS、内存、处理器等关键信息，包含但不限于：固件版本、发布日期、访问级别、容量、缓存等信息.</p>
+<p><img src="https://files.mdnice.com/user/17335/574d8332-1ff9-4413-9e85-45d2729a5dc3.png"></p>
+<hr>
+<h4 id="2-2-3、Advance"><a href="#2-2-3、Advance" class="headerlink" title="2.2.3、Advance"></a>2.2.3、<strong>Advance</strong></h4><p>该页面主要显示高级选项设定，依据需求对系统进行设定、调优、信息查看等.</p>
+<p><img src="https://files.mdnice.com/user/17335/2460609f-9f9f-4485-bc26-374ec4562aae.png"></p>
+<hr>
+<h4 id="2-2-4、Platform-Configuration"><a href="#2-2-4、Platform-Configuration" class="headerlink" title="2.2.4、Platform Configuration"></a>2.2.4、<strong>Platform Configuration</strong></h4><p>该页面主要显示PCH、内存等系统下设置项与拓扑信息显示.</p>
+<p><img src="https://files.mdnice.com/user/17335/f475c267-e277-4220-9c8c-ec26191a543c.png"></p>
+<hr>
+<h4 id="2-2-5、Socket-Configuration"><a href="#2-2-5、Socket-Configuration" class="headerlink" title="2.2.5、Socket Configuration"></a>2.2.5、<strong>Socket</strong> Configuration</h4><p>该页面主要显示CPU系统下设置项、调优项与拓扑信息等的显示.</p>
+<p><img src="https://files.mdnice.com/user/17335/a6b7671c-9816-4c90-a642-a3c11c88fc2e.png"></p>
+<hr>
+<h4 id="2-2-6、Server-Mgmt"><a href="#2-2-6、Server-Mgmt" class="headerlink" title="2.2.6、Server Mgmt"></a>2.2.6、<strong>Server Mgmt</strong></h4><p>设备<strong>IPMI远程管理功能设置与信息显示页面.</strong></p>
+<p><img src="https://files.mdnice.com/user/17335/7de34a14-4511-4d66-9ce1-d6654cdf90e7.png"></p>
+<hr>
+<h4 id="2-2-7、Security"><a href="#2-2-7、Security" class="headerlink" title="2.2.7、Security"></a>2.2.7、<strong>Security</strong></h4><p>系统管理员密码设置以及TPM功能管理页面.</p>
+<p><img src="https://files.mdnice.com/user/17335/e0d6b0f5-c63e-48ec-8f7c-231b89e612a3.png"></p>
+<hr>
+<h4 id="2-2-8、Boot"><a href="#2-2-8、Boot" class="headerlink" title="2.2.8、Boot"></a>2.2.8、<strong>Boot</strong></h4><p>引导项信息显示，以及设置页面.</p>
+<p><img src="https://files.mdnice.com/user/17335/0b28b08b-0b36-4014-ab42-e5ecadb69a45.png"></p>
+<h2 id="3、IPMI"><a href="#3、IPMI" class="headerlink" title="3、IPMI"></a>3、IPMI</h2><ol>
+<li><p>IPMI协议是由惠普、戴尔、英特尔制定研发出来，最新标准为IPMI2.0，用户可以用IPMI来监视服务器物理健康特征，比如温度、电压、风扇、电源状态等等</p>
+</li>
+<li><p>IPMI智能平台管理接口的核心就是BMC基板管理控制器，<strong>IPMI所有功能都通过向BMC发送命令来实现</strong></p>
+</li>
+<li><p><strong>BMC、BIOS、OS相互独立，并可进行交互，通过BMC可以远程操作服务器</strong>，包括开关机、重装系统、查看硬件状态和日志等等，一般个人PC不具备BMC功能</p>
+</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/3129f386-46c2-41f3-ab4a-5ff57753380a.png"></p>
+<h3 id="3-1、带外分类"><a href="#3-1、带外分类" class="headerlink" title="3.1、带外分类"></a>3.1、带外分类</h3><ol start="4">
+<li><p>不同厂商对带外管理接口名称定义不同，可以统称为<strong>MGMT</strong>，一般是先配置BMC地址，然后通过个人PC进行远程连接</p>
+</li>
+<li><p>配置BMC的<strong>IP地址、子网掩码、网关可以通过BIOS进行配置</strong>，注意IMM、IBMC等关键词进行配置即可；也可以通过BMC地址进行远程修改配置</p>
+</li>
+<li><p>配置完成后，服务器会重启，重启界面可以看到带外IP地址，一般通过网线直连服务器带外管理口，DHCP分配BMC的IP地址，然后将<strong>笔记本电脑IP设置为同网段地址，浏览器输入BMC的IP地址即可进行带外界面访问</strong></p>
+</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/216fd5b1-608d-4c77-be83-c10971a80b78.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/819fe3eb-c51e-4f04-8fdd-04cf61f8d08b.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2023/12/14/%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%A6%E5%A4%96%E7%AE%A1%E7%90%86/" data-id="cls9wyfme0000mcvh7k98hiny" data-title="服务器带外管理" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" rel="tag">服务器硬件科普</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          服务器管理平台（6）- Utils
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/13/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">服务器基础介绍</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" rel="tag">日常运维实例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" rel="tag">服务器硬件科普</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/" rel="tag">服务器管理平台</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E4%BF%A1%E5%88%9B/" style="font-size: 20px;">信创</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" style="font-size: 13.33px;">日常运维实例</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" style="font-size: 20px;">服务器硬件科普</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/" style="font-size: 16.67px;">服务器管理平台</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/02/13/%E9%BE%99%E8%8A%AF--%E8%87%AA%E4%B8%BB%E6%9E%B6%E6%9E%84%E5%85%88%E9%A9%B1%E8%80%85/">龙芯--自主架构先驱者</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/12/%E9%B2%B2%E9%B9%8F--%E5%9E%82%E7%9B%B4%E7%94%9F%E6%80%81%E9%A2%86%E5%AF%BC%E8%80%85/">鲲鹏--垂直生态领导者</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/11/%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/">飞腾--PK生态主导者</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/10/%E6%B5%B7%E5%85%89-%E6%80%A7%E8%83%BD%E9%A2%86%E5%85%88%E5%AE%9E%E5%B9%B2%E8%80%85/">海光--性能领先实干者</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/09/%E4%BF%A1%E5%88%9B%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/">信创发展之路</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -73,485 +73,25 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-服务器基础介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.863Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="服务器基础介绍"><a href="#服务器基础介绍" class="headerlink" title="服务器基础介绍"></a>服务器基础介绍</h1><blockquote>
-<p>介绍服务器相关基础知识，如服务器分类、组成、机箱内部构造等</p>
-</blockquote>
-<h2 id="1、什么是服务器？"><a href="#1、什么是服务器？" class="headerlink" title="1、什么是服务器？"></a>1、什么是服务器？</h2><ol>
-<li><p>服务器品牌有惠普、戴尔、浪潮、华为、华三、曙光等，各厂商服务器型号存在差异，惠普DL380G10、戴尔PowerEdge R750、浪潮NF5280M5、华为2288HV5、曙光R6230HA</p>
-</li>
-<li><p>一般用SN序列号和资产编号来对服务器进行标识，其中SN为唯一标识</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/c07e3428-9a31-49ae-ba6b-b9508933cef5.png"></p>
-<h2 id="2、服务器演进"><a href="#2、服务器演进" class="headerlink" title="2、服务器演进"></a>2、服务器演进</h2><p><img src="https://files.mdnice.com/user/17335/5fea500a-57ef-48a5-9bd3-623a1353dd26.png"></p>
-<h3 id="2-1、外形结构演化"><a href="#2-1、外形结构演化" class="headerlink" title="2.1、外形结构演化"></a>2.1、外形结构演化</h3><p><img src="https://files.mdnice.com/user/17335/417bae9f-220e-4e4a-b727-4284bd57ce95.png"></p>
-<ul>
-<li><p><strong>大型机</strong>：普通人很少接触，用于大规模计算的计算机系统.大型机通常用于政府、银行、交通、保险公司和大型制造企业。特点是处理数据能力强大、稳定性和安全性又非常高</p>
-</li>
-<li><p><strong>小型机</strong>：往往应用于金融、电力、电信等行业，这些用户看重的是Unix操作系统和专用服务器RAS特性、纵向扩展性和高并发访问下的出色处理能力。这些特性是普通的X86服务器很难达到的，所以在数据库等关键应用一般都采用“高大贵”的小型机方案。</p>
-</li>
-</ul>
-<h3 id="2-2、服务器发展方向"><a href="#2-2、服务器发展方向" class="headerlink" title="2.2、服务器发展方向"></a>2.2、服务器发展方向</h3><p><img src="https://files.mdnice.com/user/17335/ac20f5a9-260a-4d5d-add0-215121aa9f52.png"></p>
-<h3 id="2-3、服务器应用部署架构"><a href="#2-3、服务器应用部署架构" class="headerlink" title="2.3、服务器应用部署架构"></a>2.3、服务器应用部署架构</h3><p><img src="https://files.mdnice.com/user/17335/6dfd5c3c-c347-458c-9d54-a5cba6be2e0b.png"></p>
-<h3 id="2-4、服务器上层软件架构"><a href="#2-4、服务器上层软件架构" class="headerlink" title="2.4、服务器上层软件架构"></a>2.4、服务器上层软件架构</h3><p><img src="https://files.mdnice.com/user/17335/c9320dbe-e26f-4335-86e3-b5387b9b05a0.png"></p>
-<h2 id="3、服务器组成"><a href="#3、服务器组成" class="headerlink" title="3、服务器组成"></a>3、服务器组成</h2><p><img src="https://files.mdnice.com/user/17335/a8f909b4-68d5-4b68-bd7a-403ec82f27d1.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/ef66384d-1327-461a-b58b-10ce664fa426.png"></p>
-<h3 id="3-1、服务器前面板"><a href="#3-1、服务器前面板" class="headerlink" title="3.1、服务器前面板"></a>3.1、服务器前面板</h3><ol>
-<li><p>指示灯一般分为健康灯和指示灯，指示灯用来标记服务器，一般为UID标识；<strong>有心跳标识的一般为健康灯</strong>，用来展示服务器状态是否正常</p>
-</li>
-<li><p>电源按钮短按开机、长按关机，一般黄色代表没有开机、绿色或蓝色代表已经开机</p>
-</li>
-<li><p>前面板通风进气，机箱内部有导流槽和散热板，从后面板出气，所以一般前面板凉风习习，后面板热浪滚滚</p>
-</li>
-<li><p>服务器光驱可选，目前一般不配置光驱，空间阉割改造为硬盘使用</p>
-</li>
-<li><p>服务器硬盘一般需要做Raid后，保障冗余和安全性后进行格式化使用，按对应的按钮可以对硬盘进行插板，服务器硬盘一般为热插拔</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/7bd96ed7-c065-450e-82ec-08cfb4c217d3.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/3295b6e8-cb91-49fb-8b19-aac6e0d5b624.png"></p>
-<h3 id="3-2、服务器后面板"><a href="#3-2、服务器后面板" class="headerlink" title="3.2、服务器后面板"></a>3.2、服务器后面板</h3><ol>
-<li><p>服务器一般为双电源，即使单路掉电不影响正常使用</p>
-</li>
-<li><p>ILO口一般为带外管理口，可以远程对服务器进行开关机、重装系统等操作</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/f90faafa-bfb7-44a3-b791-5896cbbc613c.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/2ea84899-dc31-45f0-af43-0399e492f8d0.png"></p>
-<h3 id="3-3、机箱内部"><a href="#3-3、机箱内部" class="headerlink" title="3.3、机箱内部"></a>3.3、机箱内部</h3><ol>
-<li>机箱内部主要包括风扇、导流板、内存条、CPU、Raid卡、BMC纽扣电池等</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/47f079b1-c2a7-48a9-aec9-962e3c53238a.png"></p>
-<h2 id="4、服务器分类"><a href="#4、服务器分类" class="headerlink" title="4、服务器分类"></a>4、服务器分类</h2><p><img src="https://files.mdnice.com/user/17335/4be73f8f-d7c1-4fc5-9a49-68c71ac240e2.png"></p>
-<h3 id="4-1、外观分类"><a href="#4-1、外观分类" class="headerlink" title="4.1、外观分类"></a>4.1、外观分类</h3><ol>
-<li><p>服务器按照外观可以分为机架式服务器、塔式服务器、机柜式服务器、刀片式服务器</p>
-</li>
-<li><p>机架式服务器则以U高度来划分，有1U、2U、3U、4U、7U、8U等高度，1U一般为4.445CM</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/eb061326-f4ea-4d12-b98a-83b27e27840f.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/568f25ac-124b-4f84-87b9-e449c35d05e6.png"></p>
-<h3 id="4-2、架构分类"><a href="#4-2、架构分类" class="headerlink" title="4.2、架构分类"></a>4.2、架构分类</h3><ol>
-<li><p>目前架构分为X86和非X86两种，X86为CISC复杂指令集，价格便宜、兼容性好，但是稳定性和安全性差，主要用在中小企业和非关键业务中；而非X86为RISC精简指令集，价格昂贵，体系封闭，但是稳定性和安全性好，主要用于金融服务、电信等行业。</p>
-</li>
-<li><p>X86服务器厂商为Intel和AMD，非X86一般为ARM架构，生产厂商为华为、苹果等，苹果M1芯片为ARM架构</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/478b574f-8a97-41fa-86d6-286efd97d368.png"></p>
-<ul>
-<li><p><strong>x86服务器</strong>：采用CISC架构处理器。1978年6月8日，Intel发布了一款新型的<a target="_blank" rel="noopener" href="https://www.eefocus.com/baike/506860.html">微处理器</a>8086，意味着x86架构的诞生，而x86作为特定微处理器执行计算机语言的<a target="_blank" rel="noopener" href="https://www.eefocus.com/baike/511008.html">指令集</a>，定义了<a target="_blank" rel="noopener" href="https://www.eefocus.com/tag/%E8%8A%AF%E7%89%87/">芯片</a>的基本使用规则。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.eefocus.com/baike/481548.html">ARM</a>服务器</strong>：ARM全称为Advanced RISC Machine，即进阶精简指令集机器。ARM是RISC微处理器的代表作之一，最大的特点在于节能。</p>
-</li>
-</ul>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
-<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
-<li>点“在看”支持我吧!</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzkt000dmcvh1mt095rv" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-服务器内存介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.847Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>本篇文章用于介绍服务器内存，包括基本概念、内存演进、规格识别、内存条配置规则等</p>
-</blockquote>
-<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器内存是指安装在服务器主板上的用于存储和处理数据的硬件组件。它是服务器中的主要性能关键因素之一，对于服务器的运行速度、多任务处理能力和数据处理效率起着至关重要的作用。以下是一些关于服务器内存的重要概念和特点：</p>
-<ul>
-<li><p>容量：服务器内存的容量决定了服务器可以同时存储和处理的数据量。较大的内存容量可以支持更多的应用程序和用户同时访问服务器，提供更高的性能和响应速度。</p>
-</li>
-<li><p>类型：服务器内存通常使用ECC（Error-Correcting Code）内存，它具有纠错功能，可以检测和修复内存中的错误。常见的服务器内存类型包括DDR4、DDR3等。</p>
-</li>
-<li><p>速度：服务器内存的速度指的是内存模块的数据传输速率。较高的内存速度可以提供更快的数据读写和处理能力，从而提高服务器的性能。</p>
-</li>
-<li><p>扩展性：服务器内存通常具有较高的扩展性，可以通过添加更多的内存模块来扩大内存容量。这对于满足不断增长的业务需求和提高服务器性能非常重要。</p>
-</li>
-<li><p>通道和插槽：服务器内存通常分为多个通道和插槽，以支持多通道内存架构。多通道内存可以提供更高的数据传输带宽，提高服务器的性能。</p>
-</li>
-<li><p>冗余和热插拔：一些服务器支持冗余内存配置，即在一个内存模块故障时，其他内存模块可以继续工作，确保服务器的稳定性和可靠性。此外，一些服务器还支持热插拔内存，即可以在服务器运行时添加或移除内存模块，而无需关闭服务器</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/939d2631-d531-42c8-b0e1-07b91df42b5a.png"></p>
-<h3 id="1-1、存储功能分类"><a href="#1-1、存储功能分类" class="headerlink" title="1.1、存储功能分类"></a>1.1、存储功能分类</h3><p><img src="https://files.mdnice.com/user/17335/00cedc4a-b6a1-48a9-9002-6e12675369b1.png"></p>
-<h3 id="1-2、DRAM分类"><a href="#1-2、DRAM分类" class="headerlink" title="1.2、DRAM分类"></a>1.2、DRAM分类</h3><p><img src="https://files.mdnice.com/user/17335/09dda3bf-2240-462f-a077-0e8b602f902e.png"></p>
-<h3 id="1-3、DRAM在系统中位置"><a href="#1-3、DRAM在系统中位置" class="headerlink" title="1.3、DRAM在系统中位置"></a>1.3、DRAM在系统中位置</h3><ul>
-<li><p>早期内存通过存储器总线和北桥（MCH）相连，北桥通过前段总线与CPU通信</p>
-</li>
-<li><p>从Intel Nehalem起，北桥被集成到CPU内部，内存直接通过存储器总线与CPU相连</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d86fa7c4-4252-4da2-bffe-0e6eebd2f016.png"></p>
-<h2 id="2、内存演进"><a href="#2、内存演进" class="headerlink" title="2、内存演进"></a>2、内存演进</h2><p><img src="https://files.mdnice.com/user/17335/9b364bac-61b2-4f79-9bfc-dc2313a95958.png"></p>
-<h3 id="2-1、内存演进的指标：容量、功耗、性能"><a href="#2-1、内存演进的指标：容量、功耗、性能" class="headerlink" title="2.1、内存演进的指标：容量、功耗、性能"></a>2.1、内存演进的指标：容量、功耗、性能</h3><p><img src="https://files.mdnice.com/user/17335/56126915-6294-4952-904d-fa36e9a92435.png"></p>
-<h3 id="2-2、内存条类型介绍"><a href="#2-2、内存条类型介绍" class="headerlink" title="2.2、内存条类型介绍"></a>2.2、内存条类型介绍</h3><p><img src="https://files.mdnice.com/user/17335/53ef00d9-b63f-448e-ac34-ec75737a9fb1.png"></p>
-<h3 id="2-3、主流内存条生产厂家"><a href="#2-3、主流内存条生产厂家" class="headerlink" title="2.3、主流内存条生产厂家"></a>2.3、主流内存条生产厂家</h3><p><img src="https://files.mdnice.com/user/17335/4f3f2d67-91bd-41f6-81e8-ba80156dc912.png"></p>
-<h2 id="3、常用功能"><a href="#3、常用功能" class="headerlink" title="3、常用功能"></a>3、常用功能</h2><h3 id="3-1、内存插槽类型"><a href="#3-1、内存插槽类型" class="headerlink" title="3.1、内存插槽类型"></a>3.1、内存插槽类型</h3><p><img src="https://files.mdnice.com/user/17335/2dac040b-e57a-438d-9206-428b1fb5cd2c.png"></p>
-<h3 id="3-2、内存条组成"><a href="#3-2、内存条组成" class="headerlink" title="3.2、内存条组成"></a>3.2、内存条组成</h3><p><img src="https://files.mdnice.com/user/17335/41c69653-df33-4c65-bd74-63f14f678f86.png"></p>
-<h3 id="3-3、内存条规格识别"><a href="#3-3、内存条规格识别" class="headerlink" title="3.3、内存条规格识别"></a>3.3、内存条规格识别</h3><p><img src="https://files.mdnice.com/user/17335/5b2b7081-ea81-474b-85bf-0686999209e5.png"></p>
-<h3 id="3-4、服务器内存条配置原则"><a href="#3-4、服务器内存条配置原则" class="headerlink" title="3.4、服务器内存条配置原则"></a>3.4、服务器内存条配置原则</h3><p><img src="https://files.mdnice.com/user/17335/489e4970-2c41-437b-ad10-1aced3601c4d.png"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
-<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
-<li>点“在看”支持我吧!</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzks000bmcvh3c5kee6g" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-服务器硬盘介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.830Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="服务器硬盘"><a href="#服务器硬盘" class="headerlink" title="服务器硬盘"></a>服务器硬盘</h1><h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器硬盘是一种专门用于存储和读取数据的硬件设备。它通常具有较大的存储容量和高速的数据传输速度，以满足服务器对大量数据的处理需求。服务器硬盘可以根据不同的特性和用途进行分类。以下是几种常见的服务器硬盘分类：</p>
-<ol>
-<li><p><strong>SATA硬盘</strong>：SATA（Serial ATA）硬盘是最常见的<strong>机械硬盘HDD</strong>。它们通常具有较低的成本和较大的存储容量，适用于需要大容量存储但对性能要求不高的应用场景。</p>
-</li>
-<li><p><strong>SAS硬盘</strong>：SAS（Serial Attached SCSI）硬盘是一种高性能的<strong>机械硬盘HDD</strong>。它们具有更高的转速和更快的数据传输速度，适用于需要较高性能和可靠性的应用场景，如数据库、虚拟化和企业级应用。</p>
-</li>
-<li><p><strong>SSD硬盘</strong>：SSD（Solid State Drive）硬盘是一种基于<strong>闪存存储技术</strong>的服务器硬盘。它们具有更快的读写速度、更低的延迟和较高的耐用性，适用于需要高性能和快速响应的应用场景，如虚拟化、云计算和大数据分析。</p>
-</li>
-<li><p><strong>NVMe硬盘</strong>：NVMe（Non-Volatile Memory Express）硬盘是一种基于<strong>PCIe接口</strong>的高性能存储设备。它们具有更高的带宽和更低的延迟，适用于需要极高性能和低延迟的应用场景，如高性能计算、人工智能和大规模数据库。</p>
-</li>
-<li><p>Nearline硬盘：Nearline硬盘是一种介于传统硬盘和磁带之间的存储介质。它们具有较大的存储容量和较低的成本，适用于需要长期存储和备份的应用场景。</p>
-</li>
-<li><p>光纤通道硬盘：光纤通道硬盘是一种使用光纤通道技术连接的高性能存储设备。它们具有更高的带宽和更低的延迟，适用于需要高性能和可靠性的大规模存储系统。</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/f0d97d94-e6b8-4247-9987-d4b485d62096.png"></p>
-<h3 id="1-1、硬盘尺寸"><a href="#1-1、硬盘尺寸" class="headerlink" title="1.1、硬盘尺寸"></a>1.1、硬盘尺寸</h3><p><img src="https://files.mdnice.com/user/17335/188096fe-06c0-405f-a551-ac1cefd79632.png"></p>
-<h3 id="1-2、硬盘关键指标"><a href="#1-2、硬盘关键指标" class="headerlink" title="1.2、硬盘关键指标"></a>1.2、硬盘关键指标</h3><ul>
-<li>硬盘<strong>10k</strong>和<strong>15k</strong>是指硬盘的转速，分别为每分钟10000转和15000转</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/cc12a52f-3680-4312-8950-70c703ef75de.png"></p>
-<h3 id="1-3、容量差异对比"><a href="#1-3、容量差异对比" class="headerlink" title="1.3、容量差异对比"></a>1.3、容量差异对比</h3><p><img src="https://files.mdnice.com/user/17335/b8648a59-e328-4c55-9fc5-896f2fe3e4e4.png"></p>
-<h3 id="1-4、功耗差异对比"><a href="#1-4、功耗差异对比" class="headerlink" title="1.4、功耗差异对比"></a>1.4、功耗差异对比</h3><p><img src="https://files.mdnice.com/user/17335/4b550667-0f99-4212-b0af-baee119eb081.png"></p>
-<h3 id="1-5、性能差异对比"><a href="#1-5、性能差异对比" class="headerlink" title="1.5、性能差异对比"></a>1.5、性能差异对比</h3><p><img src="https://files.mdnice.com/user/17335/a3672e3b-d69e-41d6-bf9f-cb7f1f11a85c.png"></p>
-<h3 id="1-6、寿命及可靠性分析"><a href="#1-6、寿命及可靠性分析" class="headerlink" title="1.6、寿命及可靠性分析"></a>1.6、寿命及可靠性分析</h3><p><img src="https://files.mdnice.com/user/17335/8e044e84-2b23-45c5-a03e-9a7dd48767cd.png"></p>
-<h2 id="2、选型指南"><a href="#2、选型指南" class="headerlink" title="2、选型指南"></a>2、选型指南</h2><h3 id="2-1、业务类型"><a href="#2-1、业务类型" class="headerlink" title="2.1、业务类型"></a>2.1、业务类型</h3><p><img src="https://files.mdnice.com/user/17335/33e9b9b8-553d-4645-99ab-f6687b624bda.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/fde59083-624a-474a-a104-4f9e5c8e3a2d.png"></p>
-<h3 id="2-2、主流硬盘类型"><a href="#2-2、主流硬盘类型" class="headerlink" title="2.2、主流硬盘类型"></a>2.2、主流硬盘类型</h3><p><img src="https://files.mdnice.com/user/17335/ead86f2a-3994-46e9-967a-3c71ff0a00cd.png"></p>
-<h3 id="2-3、硬盘关键指标"><a href="#2-3、硬盘关键指标" class="headerlink" title="2.3、硬盘关键指标"></a>2.3、硬盘关键指标</h3><p><img src="https://files.mdnice.com/user/17335/8df213f4-adce-4501-9d9d-fb89bc1b3cd3.png"></p>
-<h2 id="3、RAID"><a href="#3、RAID" class="headerlink" title="3、RAID"></a>3、RAID</h2><p>RAID（Redundant Array of Independent Disks）是一种通过<strong>将多个独立的硬盘组合在一起来提供数据冗余、性能提升或两者兼备</strong>的技术。服务器RAID是在服务器中使用RAID技术来提供更高的数据可靠性、性能和存储容量。</p>
-<h3 id="3-1、RAID级别"><a href="#3-1、RAID级别" class="headerlink" title="3.1、RAID级别"></a>3.1、RAID级别</h3><p>以下是几种常见的服务器RAID级别：</p>
-<ol start="7">
-<li><p><strong>RAID 0</strong>：RAID 0将数据分散存储在多个硬盘上，以提高读写性能。它通过并行读写操作来提高数据吞吐量，但没有冗余备份，因此如果其中一个硬盘故障，所有数据都会丢失。</p>
-</li>
-<li><p><strong>RAID 1</strong>：RAID 1<strong>使用两个硬盘来实现数据镜像。所有数据同时写入两个硬盘，因此如果其中一个硬盘故障，数据仍然可从另一个硬盘中恢复</strong>。RAID 1提供了较高的数据可靠性，但存储容量只能达到一个硬盘的容量。</p>
-</li>
-<li><p><strong>RAID 5</strong>：RAID 5<strong>使用三个或更多硬盘来实现数据分布和冗余</strong>。它将数据和奇偶校验信息分散存储在多个硬盘上，以提供冗余备份和读写性能的提升。<strong>如果其中一个硬盘故障，数据可以通过奇偶校验信息从其他硬盘中重建</strong>。RAID 5提供了较高的数据可靠性和存储容量。</p>
-</li>
-<li><p><strong>RAID 6</strong>：RAID 6与RAID 5类似，但使用两个奇偶校验信息来提供更高的冗余备份。它<strong>需要至少四个硬盘，并且可以同时容忍两个硬盘的故障</strong>。RAID 6提供了更高的数据可靠性，但写入性能相对较低。</p>
-</li>
-<li><p><strong>RAID 10</strong>：<strong>RAID 10是RAID 1和RAID 0的组合</strong>。它将<strong>多个硬盘分为两组，每组中的硬盘进行数据镜像，然后将数据分散存储在两组之间</strong>以提高性能。RAID 10提供了较高的数据可靠性和读写性能，但存储容量只能达到总容量的一半。</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/0ccf28a4-507f-442f-ad7a-bf2353c75981.png"></p>
-<h3 id="3-2、数据存取方式"><a href="#3-2、数据存取方式" class="headerlink" title="3.2、数据存取方式"></a>3.2、数据存取方式</h3><p><img src="https://files.mdnice.com/user/17335/18fcf80a-54bd-41d9-ba3e-2e7b9fad66e6.png"></p>
-<h3 id="3-3、热备-重构"><a href="#3-3、热备-重构" class="headerlink" title="3.3、热备 &amp; 重构"></a>3.3、热备 &amp; 重构</h3><p><img src="https://files.mdnice.com/user/17335/4a135217-ff4e-4210-b750-5124f55670be.png"></p>
-<h3 id="3-4、逻辑卷"><a href="#3-4、逻辑卷" class="headerlink" title="3.4、逻辑卷"></a>3.4、逻辑卷</h3><p><img src="https://files.mdnice.com/user/17335/057a247c-2b7a-4e11-9557-4c0960748e2f.png"></p>
-<h3 id="3-5、RAID卡"><a href="#3-5、RAID卡" class="headerlink" title="3.5、RAID卡"></a>3.5、RAID卡</h3><p><img src="https://files.mdnice.com/user/17335/a2206f54-3bc4-486b-9231-57afad6f9125.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/991e8dd7-fea9-466f-b9f4-0cfedb15f774.png"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>欢迎大家关注我，公众号会分享个人日常运维记录，欢迎点赞和在看！</p>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzky000kmcvhbgoi0iwt" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-服务器CPU介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.814Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>本篇文章主要介绍服务器CPU，包括基础概念、常用功能及国产CPU简介等</p>
-</blockquote>
-<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><ul>
-<li><p>CPU（Central Processing Unit，中央处理器）是一块超大规模的集成电路，通常被称为计算机的大脑，是一台计算机的运算核心（Core）和控制核心（Control Unit）,也是整个计算机系统最重要的组成部件</p>
-</li>
-<li><p>中央处理器主要包括运算器（算数逻辑运算单元，ALU，Arithmetic Logic Unit）和高速缓冲器（Cache）及实现他们之间联系的数据（Data）、控制及状态的总线（Bus）</p>
-</li>
-<li><p><strong>CPU与存储器（Memory）和输入&#x2F;输出（I&#x2F;O</strong>）设备合称为电子计算机三大核心部件</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/5fc60f1b-c631-4cbd-b62b-a778dc2f3e4c.png"></p>
-<h3 id="CPU分类"><a href="#CPU分类" class="headerlink" title="CPU分类"></a>CPU分类</h3><p>CPU目前有两种指令集，即CISC复杂指令集和RISC精简指令集，一般按照指令集对CPU进行分类</p>
-<ul>
-<li><p>CISC（Complex Instruction Set Computer），复杂指令集，早期的CPU全都是CISC架构，设计目的主要是用最少的机器语言指令来完成所需的计算任务，这种架构会增加CPU结构的复杂性和对CPU工艺的要求，但对于编译器开发十分有利</p>
-</li>
-<li><p>RISC（Reduced Instruction Set Computer），精简指令集。RISC架构要求软件来指定各个操作步骤，这种架构可以降低CPU的复杂性以及允许在同样的工艺水平下生产出功能更强大的CPU，但对于编译器的设计有更高的要求</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/94047b35-ba3e-4af8-a87d-aefb3a8cf23e.png"></p>
-<h2 id="2、X86处理器"><a href="#2、X86处理器" class="headerlink" title="2、X86处理器"></a>2、X86处理器</h2><h3 id="2-1、发展历史"><a href="#2-1、发展历史" class="headerlink" title="2.1、发展历史"></a>2.1、发展历史</h3><p><img src="https://files.mdnice.com/user/17335/dc33a12a-71e9-4f38-9f90-ab7376a9aac9.png"></p>
-<h3 id="2-2、Intel-CPU路标"><a href="#2-2、Intel-CPU路标" class="headerlink" title="2.2、Intel CPU路标"></a>2.2、Intel CPU路标</h3><p><img src="https://files.mdnice.com/user/17335/7f731931-95fe-4e7a-aa2d-99a3d9cd51f0.png"></p>
-<h3 id="2-3、Intel命名规则"><a href="#2-3、Intel命名规则" class="headerlink" title="2.3、Intel命名规则"></a>2.3、Intel命名规则</h3><p><img src="https://files.mdnice.com/user/17335/cb6d834a-7fe5-43c0-8108-eddd736992b5.png"></p>
-<h2 id="3、常用功能"><a href="#3、常用功能" class="headerlink" title="3、常用功能"></a>3、常用功能</h2><h3 id="3-1、缓存"><a href="#3-1、缓存" class="headerlink" title="3.1、缓存"></a>3.1、缓存</h3><ul>
-<li>缓存（Cache Memory）是位于CPU和内存之间的临时存储器，目前的CPU拥有一级、二级和三级缓存（L1 L2 L3 Cache）</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/eb087875-8f03-4f82-ab7c-1aa9e30f29ef.png"></p>
-<h3 id="3-2、频率"><a href="#3-2、频率" class="headerlink" title="3.2、频率"></a>3.2、频率</h3><ul>
-<li><p>CPU 的频率主要包括主频、外频和倍频三部分。<strong>主频&#x3D;外频*倍频</strong>，这是X86架构CPU计算频率的公式，CPU主频为CPU 的额定工作频率，当内核数目和缓存大小一样时，主频越高的CPU性能越好</p>
-</li>
-<li><p><strong>Intel Turbo Boost</strong>技术为Intel睿频加速技术，此技术运行Intel CPU在标称频率（TSC）之上，性能分配上实现按需分配</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d38b3fe5-8f0e-47d0-9211-16a20294e0ce.png"></p>
-<h3 id="3-3、多核和超线程"><a href="#3-3、多核和超线程" class="headerlink" title="3.3、多核和超线程"></a>3.3、多核和超线程</h3><ul>
-<li><p><strong>多核处理器</strong>把多个CPU（核心）集成到单个集成电路芯片中</p>
-</li>
-<li><p><strong>超线程（Hyper-Threading）</strong>其实就是同时多线程（simultaneous multi-theading），是一项允许一个CPU执行多个控制流的技术</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/2f97991b-c63b-4bfc-a0b0-798b4cf87eb1.png"></p>
-<h3 id="3-4、CPU参数说明"><a href="#3-4、CPU参数说明" class="headerlink" title="3.4、CPU参数说明"></a>3.4、CPU参数说明</h3><p><img src="https://files.mdnice.com/user/17335/47b9c98a-da41-41a9-bc36-80e4597af00b.png"></p>
-<h2 id="4、国产CPU"><a href="#4、国产CPU" class="headerlink" title="4、国产CPU"></a>4、国产CPU</h2><p>目前都在主推信创，即信息技术应用创新产业，旨在实现信息技术领域的自主可控，保障国家信息安全，主打的是国产化替代。国产 CPU 和操作系统是信创产业的根基，也是信创产业中技术壁垒最高的环节。 没有CPU 和操作系统的安全可控，整个信创产业就是无根之木、无源之水</p>
-<p><img src="https://files.mdnice.com/user/17335/ecaeed46-2826-4f38-956d-105a6f59deab.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/264b60b4-40d0-4ce7-80c0-47e980e362cf.png"></p>
-<h2 id="4-1、举例"><a href="#4-1、举例" class="headerlink" title="4.1、举例"></a>4.1、举例</h2><p>前不久接触过一个银河麒麟的国产操作系统，用着不是那么好用，简单放一个桌面截图吧</p>
-<p><img src="https://files.mdnice.com/user/17335/d9f4d3fd-a7a8-4b30-91bf-806a7819c3ca.png"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>欢迎大家关注我，公众号会分享个人日常运维记录，欢迎点赞和在看！</p>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzkp0009mcvh4qik78ww" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-小型机故障案例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/%E5%B0%8F%E5%9E%8B%E6%9C%BA%E6%95%85%E9%9A%9C%E6%A1%88%E4%BE%8B/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.664Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="小型机故障案例"><a href="#小型机故障案例" class="headerlink" title="小型机故障案例"></a>小型机故障案例</h1><p><img src="https://files.mdnice.com/user/17335/b0cafeb8-6461-4c50-af7b-33f15238cdd4.jpg"></p>
-<ul>
-<li>小型机往往应用于金融、电力、电信等行业，Unix操作系统和专用服务器RAS特性、纵向扩展性和高并发访问下的出色处理能力<strong>，如HP RX6600</strong></li>
-<li>本文章记录在机房直连服务器进行故障原因排查及解决过程</li>
-</ul>
-<h2 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h2><blockquote>
-<p>HP RX6600小型机关机后，重新开机ping不通，远程无法登陆</p>
-</blockquote>
-<h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><ol>
-<li>小型机需要使用<strong>console线接入笔记本电脑，使用SecureCRT工具登录带外即MP</strong>，服务器前面板会说明带外用户名和密码（HP服务器用户名默认为Admin，密码为Admin），如果忘记，可以用笔按住后面板<strong>Reset</strong>小按钮<strong>5S以上</strong>，绿灯变为黄灯后释放</li>
-<li>重新使用默认用户名和密码登陆服务器MP带外，查看电源状态，<strong>注意小型机加电为系统电和服务器电，此故障为系统未正常加电，导致无法进入系统</strong></li>
-</ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ctrl-B 返回MP主目录  co  console  </span></span><br><span class="line"></span><br><span class="line">cm  <span class="comment"># Command Menu 命令菜单</span></span><br><span class="line"></span><br><span class="line">pc <span class="comment"># power control</span></span><br><span class="line"></span><br><span class="line">on <span class="comment"># power on 服务器上电,回车后输入 y 确认</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">ps</span> <span class="comment"># power status 查看电源状态</span></span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://files.mdnice.com/user/17335/183a1e64-7c4f-4240-a7c6-96c5cefa3e7b.png"></p>
-<ol start="3">
-<li>查看发现服务器电源状态处于<strong>not available</strong>状态，尝试带外方式使机器上电power on，但是未生效，随后检查服务器后面板电源模块发现其中1个电源模块故障，<strong>拔除双电源线，然后重新插入正常电源线，对服务器带外正常加电</strong></li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cm # console</span><br><span class="line"></span><br><span class="line">pc # power control</span><br><span class="line"></span><br><span class="line">ps # power status 重新登录MP后发现服务器已正常加电</span><br><span class="line"></span><br><span class="line">ss # system status 查看系统进程状态</span><br><span class="line"></span><br><span class="line">pc # power control</span><br><span class="line"></span><br><span class="line">on # 再次确认电源状态，提示already on,已正常加电</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://files.mdnice.com/user/17335/32ac4778-15d6-4ca4-8e7b-3bda5f5c2312.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/e34fd9cd-92f8-489f-aa5c-f94464705977.png"></p>
-<ol start="4">
-<li>服务器正常上电后，进入MP主菜单，进入虚拟前面板查看已正常进入系统引导，<strong>等待10分钟左右即可尝试登录系统</strong></li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctrl-B # 回到主菜单</span><br><span class="line"></span><br><span class="line">vfp # virtual Front Panel，查看是否正常进入引导</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&quot;Virtual Front Panel&quot;</span>（虚拟前面板）通常指的是一种软件界面或工具，用于模拟硬件设备的前面板或控制面板。这种模拟可以用于监控、控制和与实际设备进行交互，而无需实际物理连接。虚拟前面板通常用于测试、仿真、远程控制或培训等应用</span></span><br><span class="line"></span><br><span class="line">ctrl-B # 回到主菜单</span><br><span class="line"></span><br><span class="line">co # 再次确认已经正常进入引导</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://files.mdnice.com/user/17335/b04e85f2-de1e-4cf8-9a7d-dc60d2fffcbf.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/4f7bcea3-c9ac-46ce-814e-04e6c13bf914.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/a6b63ada-5d80-40f2-982a-0c0286f78bfc.png"></p>
-<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
-<li>欢迎关注，感谢支持！</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E5%B0%8F%E5%9E%8B%E6%9C%BA%E6%95%85%E9%9A%9C%E6%A1%88%E4%BE%8B/" data-id="cls9wmzko0008mcvhc7btactl" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Zabbix交换分区使用率过高排查" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/06/Zabbix%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E4%BD%BF%E7%94%A8%E7%8E%87%E8%BF%87%E9%AB%98%E6%8E%92%E6%9F%A5/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.648Z" itemprop="datePublished">2024-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Zabbix-High-swap-space-usage"><a href="#Zabbix-High-swap-space-usage" class="headerlink" title="Zabbix High swap space usage"></a>Zabbix High swap space usage</h1><h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><blockquote>
-<p>Zabbix 出现Highswap space usage(less than 50% free)告警，提示交换分区空间使用率超过50%</p>
-</blockquote>
-<p><img src="https://files.mdnice.com/user/17335/5864687b-e2a1-4534-9db2-159ac05f9816.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/1ea8c9ca-ec89-472f-a55f-e90adc843e23.png"></p>
-<h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><h3 id="1-确定swap分区是否已占满"><a href="#1-确定swap分区是否已占满" class="headerlink" title="1. 确定swap分区是否已占满"></a>1. 确定swap分区是否已占满</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://files.mdnice.com/user/17335/2c5a8e3d-501b-40c4-ae60-30f3fcf68c54.png"></p>
-<p>登录Zabbix服务器检查内存情况，检查发现Linux服务器空闲的内存还有不少，但是使用了大量的Swap空间(超过50%）</p>
-<h3 id="2-统计swap高占用进程"><a href="#2-统计swap高占用进程" class="headerlink" title="2. 统计swap高占用进程"></a>2. 统计swap高占用进程</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for file in /proc/*/status; do awk &#x27;/VmSwap|Name/&#123;printf $2 &quot; &quot; $3&#125;END&#123;print &quot;&quot;&#125;&#x27; $file; done | sort -k 2 -n -r | more</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://files.mdnice.com/user/17335/f45148b6-9774-4a16-8702-85b39c425bbb.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/fd45756c-cf31-4db6-a74d-68ad10e7022d.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/02a18710-7f5b-4433-b065-1fb4de348980.png"></p>
-<p>不断下拉发现<strong>postmaster、zabbix_server</strong>进程数量相对比较多且内存占用量较大，虽然php-fpm有20多个进程，但是内存占用量比较小，gnome等其他进程数量则相对更少</p>
-<h3 id="3-统计高进程内存占用量"><a href="#3-统计高进程内存占用量" class="headerlink" title="3. 统计高进程内存占用量"></a>3. 统计高进程内存占用量</h3><ul>
-<li>统计zabbix_server进程数量</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for file in /proc/*/status; do awk &#x27;/VmSwap|Name/&#123;printf $2 &quot; &quot; $3&#125;END&#123;print &quot;&quot;&#125;&#x27; $file; done | sort -k 2 -n -r | grep -wi &quot;zabbix_server&quot; | wc -l</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://files.mdnice.com/user/17335/fbcc832b-0211-4257-ae53-eef18bcf535b.png"></p>
-<ul>
-<li>统计zabbix_server进程占用内存大小</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for file in /proc/*/status; do awk &#x27;/VmSwap|Name/&#123;printf $2 &quot; &quot; $3&#125;END&#123;print &quot;&quot;&#125;&#x27; $file; done | sort -k 2 -n -r | grep -wi &quot;zabbix_server&quot; &gt; temp.ini</span><br><span class="line"></span><br><span class="line">sum=0</span><br><span class="line"></span><br><span class="line">for mem in `cat temp.ini | awk -F &#x27; &#x27; &#x27;&#123;print $2&#125;&#x27;`; do sum=$[$sum+$mem]; done</span><br><span class="line"></span><br><span class="line">echo $sum</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://files.mdnice.com/user/17335/49b6bfd6-ef42-4441-adc5-39eb661538bb.png"></p>
-<p>同理可以计算postmaster等其他进程内存使用量</p>
-<p><img src="https://files.mdnice.com/user/17335/2e1b1a93-a19c-449e-ab02-e3446b75e7a8.png"></p>
-<p>最后统计发现，zabbix_server共有866个进程，占用2.2G的swap内存，接近swap已使用空间的大部分，属于异常情况，需要重启zabbix_server服务</p>
-<h3 id="4-重启zabbix服务"><a href="#4-重启zabbix服务" class="headerlink" title="4. 重启zabbix服务"></a>4. 重启zabbix服务</h3><ul>
-<li><strong>重启服务前建议对虚拟机进行快照，保存当前状态，便于快速回滚</strong></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart zabbix-server</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://files.mdnice.com/user/17335/4804acdf-84c9-4cb6-85d2-0ee320a37a73.png"></p>
-<p>检查swap交换空间内存发现已经恢复正常</p>
-<blockquote>
-<p>zabbix数据大量写入swap空间明显属于异常，可能是某个bug导致数据并未正常写入磁盘空间，有待进一步定位排查</p>
-</blockquote>
-<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
-<li>欢迎关注，感谢支持！</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/Zabbix%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E4%BD%BF%E7%94%A8%E7%8E%87%E8%BF%87%E9%AB%98%E6%8E%92%E6%9F%A5/" data-id="cls9wmzki0003mcvh58qw41ae" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-服务器如何重置密码？" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.632Z" itemprop="datePublished">2024-02-06</time>
+    <a href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/" class="article-date">
+  <time class="dt-published" datetime="2024-01-14T05:08:13.000Z" itemprop="datePublished">2024-01-14</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/">服务器重置密码</a>
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -607,10 +147,94 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/" data-id="cls9wmzkv000fmcvh2cgw6kq8" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://rendong3.github.io/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/" data-id="cls9wmzkv000fmcvh2cgw6kq8" data-title="服务器重置密码" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" rel="tag">日常运维实例</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-服务器机房上架交付流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%BA%E6%88%BF%E4%B8%8A%E6%9E%B6%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2024-01-14T05:08:13.000Z" itemprop="datePublished">2024-01-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%BA%E6%88%BF%E4%B8%8A%E6%9E%B6%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B/">服务器上架交付</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="服务器上架交付"><a href="#服务器上架交付" class="headerlink" title="服务器上架交付"></a>服务器上架交付</h1><blockquote>
+<p>服务器到货验收后，会进行机房机房上架，完成重装系统、网络配置后交付使用</p>
+</blockquote>
+<h2 id="1、到货验收"><a href="#1、到货验收" class="headerlink" title="1、到货验收"></a>1、到货验收</h2><ul>
+<li>采购服务器到货后，会联合多部门进行SN、配置、数量等多方面验收，如数量是否匹配，配置是否相符等</li>
+<li>也会拆开机箱看看内部构造，了解下最新的服务器，箱体一般包含服务器、电源线、导轨3部分<br><img src="https://files.mdnice.com/user/17335/ce17ad35-8628-408a-bd7c-9a4a2a541c1a.png"></li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/fab9a800-84f0-4954-ac1d-264bb8386433.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/c6a678cd-03b2-4eda-a80b-d239d385cfa1.png"></p>
+<h2 id="2、上架"><a href="#2、上架" class="headerlink" title="2、上架"></a>2、上架</h2><ol>
+<li>参考机柜空闲程度和网络配置等，选定服务器安装具体位置，机柜一般为42U或者47U，现在大多数服务器为2U，服务器之间间隔1U保证有效散热即可，更多服务器基础科普可以参考历史文章《服务器介绍》</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/b0e9523a-dadb-4c04-a81b-3a92c34d9037.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/2992340e-0a8a-4074-b384-39208cc95b90.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/f875b70c-2f45-4d44-94b4-15dbb49101d0.png"></p>
+<ol start="2">
+<li>安装导轨或者托盘，上架服务器，注意电源为16A还是10A，不要插错，需要接入AB双路电源</li>
+<li>同一机柜需要考虑不能超出机柜的额定功率，否则容易造成安全隐患</li>
+</ol>
+<h2 id="3、配置"><a href="#3、配置" class="headerlink" title="3、配置"></a>3、配置</h2><h3 id="3-1、重装系统"><a href="#3-1、重装系统" class="headerlink" title="3.1、重装系统"></a>3.1、重装系统</h3><p><img src="https://files.mdnice.com/user/17335/2a4b8702-4937-4f23-a37a-72bbdab4099b.png"></p>
+<ul>
+<li><p>服务器加电后，检查状态灯是否正常，配置Raid，一般为Raid5，硬盘介绍可以参考历史文章《服务器硬盘介绍》</p>
+</li>
+<li><p>重装系统，按照要求分配硬盘、进行IP网络配置，验证网关是否ping通，系统介绍可以参考历史文章《服务器操作系统介绍》</p>
+</li>
+</ul>
+<h3 id="3-2、网络配置"><a href="#3-2、网络配置" class="headerlink" title="3.2、网络配置"></a>3.2、网络配置</h3><p><img src="https://files.mdnice.com/user/17335/b1bdc017-5df4-4d10-a509-0aa73ee00052.png"></p>
+<ol>
+<li>一般服务器需要配置带外、业务、管理等多条光纤或者网线，根据网络要求选择服务器光口或电口进行跳线，注意合理配置交换机端口及合理布线.网卡介绍可以参考文章《服务器网卡介绍》<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ip a # 查看服务器网卡状态</span><br><span class="line"></span><br><span class="line">ethtool -p enoX # 如服务器存在多个网卡UP，需要确认网卡对应网口，合理跳线及配置交换机端口</span><br><span class="line"></span><br><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-enoX # 设置网卡配置文件，修改static静态IP，IPADDR、网关、子网掩码，保存退出</span><br><span class="line"></span><br><span class="line">systemctl restart network # 重启网络使配置生效，也可以ifup、ifdown,注意不同品牌或系统可能命令稍有差异</span><br><span class="line"></span><br><span class="line">ping gateway # ping网关测试验证</span><br><span class="line">服务器按照要求可以配置带外IP</span><br><span class="line">Del进入SetUp页面</span><br><span class="line">修改BMC地址，使用静态IP，注意浪潮需要关闭share Link功能，否则带外及业务配置后网络不通</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="3-3、烤机"><a href="#3-3、烤机" class="headerlink" title="3.3、烤机"></a>3.3、烤机</h3><ul>
+<li>烤机是一种用于测试服务器硬件稳定性和性能的方法。它涉及让服务器持续运行24小时或更长时间，通过这种方式来检查服务器在高负载下的表现。</li>
+<li>烤机的目的是找出硬件是否存在潜在问题，用来验证其质量是否符合宣传标准</li>
+<li>在烤机过程中，服务器通常会运行一些大型程序或软件，这会导致硬件的温度升高，因此有时被比喻为类似烧烤的过程。</li>
+<li>大型云厂商一般在烤机前会预装统一操作系统，烤机3-7天后，按照客户要求安装重装指定操作系统，作为母机交付使用</li>
+</ul>
+<h2 id="4、交付"><a href="#4、交付" class="headerlink" title="4、交付"></a>4、交付</h2><p><img src="https://files.mdnice.com/user/17335/759ac974-928f-4d46-a37f-7f9119ba5578.png"></p>
+<ul>
+<li>服务器交付使用部门后，运维人员需要记录服务器资产编码、序列号、位置，更新到数据库，做好IP、用途等信息备注</li>
+</ul>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%BA%E6%88%BF%E4%B8%8A%E6%9E%B6%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B/" data-id="cls9wmzkx000imcvh3vt66v9d" data-title="服务器上架交付" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" rel="tag">日常运维实例</a></li></ul>
+
     </footer>
   </div>
   
@@ -621,13 +245,23 @@
   
     <article id="post-服务器进入救援模式如何解决" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E5%85%A5%E6%95%91%E6%8F%B4%E6%A8%A1%E5%BC%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.616Z" itemprop="datePublished">2024-02-06</time>
+    <a href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E5%85%A5%E6%95%91%E6%8F%B4%E6%A8%A1%E5%BC%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/" class="article-date">
+  <time class="dt-published" datetime="2024-01-14T05:08:13.000Z" itemprop="datePublished">2024-01-14</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E5%85%A5%E6%95%91%E6%8F%B4%E6%A8%A1%E5%BC%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/">服务器进入救援模式</a>
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -727,10 +361,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E5%85%A5%E6%95%91%E6%8F%B4%E6%A8%A1%E5%BC%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/" data-id="cls9wmzl4000smcvh02dm23fz" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://rendong3.github.io/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E5%85%A5%E6%95%91%E6%8F%B4%E6%A8%A1%E5%BC%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/" data-id="cls9wmzl4000smcvh02dm23fz" data-title="服务器进入救援模式" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" rel="tag">日常运维实例</a></li></ul>
+
     </footer>
   </div>
   
@@ -739,68 +375,544 @@
 
 
   
-    <article id="post-服务器机房上架交付流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Zabbix交换分区使用率过高排查" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%BA%E6%88%BF%E4%B8%8A%E6%9E%B6%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.600Z" itemprop="datePublished">2024-02-06</time>
+    <a href="/2024/01/13/Zabbix%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E4%BD%BF%E7%94%A8%E7%8E%87%E8%BF%87%E9%AB%98%E6%8E%92%E6%9F%A5/" class="article-date">
+  <time class="dt-published" datetime="2024-01-13T05:08:13.000Z" itemprop="datePublished">2024-01-13</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/01/13/Zabbix%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E4%BD%BF%E7%94%A8%E7%8E%87%E8%BF%87%E9%AB%98%E6%8E%92%E6%9F%A5/">Zabbix High swap space usage</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="服务器上架交付"><a href="#服务器上架交付" class="headerlink" title="服务器上架交付"></a>服务器上架交付</h1><blockquote>
-<p>服务器到货验收后，会进行机房机房上架，完成重装系统、网络配置后交付使用</p>
+        <h1 id="Zabbix-High-swap-space-usage"><a href="#Zabbix-High-swap-space-usage" class="headerlink" title="Zabbix High swap space usage"></a>Zabbix High swap space usage</h1><h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><blockquote>
+<p>Zabbix 出现Highswap space usage(less than 50% free)告警，提示交换分区空间使用率超过50%</p>
 </blockquote>
-<h2 id="1、到货验收"><a href="#1、到货验收" class="headerlink" title="1、到货验收"></a>1、到货验收</h2><ul>
-<li>采购服务器到货后，会联合多部门进行SN、配置、数量等多方面验收，如数量是否匹配，配置是否相符等</li>
-<li>也会拆开机箱看看内部构造，了解下最新的服务器，箱体一般包含服务器、电源线、导轨3部分<br><img src="https://files.mdnice.com/user/17335/ce17ad35-8628-408a-bd7c-9a4a2a541c1a.png"></li>
+<p><img src="https://files.mdnice.com/user/17335/5864687b-e2a1-4534-9db2-159ac05f9816.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/1ea8c9ca-ec89-472f-a55f-e90adc843e23.png"></p>
+<h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><h3 id="1-确定swap分区是否已占满"><a href="#1-确定swap分区是否已占满" class="headerlink" title="1. 确定swap分区是否已占满"></a>1. 确定swap分区是否已占满</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://files.mdnice.com/user/17335/2c5a8e3d-501b-40c4-ae60-30f3fcf68c54.png"></p>
+<p>登录Zabbix服务器检查内存情况，检查发现Linux服务器空闲的内存还有不少，但是使用了大量的Swap空间(超过50%）</p>
+<h3 id="2-统计swap高占用进程"><a href="#2-统计swap高占用进程" class="headerlink" title="2. 统计swap高占用进程"></a>2. 统计swap高占用进程</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for file in /proc/*/status; do awk &#x27;/VmSwap|Name/&#123;printf $2 &quot; &quot; $3&#125;END&#123;print &quot;&quot;&#125;&#x27; $file; done | sort -k 2 -n -r | more</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://files.mdnice.com/user/17335/f45148b6-9774-4a16-8702-85b39c425bbb.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/fd45756c-cf31-4db6-a74d-68ad10e7022d.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/02a18710-7f5b-4433-b065-1fb4de348980.png"></p>
+<p>不断下拉发现<strong>postmaster、zabbix_server</strong>进程数量相对比较多且内存占用量较大，虽然php-fpm有20多个进程，但是内存占用量比较小，gnome等其他进程数量则相对更少</p>
+<h3 id="3-统计高进程内存占用量"><a href="#3-统计高进程内存占用量" class="headerlink" title="3. 统计高进程内存占用量"></a>3. 统计高进程内存占用量</h3><ul>
+<li>统计zabbix_server进程数量</li>
 </ul>
-<p><img src="https://files.mdnice.com/user/17335/fab9a800-84f0-4954-ac1d-264bb8386433.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/c6a678cd-03b2-4eda-a80b-d239d385cfa1.png"></p>
-<h2 id="2、上架"><a href="#2、上架" class="headerlink" title="2、上架"></a>2、上架</h2><ol>
-<li>参考机柜空闲程度和网络配置等，选定服务器安装具体位置，机柜一般为42U或者47U，现在大多数服务器为2U，服务器之间间隔1U保证有效散热即可，更多服务器基础科普可以参考历史文章《服务器介绍》</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/b0e9523a-dadb-4c04-a81b-3a92c34d9037.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/2992340e-0a8a-4074-b384-39208cc95b90.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/f875b70c-2f45-4d44-94b4-15dbb49101d0.png"></p>
-<ol start="2">
-<li>安装导轨或者托盘，上架服务器，注意电源为16A还是10A，不要插错，需要接入AB双路电源</li>
-<li>同一机柜需要考虑不能超出机柜的额定功率，否则容易造成安全隐患</li>
-</ol>
-<h2 id="3、配置"><a href="#3、配置" class="headerlink" title="3、配置"></a>3、配置</h2><h3 id="3-1、重装系统"><a href="#3-1、重装系统" class="headerlink" title="3.1、重装系统"></a>3.1、重装系统</h3><p><img src="https://files.mdnice.com/user/17335/2a4b8702-4937-4f23-a37a-72bbdab4099b.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for file in /proc/*/status; do awk &#x27;/VmSwap|Name/&#123;printf $2 &quot; &quot; $3&#125;END&#123;print &quot;&quot;&#125;&#x27; $file; done | sort -k 2 -n -r | grep -wi &quot;zabbix_server&quot; | wc -l</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://files.mdnice.com/user/17335/fbcc832b-0211-4257-ae53-eef18bcf535b.png"></p>
 <ul>
-<li><p>服务器加电后，检查状态灯是否正常，配置Raid，一般为Raid5，硬盘介绍可以参考历史文章《服务器硬盘介绍》</p>
-</li>
-<li><p>重装系统，按照要求分配硬盘、进行IP网络配置，验证网关是否ping通，系统介绍可以参考历史文章《服务器操作系统介绍》</p>
-</li>
+<li>统计zabbix_server进程占用内存大小</li>
 </ul>
-<h3 id="3-2、网络配置"><a href="#3-2、网络配置" class="headerlink" title="3.2、网络配置"></a>3.2、网络配置</h3><p><img src="https://files.mdnice.com/user/17335/b1bdc017-5df4-4d10-a509-0aa73ee00052.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for file in /proc/*/status; do awk &#x27;/VmSwap|Name/&#123;printf $2 &quot; &quot; $3&#125;END&#123;print &quot;&quot;&#125;&#x27; $file; done | sort -k 2 -n -r | grep -wi &quot;zabbix_server&quot; &gt; temp.ini</span><br><span class="line"></span><br><span class="line">sum=0</span><br><span class="line"></span><br><span class="line">for mem in `cat temp.ini | awk -F &#x27; &#x27; &#x27;&#123;print $2&#125;&#x27;`; do sum=$[$sum+$mem]; done</span><br><span class="line"></span><br><span class="line">echo $sum</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://files.mdnice.com/user/17335/49b6bfd6-ef42-4441-adc5-39eb661538bb.png"></p>
+<p>同理可以计算postmaster等其他进程内存使用量</p>
+<p><img src="https://files.mdnice.com/user/17335/2e1b1a93-a19c-449e-ab02-e3446b75e7a8.png"></p>
+<p>最后统计发现，zabbix_server共有866个进程，占用2.2G的swap内存，接近swap已使用空间的大部分，属于异常情况，需要重启zabbix_server服务</p>
+<h3 id="4-重启zabbix服务"><a href="#4-重启zabbix服务" class="headerlink" title="4. 重启zabbix服务"></a>4. 重启zabbix服务</h3><ul>
+<li><strong>重启服务前建议对虚拟机进行快照，保存当前状态，便于快速回滚</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart zabbix-server</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://files.mdnice.com/user/17335/4804acdf-84c9-4cb6-85d2-0ee320a37a73.png"></p>
+<p>检查swap交换空间内存发现已经恢复正常</p>
+<blockquote>
+<p>zabbix数据大量写入swap空间明显属于异常，可能是某个bug导致数据并未正常写入磁盘空间，有待进一步定位排查</p>
+</blockquote>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
+<li>欢迎关注，感谢支持！</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/01/13/Zabbix%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E4%BD%BF%E7%94%A8%E7%8E%87%E8%BF%87%E9%AB%98%E6%8E%92%E6%9F%A5/" data-id="cls9wmzki0003mcvh58qw41ae" data-title="Zabbix High swap space usage" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" rel="tag">日常运维实例</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-小型机故障案例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/12/%E5%B0%8F%E5%9E%8B%E6%9C%BA%E6%95%85%E9%9A%9C%E6%A1%88%E4%BE%8B/" class="article-date">
+  <time class="dt-published" datetime="2024-01-12T05:08:13.000Z" itemprop="datePublished">2024-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/01/12/%E5%B0%8F%E5%9E%8B%E6%9C%BA%E6%95%85%E9%9A%9C%E6%A1%88%E4%BE%8B/">小型机故障案例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="小型机故障案例"><a href="#小型机故障案例" class="headerlink" title="小型机故障案例"></a>小型机故障案例</h1><p><img src="https://files.mdnice.com/user/17335/b0cafeb8-6461-4c50-af7b-33f15238cdd4.jpg"></p>
+<ul>
+<li>小型机往往应用于金融、电力、电信等行业，Unix操作系统和专用服务器RAS特性、纵向扩展性和高并发访问下的出色处理能力<strong>，如HP RX6600</strong></li>
+<li>本文章记录在机房直连服务器进行故障原因排查及解决过程</li>
+</ul>
+<h2 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h2><blockquote>
+<p>HP RX6600小型机关机后，重新开机ping不通，远程无法登陆</p>
+</blockquote>
+<h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><ol>
+<li>小型机需要使用<strong>console线接入笔记本电脑，使用SecureCRT工具登录带外即MP</strong>，服务器前面板会说明带外用户名和密码（HP服务器用户名默认为Admin，密码为Admin），如果忘记，可以用笔按住后面板<strong>Reset</strong>小按钮<strong>5S以上</strong>，绿灯变为黄灯后释放</li>
+<li>重新使用默认用户名和密码登陆服务器MP带外，查看电源状态，<strong>注意小型机加电为系统电和服务器电，此故障为系统未正常加电，导致无法进入系统</strong></li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ctrl-B 返回MP主目录  co  console  </span></span><br><span class="line"></span><br><span class="line">cm  <span class="comment"># Command Menu 命令菜单</span></span><br><span class="line"></span><br><span class="line">pc <span class="comment"># power control</span></span><br><span class="line"></span><br><span class="line">on <span class="comment"># power on 服务器上电,回车后输入 y 确认</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">ps</span> <span class="comment"># power status 查看电源状态</span></span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://files.mdnice.com/user/17335/183a1e64-7c4f-4240-a7c6-96c5cefa3e7b.png"></p>
+<ol start="3">
+<li>查看发现服务器电源状态处于<strong>not available</strong>状态，尝试带外方式使机器上电power on，但是未生效，随后检查服务器后面板电源模块发现其中1个电源模块故障，<strong>拔除双电源线，然后重新插入正常电源线，对服务器带外正常加电</strong></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cm # console</span><br><span class="line"></span><br><span class="line">pc # power control</span><br><span class="line"></span><br><span class="line">ps # power status 重新登录MP后发现服务器已正常加电</span><br><span class="line"></span><br><span class="line">ss # system status 查看系统进程状态</span><br><span class="line"></span><br><span class="line">pc # power control</span><br><span class="line"></span><br><span class="line">on # 再次确认电源状态，提示already on,已正常加电</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://files.mdnice.com/user/17335/32ac4778-15d6-4ca4-8e7b-3bda5f5c2312.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/e34fd9cd-92f8-489f-aa5c-f94464705977.png"></p>
+<ol start="4">
+<li>服务器正常上电后，进入MP主菜单，进入虚拟前面板查看已正常进入系统引导，<strong>等待10分钟左右即可尝试登录系统</strong></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctrl-B # 回到主菜单</span><br><span class="line"></span><br><span class="line">vfp # virtual Front Panel，查看是否正常进入引导</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&quot;Virtual Front Panel&quot;</span>（虚拟前面板）通常指的是一种软件界面或工具，用于模拟硬件设备的前面板或控制面板。这种模拟可以用于监控、控制和与实际设备进行交互，而无需实际物理连接。虚拟前面板通常用于测试、仿真、远程控制或培训等应用</span></span><br><span class="line"></span><br><span class="line">ctrl-B # 回到主菜单</span><br><span class="line"></span><br><span class="line">co # 再次确认已经正常进入引导</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://files.mdnice.com/user/17335/b04e85f2-de1e-4cf8-9a7d-dc60d2fffcbf.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/4f7bcea3-c9ac-46ce-814e-04e6c13bf914.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/a6b63ada-5d80-40f2-982a-0c0286f78bfc.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
+<li>欢迎关注，感谢支持！</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2024/01/12/%E5%B0%8F%E5%9E%8B%E6%9C%BA%E6%95%85%E9%9A%9C%E6%A1%88%E4%BE%8B/" data-id="cls9wmzko0008mcvhc7btactl" data-title="小型机故障案例" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" rel="tag">日常运维实例</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-服务器硬盘介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/16/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2023-12-16T05:08:13.000Z" itemprop="datePublished">2023-12-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/16/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/">服务器硬盘介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="服务器硬盘"><a href="#服务器硬盘" class="headerlink" title="服务器硬盘"></a>服务器硬盘</h1><h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器硬盘是一种专门用于存储和读取数据的硬件设备。它通常具有较大的存储容量和高速的数据传输速度，以满足服务器对大量数据的处理需求。服务器硬盘可以根据不同的特性和用途进行分类。以下是几种常见的服务器硬盘分类：</p>
 <ol>
-<li>一般服务器需要配置带外、业务、管理等多条光纤或者网线，根据网络要求选择服务器光口或电口进行跳线，注意合理配置交换机端口及合理布线.网卡介绍可以参考文章《服务器网卡介绍》<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ip a # 查看服务器网卡状态</span><br><span class="line"></span><br><span class="line">ethtool -p enoX # 如服务器存在多个网卡UP，需要确认网卡对应网口，合理跳线及配置交换机端口</span><br><span class="line"></span><br><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-enoX # 设置网卡配置文件，修改static静态IP，IPADDR、网关、子网掩码，保存退出</span><br><span class="line"></span><br><span class="line">systemctl restart network # 重启网络使配置生效，也可以ifup、ifdown,注意不同品牌或系统可能命令稍有差异</span><br><span class="line"></span><br><span class="line">ping gateway # ping网关测试验证</span><br><span class="line">服务器按照要求可以配置带外IP</span><br><span class="line">Del进入SetUp页面</span><br><span class="line">修改BMC地址，使用静态IP，注意浪潮需要关闭share Link功能，否则带外及业务配置后网络不通</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>SATA硬盘</strong>：SATA（Serial ATA）硬盘是最常见的<strong>机械硬盘HDD</strong>。它们通常具有较低的成本和较大的存储容量，适用于需要大容量存储但对性能要求不高的应用场景。</p>
+</li>
+<li><p><strong>SAS硬盘</strong>：SAS（Serial Attached SCSI）硬盘是一种高性能的<strong>机械硬盘HDD</strong>。它们具有更高的转速和更快的数据传输速度，适用于需要较高性能和可靠性的应用场景，如数据库、虚拟化和企业级应用。</p>
+</li>
+<li><p><strong>SSD硬盘</strong>：SSD（Solid State Drive）硬盘是一种基于<strong>闪存存储技术</strong>的服务器硬盘。它们具有更快的读写速度、更低的延迟和较高的耐用性，适用于需要高性能和快速响应的应用场景，如虚拟化、云计算和大数据分析。</p>
+</li>
+<li><p><strong>NVMe硬盘</strong>：NVMe（Non-Volatile Memory Express）硬盘是一种基于<strong>PCIe接口</strong>的高性能存储设备。它们具有更高的带宽和更低的延迟，适用于需要极高性能和低延迟的应用场景，如高性能计算、人工智能和大规模数据库。</p>
+</li>
+<li><p>Nearline硬盘：Nearline硬盘是一种介于传统硬盘和磁带之间的存储介质。它们具有较大的存储容量和较低的成本，适用于需要长期存储和备份的应用场景。</p>
+</li>
+<li><p>光纤通道硬盘：光纤通道硬盘是一种使用光纤通道技术连接的高性能存储设备。它们具有更高的带宽和更低的延迟，适用于需要高性能和可靠性的大规模存储系统。</p>
+</li>
 </ol>
-<h3 id="3-3、烤机"><a href="#3-3、烤机" class="headerlink" title="3.3、烤机"></a>3.3、烤机</h3><ul>
-<li>烤机是一种用于测试服务器硬件稳定性和性能的方法。它涉及让服务器持续运行24小时或更长时间，通过这种方式来检查服务器在高负载下的表现。</li>
-<li>烤机的目的是找出硬件是否存在潜在问题，用来验证其质量是否符合宣传标准</li>
-<li>在烤机过程中，服务器通常会运行一些大型程序或软件，这会导致硬件的温度升高，因此有时被比喻为类似烧烤的过程。</li>
-<li>大型云厂商一般在烤机前会预装统一操作系统，烤机3-7天后，按照客户要求安装重装指定操作系统，作为母机交付使用</li>
+<p><img src="https://files.mdnice.com/user/17335/f0d97d94-e6b8-4247-9987-d4b485d62096.png"></p>
+<h3 id="1-1、硬盘尺寸"><a href="#1-1、硬盘尺寸" class="headerlink" title="1.1、硬盘尺寸"></a>1.1、硬盘尺寸</h3><p><img src="https://files.mdnice.com/user/17335/188096fe-06c0-405f-a551-ac1cefd79632.png"></p>
+<h3 id="1-2、硬盘关键指标"><a href="#1-2、硬盘关键指标" class="headerlink" title="1.2、硬盘关键指标"></a>1.2、硬盘关键指标</h3><ul>
+<li>硬盘<strong>10k</strong>和<strong>15k</strong>是指硬盘的转速，分别为每分钟10000转和15000转</li>
 </ul>
-<h2 id="4、交付"><a href="#4、交付" class="headerlink" title="4、交付"></a>4、交付</h2><p><img src="https://files.mdnice.com/user/17335/759ac974-928f-4d46-a37f-7f9119ba5578.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/cc12a52f-3680-4312-8950-70c703ef75de.png"></p>
+<h3 id="1-3、容量差异对比"><a href="#1-3、容量差异对比" class="headerlink" title="1.3、容量差异对比"></a>1.3、容量差异对比</h3><p><img src="https://files.mdnice.com/user/17335/b8648a59-e328-4c55-9fc5-896f2fe3e4e4.png"></p>
+<h3 id="1-4、功耗差异对比"><a href="#1-4、功耗差异对比" class="headerlink" title="1.4、功耗差异对比"></a>1.4、功耗差异对比</h3><p><img src="https://files.mdnice.com/user/17335/4b550667-0f99-4212-b0af-baee119eb081.png"></p>
+<h3 id="1-5、性能差异对比"><a href="#1-5、性能差异对比" class="headerlink" title="1.5、性能差异对比"></a>1.5、性能差异对比</h3><p><img src="https://files.mdnice.com/user/17335/a3672e3b-d69e-41d6-bf9f-cb7f1f11a85c.png"></p>
+<h3 id="1-6、寿命及可靠性分析"><a href="#1-6、寿命及可靠性分析" class="headerlink" title="1.6、寿命及可靠性分析"></a>1.6、寿命及可靠性分析</h3><p><img src="https://files.mdnice.com/user/17335/8e044e84-2b23-45c5-a03e-9a7dd48767cd.png"></p>
+<h2 id="2、选型指南"><a href="#2、选型指南" class="headerlink" title="2、选型指南"></a>2、选型指南</h2><h3 id="2-1、业务类型"><a href="#2-1、业务类型" class="headerlink" title="2.1、业务类型"></a>2.1、业务类型</h3><p><img src="https://files.mdnice.com/user/17335/33e9b9b8-553d-4645-99ab-f6687b624bda.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/fde59083-624a-474a-a104-4f9e5c8e3a2d.png"></p>
+<h3 id="2-2、主流硬盘类型"><a href="#2-2、主流硬盘类型" class="headerlink" title="2.2、主流硬盘类型"></a>2.2、主流硬盘类型</h3><p><img src="https://files.mdnice.com/user/17335/ead86f2a-3994-46e9-967a-3c71ff0a00cd.png"></p>
+<h3 id="2-3、硬盘关键指标"><a href="#2-3、硬盘关键指标" class="headerlink" title="2.3、硬盘关键指标"></a>2.3、硬盘关键指标</h3><p><img src="https://files.mdnice.com/user/17335/8df213f4-adce-4501-9d9d-fb89bc1b3cd3.png"></p>
+<h2 id="3、RAID"><a href="#3、RAID" class="headerlink" title="3、RAID"></a>3、RAID</h2><p>RAID（Redundant Array of Independent Disks）是一种通过<strong>将多个独立的硬盘组合在一起来提供数据冗余、性能提升或两者兼备</strong>的技术。服务器RAID是在服务器中使用RAID技术来提供更高的数据可靠性、性能和存储容量。</p>
+<h3 id="3-1、RAID级别"><a href="#3-1、RAID级别" class="headerlink" title="3.1、RAID级别"></a>3.1、RAID级别</h3><p>以下是几种常见的服务器RAID级别：</p>
+<ol start="7">
+<li><p><strong>RAID 0</strong>：RAID 0将数据分散存储在多个硬盘上，以提高读写性能。它通过并行读写操作来提高数据吞吐量，但没有冗余备份，因此如果其中一个硬盘故障，所有数据都会丢失。</p>
+</li>
+<li><p><strong>RAID 1</strong>：RAID 1<strong>使用两个硬盘来实现数据镜像。所有数据同时写入两个硬盘，因此如果其中一个硬盘故障，数据仍然可从另一个硬盘中恢复</strong>。RAID 1提供了较高的数据可靠性，但存储容量只能达到一个硬盘的容量。</p>
+</li>
+<li><p><strong>RAID 5</strong>：RAID 5<strong>使用三个或更多硬盘来实现数据分布和冗余</strong>。它将数据和奇偶校验信息分散存储在多个硬盘上，以提供冗余备份和读写性能的提升。<strong>如果其中一个硬盘故障，数据可以通过奇偶校验信息从其他硬盘中重建</strong>。RAID 5提供了较高的数据可靠性和存储容量。</p>
+</li>
+<li><p><strong>RAID 6</strong>：RAID 6与RAID 5类似，但使用两个奇偶校验信息来提供更高的冗余备份。它<strong>需要至少四个硬盘，并且可以同时容忍两个硬盘的故障</strong>。RAID 6提供了更高的数据可靠性，但写入性能相对较低。</p>
+</li>
+<li><p><strong>RAID 10</strong>：<strong>RAID 10是RAID 1和RAID 0的组合</strong>。它将<strong>多个硬盘分为两组，每组中的硬盘进行数据镜像，然后将数据分散存储在两组之间</strong>以提高性能。RAID 10提供了较高的数据可靠性和读写性能，但存储容量只能达到总容量的一半。</p>
+</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/0ccf28a4-507f-442f-ad7a-bf2353c75981.png"></p>
+<h3 id="3-2、数据存取方式"><a href="#3-2、数据存取方式" class="headerlink" title="3.2、数据存取方式"></a>3.2、数据存取方式</h3><p><img src="https://files.mdnice.com/user/17335/18fcf80a-54bd-41d9-ba3e-2e7b9fad66e6.png"></p>
+<h3 id="3-3、热备-重构"><a href="#3-3、热备-重构" class="headerlink" title="3.3、热备 &amp; 重构"></a>3.3、热备 &amp; 重构</h3><p><img src="https://files.mdnice.com/user/17335/4a135217-ff4e-4210-b750-5124f55670be.png"></p>
+<h3 id="3-4、逻辑卷"><a href="#3-4、逻辑卷" class="headerlink" title="3.4、逻辑卷"></a>3.4、逻辑卷</h3><p><img src="https://files.mdnice.com/user/17335/057a247c-2b7a-4e11-9557-4c0960748e2f.png"></p>
+<h3 id="3-5、RAID卡"><a href="#3-5、RAID卡" class="headerlink" title="3.5、RAID卡"></a>3.5、RAID卡</h3><p><img src="https://files.mdnice.com/user/17335/a2206f54-3bc4-486b-9231-57afad6f9125.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/991e8dd7-fea9-466f-b9f4-0cfedb15f774.png"></p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>欢迎大家关注我，公众号会分享个人日常运维记录，欢迎点赞和在看！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2023/12/16/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E7%9B%98%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzky000kmcvhbgoi0iwt" data-title="服务器硬盘介绍" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" rel="tag">服务器硬件科普</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-服务器CPU介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished">2023-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/">服务器CPU介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>本篇文章主要介绍服务器CPU，包括基础概念、常用功能及国产CPU简介等</p>
+</blockquote>
+<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><ul>
+<li><p>CPU（Central Processing Unit，中央处理器）是一块超大规模的集成电路，通常被称为计算机的大脑，是一台计算机的运算核心（Core）和控制核心（Control Unit）,也是整个计算机系统最重要的组成部件</p>
+</li>
+<li><p>中央处理器主要包括运算器（算数逻辑运算单元，ALU，Arithmetic Logic Unit）和高速缓冲器（Cache）及实现他们之间联系的数据（Data）、控制及状态的总线（Bus）</p>
+</li>
+<li><p><strong>CPU与存储器（Memory）和输入&#x2F;输出（I&#x2F;O</strong>）设备合称为电子计算机三大核心部件</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/5fc60f1b-c631-4cbd-b62b-a778dc2f3e4c.png"></p>
+<h3 id="CPU分类"><a href="#CPU分类" class="headerlink" title="CPU分类"></a>CPU分类</h3><p>CPU目前有两种指令集，即CISC复杂指令集和RISC精简指令集，一般按照指令集对CPU进行分类</p>
 <ul>
-<li>服务器交付使用部门后，运维人员需要记录服务器资产编码、序列号、位置，更新到数据库，做好IP、用途等信息备注</li>
+<li><p>CISC（Complex Instruction Set Computer），复杂指令集，早期的CPU全都是CISC架构，设计目的主要是用最少的机器语言指令来完成所需的计算任务，这种架构会增加CPU结构的复杂性和对CPU工艺的要求，但对于编译器开发十分有利</p>
+</li>
+<li><p>RISC（Reduced Instruction Set Computer），精简指令集。RISC架构要求软件来指定各个操作步骤，这种架构可以降低CPU的复杂性以及允许在同样的工艺水平下生产出功能更强大的CPU，但对于编译器的设计有更高的要求</p>
+</li>
 </ul>
+<p><img src="https://files.mdnice.com/user/17335/94047b35-ba3e-4af8-a87d-aefb3a8cf23e.png"></p>
+<h2 id="2、X86处理器"><a href="#2、X86处理器" class="headerlink" title="2、X86处理器"></a>2、X86处理器</h2><h3 id="2-1、发展历史"><a href="#2-1、发展历史" class="headerlink" title="2.1、发展历史"></a>2.1、发展历史</h3><p><img src="https://files.mdnice.com/user/17335/dc33a12a-71e9-4f38-9f90-ab7376a9aac9.png"></p>
+<h3 id="2-2、Intel-CPU路标"><a href="#2-2、Intel-CPU路标" class="headerlink" title="2.2、Intel CPU路标"></a>2.2、Intel CPU路标</h3><p><img src="https://files.mdnice.com/user/17335/7f731931-95fe-4e7a-aa2d-99a3d9cd51f0.png"></p>
+<h3 id="2-3、Intel命名规则"><a href="#2-3、Intel命名规则" class="headerlink" title="2.3、Intel命名规则"></a>2.3、Intel命名规则</h3><p><img src="https://files.mdnice.com/user/17335/cb6d834a-7fe5-43c0-8108-eddd736992b5.png"></p>
+<h2 id="3、常用功能"><a href="#3、常用功能" class="headerlink" title="3、常用功能"></a>3、常用功能</h2><h3 id="3-1、缓存"><a href="#3-1、缓存" class="headerlink" title="3.1、缓存"></a>3.1、缓存</h3><ul>
+<li>缓存（Cache Memory）是位于CPU和内存之间的临时存储器，目前的CPU拥有一级、二级和三级缓存（L1 L2 L3 Cache）</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/eb087875-8f03-4f82-ab7c-1aa9e30f29ef.png"></p>
+<h3 id="3-2、频率"><a href="#3-2、频率" class="headerlink" title="3.2、频率"></a>3.2、频率</h3><ul>
+<li><p>CPU 的频率主要包括主频、外频和倍频三部分。<strong>主频&#x3D;外频*倍频</strong>，这是X86架构CPU计算频率的公式，CPU主频为CPU 的额定工作频率，当内核数目和缓存大小一样时，主频越高的CPU性能越好</p>
+</li>
+<li><p><strong>Intel Turbo Boost</strong>技术为Intel睿频加速技术，此技术运行Intel CPU在标称频率（TSC）之上，性能分配上实现按需分配</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d38b3fe5-8f0e-47d0-9211-16a20294e0ce.png"></p>
+<h3 id="3-3、多核和超线程"><a href="#3-3、多核和超线程" class="headerlink" title="3.3、多核和超线程"></a>3.3、多核和超线程</h3><ul>
+<li><p><strong>多核处理器</strong>把多个CPU（核心）集成到单个集成电路芯片中</p>
+</li>
+<li><p><strong>超线程（Hyper-Threading）</strong>其实就是同时多线程（simultaneous multi-theading），是一项允许一个CPU执行多个控制流的技术</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/2f97991b-c63b-4bfc-a0b0-798b4cf87eb1.png"></p>
+<h3 id="3-4、CPU参数说明"><a href="#3-4、CPU参数说明" class="headerlink" title="3.4、CPU参数说明"></a>3.4、CPU参数说明</h3><p><img src="https://files.mdnice.com/user/17335/47b9c98a-da41-41a9-bc36-80e4597af00b.png"></p>
+<h2 id="4、国产CPU"><a href="#4、国产CPU" class="headerlink" title="4、国产CPU"></a>4、国产CPU</h2><p>目前都在主推信创，即信息技术应用创新产业，旨在实现信息技术领域的自主可控，保障国家信息安全，主打的是国产化替代。国产 CPU 和操作系统是信创产业的根基，也是信创产业中技术壁垒最高的环节。 没有CPU 和操作系统的安全可控，整个信创产业就是无根之木、无源之水</p>
+<p><img src="https://files.mdnice.com/user/17335/ecaeed46-2826-4f38-956d-105a6f59deab.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/264b60b4-40d0-4ce7-80c0-47e980e362cf.png"></p>
+<h2 id="4-1、举例"><a href="#4-1、举例" class="headerlink" title="4.1、举例"></a>4.1、举例</h2><p>前不久接触过一个银河麒麟的国产操作系统，用着不是那么好用，简单放一个桌面截图吧</p>
+<p><img src="https://files.mdnice.com/user/17335/d9f4d3fd-a7a8-4b30-91bf-806a7819c3ca.png"></p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>欢迎大家关注我，公众号会分享个人日常运维记录，欢迎点赞和在看！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8CPU%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzkp0009mcvh4qik78ww" data-title="服务器CPU介绍" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" rel="tag">服务器硬件科普</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-服务器内存介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished">2023-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/">服务器内存介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>本篇文章用于介绍服务器内存，包括基本概念、内存演进、规格识别、内存条配置规则等</p>
+</blockquote>
+<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器内存是指安装在服务器主板上的用于存储和处理数据的硬件组件。它是服务器中的主要性能关键因素之一，对于服务器的运行速度、多任务处理能力和数据处理效率起着至关重要的作用。以下是一些关于服务器内存的重要概念和特点：</p>
+<ul>
+<li><p>容量：服务器内存的容量决定了服务器可以同时存储和处理的数据量。较大的内存容量可以支持更多的应用程序和用户同时访问服务器，提供更高的性能和响应速度。</p>
+</li>
+<li><p>类型：服务器内存通常使用ECC（Error-Correcting Code）内存，它具有纠错功能，可以检测和修复内存中的错误。常见的服务器内存类型包括DDR4、DDR3等。</p>
+</li>
+<li><p>速度：服务器内存的速度指的是内存模块的数据传输速率。较高的内存速度可以提供更快的数据读写和处理能力，从而提高服务器的性能。</p>
+</li>
+<li><p>扩展性：服务器内存通常具有较高的扩展性，可以通过添加更多的内存模块来扩大内存容量。这对于满足不断增长的业务需求和提高服务器性能非常重要。</p>
+</li>
+<li><p>通道和插槽：服务器内存通常分为多个通道和插槽，以支持多通道内存架构。多通道内存可以提供更高的数据传输带宽，提高服务器的性能。</p>
+</li>
+<li><p>冗余和热插拔：一些服务器支持冗余内存配置，即在一个内存模块故障时，其他内存模块可以继续工作，确保服务器的稳定性和可靠性。此外，一些服务器还支持热插拔内存，即可以在服务器运行时添加或移除内存模块，而无需关闭服务器</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/939d2631-d531-42c8-b0e1-07b91df42b5a.png"></p>
+<h3 id="1-1、存储功能分类"><a href="#1-1、存储功能分类" class="headerlink" title="1.1、存储功能分类"></a>1.1、存储功能分类</h3><p><img src="https://files.mdnice.com/user/17335/00cedc4a-b6a1-48a9-9002-6e12675369b1.png"></p>
+<h3 id="1-2、DRAM分类"><a href="#1-2、DRAM分类" class="headerlink" title="1.2、DRAM分类"></a>1.2、DRAM分类</h3><p><img src="https://files.mdnice.com/user/17335/09dda3bf-2240-462f-a077-0e8b602f902e.png"></p>
+<h3 id="1-3、DRAM在系统中位置"><a href="#1-3、DRAM在系统中位置" class="headerlink" title="1.3、DRAM在系统中位置"></a>1.3、DRAM在系统中位置</h3><ul>
+<li><p>早期内存通过存储器总线和北桥（MCH）相连，北桥通过前段总线与CPU通信</p>
+</li>
+<li><p>从Intel Nehalem起，北桥被集成到CPU内部，内存直接通过存储器总线与CPU相连</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d86fa7c4-4252-4da2-bffe-0e6eebd2f016.png"></p>
+<h2 id="2、内存演进"><a href="#2、内存演进" class="headerlink" title="2、内存演进"></a>2、内存演进</h2><p><img src="https://files.mdnice.com/user/17335/9b364bac-61b2-4f79-9bfc-dc2313a95958.png"></p>
+<h3 id="2-1、内存演进的指标：容量、功耗、性能"><a href="#2-1、内存演进的指标：容量、功耗、性能" class="headerlink" title="2.1、内存演进的指标：容量、功耗、性能"></a>2.1、内存演进的指标：容量、功耗、性能</h3><p><img src="https://files.mdnice.com/user/17335/56126915-6294-4952-904d-fa36e9a92435.png"></p>
+<h3 id="2-2、内存条类型介绍"><a href="#2-2、内存条类型介绍" class="headerlink" title="2.2、内存条类型介绍"></a>2.2、内存条类型介绍</h3><p><img src="https://files.mdnice.com/user/17335/53ef00d9-b63f-448e-ac34-ec75737a9fb1.png"></p>
+<h3 id="2-3、主流内存条生产厂家"><a href="#2-3、主流内存条生产厂家" class="headerlink" title="2.3、主流内存条生产厂家"></a>2.3、主流内存条生产厂家</h3><p><img src="https://files.mdnice.com/user/17335/4f3f2d67-91bd-41f6-81e8-ba80156dc912.png"></p>
+<h2 id="3、常用功能"><a href="#3、常用功能" class="headerlink" title="3、常用功能"></a>3、常用功能</h2><h3 id="3-1、内存插槽类型"><a href="#3-1、内存插槽类型" class="headerlink" title="3.1、内存插槽类型"></a>3.1、内存插槽类型</h3><p><img src="https://files.mdnice.com/user/17335/2dac040b-e57a-438d-9206-428b1fb5cd2c.png"></p>
+<h3 id="3-2、内存条组成"><a href="#3-2、内存条组成" class="headerlink" title="3.2、内存条组成"></a>3.2、内存条组成</h3><p><img src="https://files.mdnice.com/user/17335/41c69653-df33-4c65-bd74-63f14f678f86.png"></p>
+<h3 id="3-3、内存条规格识别"><a href="#3-3、内存条规格识别" class="headerlink" title="3.3、内存条规格识别"></a>3.3、内存条规格识别</h3><p><img src="https://files.mdnice.com/user/17335/5b2b7081-ea81-474b-85bf-0686999209e5.png"></p>
+<h3 id="3-4、服务器内存条配置原则"><a href="#3-4、服务器内存条配置原则" class="headerlink" title="3.4、服务器内存条配置原则"></a>3.4、服务器内存条配置原则</h3><p><img src="https://files.mdnice.com/user/17335/489e4970-2c41-437b-ad10-1aced3601c4d.png"></p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
+<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
+<li>点“在看”支持我吧!</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://rendong3.github.io/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E4%BB%8B%E7%BB%8D/" data-id="cls9wmzks000bmcvh3c5kee6g" data-title="服务器内存介绍" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" rel="tag">服务器硬件科普</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-服务器管理平台（1）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished">2023-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/">服务器管理平台（1）- 概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="什么是SRE"><a href="#什么是SRE" class="headerlink" title="什么是SRE?"></a>什么是SRE?</h2><blockquote>
+<p>SRE即Site Reliability Engineering（网站可靠性工程），是一种源于Google的工作理念和方法。它旨在确保产品和服务的高可用性和可靠性。</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/c1ff8726-7b7e-46fc-8c3b-74a387376a9f.png"></p>
+<ul>
+<li><p>SRE团队的成员通常是拥有软件开发背景的工程师，他们不仅设计和实施自动化工具和流程，还参与构建、部署和运行大规模复杂系统。SRE需要同时具备运维能力和开发能力</p>
+</li>
+<li><p>运维方面：之前文章已经介绍过服务器基础 、CPU、内存、硬盘等相关的硬件知识，感兴趣可以去看下历史文章，其他运维实例将在后续文章发布</p>
+</li>
+<li><p>开发方面：本人之前在某某云厂商用Go开发过数据平台，用于对批量云计算服务器进行全流程信息统计；因此计划更新简化版服务器管理平台开发实战教程，本篇文章会先对该平台进行整体介绍</p>
+</li>
+</ul>
+<h1 id="1、背景需求"><a href="#1、背景需求" class="headerlink" title="1、背景需求"></a>1、背景需求</h1><ul>
+<li>针对机房服务器采集操作系统等相关数据，如CPU、内存、PCI设备、登录日志、机器位置等信息，解决故障服务器定位难、服务器信息监控不完善等痛点</li>
+<li>实现定时采集、自主上报、落地存储、报表展示、界面可视化curd的全链路流程一体化，构建自动化运维告警监控工具，即服务器数据管理平台</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/bd5dd2e6-23fb-4f89-a6b2-d4607f4f82c3.png"></p>
+<h1 id="2、整体架构"><a href="#2、整体架构" class="headerlink" title="2、整体架构"></a>2、整体架构</h1><h2 id="2-1、架构图"><a href="#2-1、架构图" class="headerlink" title="2.1、架构图"></a>2.1、架构图</h2><p><img src="https://files.mdnice.com/user/17335/032fa5b7-7112-4978-b0d0-48c86c822b75.png"></p>
+<h3 id="2-2、设计思路"><a href="#2-2、设计思路" class="headerlink" title="2.2、设计思路"></a>2.2、设计思路</h3><ol>
+<li><p><strong>定时上报：</strong>Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知</p>
+</li>
+<li><p><strong>稳定后端</strong>：Go-web后端借鉴Gin框架，后台服务更稳定、更轻量</p>
+</li>
+<li><p><strong>落地存储</strong>：MySQL单库多表进行永久化数据存储</p>
+</li>
+<li><p><strong>报表展示</strong>：Grafana定制化模版多样数据展示</p>
+</li>
+<li><p><strong>可视化curd：</strong>layUI框架搭建前端系统，界面可视化增删改查操作</p>
+</li>
+<li><p><strong>钉钉告警：</strong>SQL配置告警规则，定时轮询进行钉钉告警</p>
+</li>
+<li><p><strong>文件存储</strong>：HTTPD文件服务器稳定上传下载</p>
+</li>
+</ol>
+<h2 id="2-3、选型指南"><a href="#2-3、选型指南" class="headerlink" title="2.3、选型指南"></a>2.3、选型指南</h2><h3 id="Gin框架"><a href="#Gin框架" class="headerlink" title="Gin框架"></a><a target="_blank" rel="noopener" href="https://gin-gonic.com/">Gin框架</a></h3><ul>
+<li><p>Go开源轻量级Web框架、简单易用</p>
+</li>
+<li><p>官方文档齐全、社区活跃</p>
+</li>
+<li><p>支持中间件、路由分组</p>
+</li>
+<li><p>支持JSON验证、错误分级管理</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/7442dbf3-95d0-4ff6-bc57-6e723f9a62d7.png"></p>
+<h3 id="LayUI"><a href="#LayUI" class="headerlink" title="LayUI"></a><a target="_blank" rel="noopener" href="https://layui.itze.cn/">LayUI</a></h3><ul>
+<li><p>开源模块化前端UI框架、拿来即用</p>
+</li>
+<li><p>遵循原生态的 HTML&#x2F;CSS&#x2F;JavaScript 开发模式</p>
+</li>
+<li><p>只需面向浏览器本身、无需涉足各类构建工具</p>
+</li>
+<li><p>文档齐全、示例众多</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/73fe051b-0ec6-482e-992e-dcd48fc76b67.png"></p>
+<h3 id="Postman调试工具"><a href="#Postman调试工具" class="headerlink" title="Postman调试工具"></a><a target="_blank" rel="noopener" href="https://www.postman.com/">Postman调试工具</a></h3><ul>
+<li><p>自动化API接口调试工具</p>
+</li>
+<li><p>模拟HTTP Request如GET、POST 、DELETE等请求</p>
+</li>
+<li><p>模拟发送文件(图片、TXT等) 等特定接口测试</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/57355918-c034-4ea3-9744-0b4810b72d25.png"></p>
+<h1 id="3、环境准备"><a href="#3、环境准备" class="headerlink" title="3、环境准备"></a>3、环境准备</h1><h2 id="3-1、环境参数"><a href="#3-1、环境参数" class="headerlink" title="3.1、环境参数"></a>3.1、环境参数</h2><figure class="highlight plaintext"><figcaption><span>Text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Centos7.9</span><br><span class="line">MySQL8.0.20</span><br><span class="line">go1.19.3</span><br><span class="line">Gin</span><br><span class="line">Grafana8.3.3</span><br><span class="line">httpd</span><br><span class="line">LayUI2.8.11</span><br><span class="line">GoLand2022.2</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3-2、安装教程"><a href="#3-2、安装教程" class="headerlink" title="3.2、安装教程"></a>3.2、安装教程</h2><h3 id="HTTPD文件服务器"><a href="#HTTPD文件服务器" class="headerlink" title="HTTPD文件服务器"></a>HTTPD文件服务器</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/stalin_/article/details/90200173">https://blog.csdn.net/stalin_&#x2F;article&#x2F;details&#x2F;90200173</a></p>
+<h3 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/super_xyo/article/details/128210788">https://blog.csdn.net/super_xyo&#x2F;article&#x2F;details&#x2F;128210788</a></p>
+<h3 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h3><p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15735145/5546596">https://blog.51cto.com/u_15735145/5546596</a></p>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36539042/article/details/125385002">https://blog.csdn.net/qq_36539042&#x2F;article&#x2F;details&#x2F;125385002</a></p>
+<h3 id="LayUI-1"><a href="#LayUI-1" class="headerlink" title="LayUI"></a>LayUI</h3><p><a target="_blank" rel="noopener" href="https://layui.dev/">https://layui.dev/</a></p>
+<h3 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Shyllin/article/details/123690458">https://blog.csdn.net/Shyllin/article/details/123690458</a></p>
+<h1 id="4、成品简介"><a href="#4、成品简介" class="headerlink" title="4、成品简介"></a>4、成品简介</h1><h2 id="Grafana-1"><a href="#Grafana-1" class="headerlink" title="Grafana"></a>Grafana</h2><p><img src="https://files.mdnice.com/user/17335/97fe1552-ed3b-4910-aca5-1dfc22793f85.png"></p>
+<h2 id="LayUI-2"><a href="#LayUI-2" class="headerlink" title="LayUI"></a>LayUI</h2><p><img src="https://files.mdnice.com/user/17335/a5180f6c-a589-4bb2-b54f-63c6cd163280.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/97aa2788-0526-402f-87f6-16523cd2d985.png"></p>
+<h2 id="钉钉"><a href="#钉钉" class="headerlink" title="钉钉"></a>钉钉</h2><p><img src="https://files.mdnice.com/user/17335/e0c85da8-e16e-4436-ae43-a996312eed46.png"></p>
 <h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
 <p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%BA%E6%88%BF%E4%B8%8A%E6%9E%B6%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B/" data-id="cls9wmzkx000imcvh3vt66v9d" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://rendong3.github.io/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/" data-id="cls9wmzkz000lmcvhf9qrfj4e" data-title="服务器管理平台（1）- 概述" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/" rel="tag">服务器管理平台</a></li></ul>
+
     </footer>
   </div>
   
@@ -809,28 +921,113 @@
 
 
   
-    <article id="post-服务器管理平台（6）- Utils" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-服务器管理平台（2）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/" class="article-date">
-  <time class="dt-published" datetime="2024-02-06T05:00:55.582Z" itemprop="datePublished">2024-02-06</time>
+    <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished">2023-12-14</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/">服务器管理平台（2）- 数据库表设计</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Utils"><a href="#Utils" class="headerlink" title="Utils"></a>Utils</h1><ul>
-<li>本篇为服务器管理平台的结篇，讲述一些必要的Util，如钉钉告警、安全加密、远程登录等功能的实现</li>
+        <h1 id="数据库表设计"><a href="#数据库表设计" class="headerlink" title="数据库表设计"></a>数据库表设计</h1><blockquote>
+<p>本篇文章主要对数据管理平台数据库表设计进行介绍，包括单库多表设计、SQL语句、视图构造等</p>
+</blockquote>
+<h2 id="1、整体设计"><a href="#1、整体设计" class="headerlink" title="1、整体设计"></a>1、整体设计</h2><ul>
+<li><p>设备品牌、序列号、型号等使用业务主表进行记录，逻辑磁盘、PCI设备可能出现1对N的情况，分别使用PCI设备表、Mac地址表、逻辑磁盘表、应用程序表、登录日志表进行记录</p>
+</li>
+<li><p>构建虚拟视图统一查询，多表联合，使用业务IP+SN序列号作为设备唯一标识</p>
+</li>
+<li><p>增加历史记录表，对所有表数据的更新删除操作进行记录，方便回溯</p>
+</li>
 </ul>
-<h2 id="1、钉钉告警"><a href="#1、钉钉告警" class="headerlink" title="1、钉钉告警"></a>1、钉钉告警</h2><h3 id="1-1、SQL配置告警规则"><a href="#1-1、SQL配置告警规则" class="headerlink" title="1.1、SQL配置告警规则"></a>1.1、SQL配置告警规则</h3><ol>
-<li><p>逻辑磁盘容量已使用比例超过90%</p>
-</li>
-<li><p>超过30天未登录</p>
-</li>
-</ol>
-<table>
+<p><img src="https://files.mdnice.com/user/17335/e0222c2d-2e89-4b64-b141-d6caf5f03208.png"></p>
+<h2 id="2、库表设计"><a href="#2、库表设计" class="headerlink" title="2、库表设计"></a>2、库表设计</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分表结构设计</p>
+</blockquote>
+<h3 id="2-1、业务主表"><a href="#2-1、业务主表" class="headerlink" title="2.1、业务主表"></a>2.1、业务主表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>int</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>Brand</td>
+<td>string</td>
+<td>品牌</td>
+</tr>
+<tr>
+<td>Model</td>
+<td>string</td>
+<td>型号</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>timestamp</td>
+<td>CPU</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>timestamp</td>
+<td>内存</td>
+</tr>
+<tr>
+<td>PlatformType</td>
+<td>string</td>
+<td>平台类型</td>
+</tr>
+<tr>
+<td>UseFor</td>
+<td>string</td>
+<td>用途</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h3 id="2-2、PCI设备表"><a href="#2-2、PCI设备表" class="headerlink" title="2.2、PCI设备表"></a>2.2、PCI设备表</h3><table>
 <thead>
 <tr>
 <th></th>
@@ -849,29 +1046,19 @@
 <td>自增ID</td>
 </tr>
 <tr>
-<td>Table</td>
+<td>BusinessIp</td>
 <td>string</td>
-<td>监测表名</td>
+<td>业务Ip地址</td>
 </tr>
 <tr>
-<td>Metric</td>
+<td>SN</td>
 <td>string</td>
-<td>监测指标</td>
+<td>序列号</td>
 </tr>
 <tr>
-<td>Template</td>
+<td>PCIDevice</td>
 <td>string</td>
-<td>告警模版</td>
-</tr>
-<tr>
-<td>Frequency</td>
-<td>string</td>
-<td>告警频率</td>
-</tr>
-<tr>
-<td>Threshold</td>
-<td>string</td>
-<td>指标阈值</td>
+<td>PCI设备表</td>
 </tr>
 <tr>
 <td>CreatedAt</td>
@@ -884,38 +1071,76 @@
 <td>修改时间</td>
 </tr>
 </tbody></table>
-<h3 id="1-2、Shell定时轮询"><a href="#1-2、Shell定时轮询" class="headerlink" title="1.2、Shell定时轮询"></a>1.2、Shell定时轮询</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 打开定时任务配置文件</span></span></span><br><span class="line"></span><br><span class="line">crontab -e</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 指定每个工作日上午11:10定时执行脚本，并把执行脚本的日志写入文件 result.log</span></span></span><br><span class="line"></span><br><span class="line">10 11 * * 1,2,3,4,5 sh [alert.sh](http://alert.sh) &gt; result.log</span><br></pre></td></tr></table></figure>
+<h3 id="2-3、MAC地址表"><a href="#2-3、MAC地址表" class="headerlink" title="2.3、MAC地址表"></a>2.3、MAC地址表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>string</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>MacAddress</td>
+<td>string</td>
+<td>MAC地址</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h2 id="3、SQL设计"><a href="#3、SQL设计" class="headerlink" title="3、SQL设计"></a>3、SQL设计</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分建表SQL，作为参考</p>
+</blockquote>
+<h3 id="3-1、历史记录表"><a href="#3-1、历史记录表" class="headerlink" title="3.1、历史记录表"></a>3.1、历史记录表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_history` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `Object` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `PK` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `Key` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `OpKind` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `PrevModify` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `NextModify` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `Version` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `Operator` <span class="type">varchar</span>(<span class="number">64</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-3、核心功能函数"><a href="#1-3、核心功能函数" class="headerlink" title="1.3、核心功能函数"></a>1.3、核心功能函数</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> openUrl = <span class="string">&quot;https://oapi.dingtalk.com/robot/send?access_token=43e4ad2bcbbef692c7652b9eecca6fd51a0db9e544edcb579640e78f71259006&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// NotifyHandler NotifyHandler</span></span><br><span class="line"><span class="keyword">type</span> NotifyHandler <span class="keyword">struct</span> &#123;</span><br><span class="line">	web.BaseHandler</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// POST method</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(NotifyHandler)</span></span> POST(ctx *web.Context) &#123;</span><br><span class="line">	<span class="comment">//1.根据POST表单拼接SQL</span></span><br><span class="line">	<span class="keyword">var</span> rules []model.AlertRule</span><br><span class="line">	rules, err := model.GetRules()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		ctx.JSON(<span class="string">&quot;Describe AlertRule&quot;</span>, <span class="number">101</span>, err)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//2. 查询记录匹配告警模版</span></span><br><span class="line">	<span class="keyword">for</span> _, rule := <span class="keyword">range</span> rules &#123;</span><br><span class="line">		<span class="keyword">switch</span> rule.Table &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&quot;es_logicaldisk&quot;</span>:</span><br><span class="line">			threshold, err := strconv.Atoi(rule.Threshold)</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				ctx.JSON(<span class="string">&quot;Describe AlertRule Threshold ,table es_logicaldisk&quot;</span>, <span class="number">101</span>, err)</span><br><span class="line">				<span class="keyword">return</span></span><br><span class="line">			&#125;</span><br><span class="line">			disks, err := model.GetDiskInfo(threshold)</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				ctx.JSON(<span class="string">&quot;Describe GetDiskInfo Fail&quot;</span>, <span class="number">101</span>, err)</span><br><span class="line">				<span class="keyword">return</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(disks) != <span class="number">0</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> _, disk := <span class="keyword">range</span> disks &#123;</span><br><span class="line">					alarmStr := fmt.Sprintf(<span class="string">&quot;时间: %s\n告警标题：逻辑磁盘容量超出%v\n业务IP：%v\n序列号:%v\n磁盘：%v使用百分比%v&quot;</span>,</span><br><span class="line">						time.Now().Format(<span class="string">&quot;2006-01-02 15:04:05&quot;</span>), rule.Threshold, disk.BusinessIp, disk.SN, disk.Filesystem, disk.UsePercent)</span><br><span class="line">					err := notify.SendDingCh(openUrl, alarmStr)</span><br><span class="line">					<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">						ctx.JSON(<span class="string">&quot;Describe LogicalDisk&quot;</span>, <span class="number">101</span>, err)</span><br><span class="line">						<span class="keyword">return</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&quot;es_logininfo&quot;</span>:</span><br><span class="line">			logins, err := model.GetLoginInfo()</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				ctx.JSON(<span class="string">&quot;Describe GetLoginInfo Fail&quot;</span>, <span class="number">101</span>, err)</span><br><span class="line">				<span class="keyword">return</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(logins) != <span class="number">0</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> _, login := <span class="keyword">range</span> logins &#123;</span><br><span class="line">					alarmStr := fmt.Sprintf(<span class="string">&quot;时间: %s\n告警标题：超过30天未登录\n业务IP：%v\n序列号:%v\n上次登录时间：%v\n,距今间隔：%v&quot;</span>,</span><br><span class="line">						time.Now().Format(<span class="string">&quot;2006-01-02 15:04:05&quot;</span>), login.BusinessIp, login.SN, login.StartTime, login.Interval)</span><br><span class="line">					err := notify.SendDingCh(openUrl, alarmStr)</span><br><span class="line">					<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">						ctx.JSON(<span class="string">&quot;Describe LoginInfo&quot;</span>, <span class="number">101</span>, err)</span><br><span class="line">						<span class="keyword">return</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ctx.JSON(fmt.Sprintf(<span class="string">&quot;ALL Alert Info Already send&quot;</span>), <span class="number">0</span>, <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="1-4、结果验证"><a href="#1-4、结果验证" class="headerlink" title="1.4、结果验证"></a>1.4、结果验证</h3><p><img src="https://files.mdnice.com/user/17335/e0c85da8-e16e-4436-ae43-a996312eed46.png"></p>
-<h2 id="2、数据安全加密"><a href="#2、数据安全加密" class="headerlink" title="2、数据安全加密"></a>2、数据安全加密</h2><h3 id="2-1、Token鉴权"><a href="#2-1、Token鉴权" class="headerlink" title="2.1、Token鉴权"></a>2.1、Token鉴权</h3><ul>
-<li>根据web访问来源平台，分配不同Token进行鉴权识别，不同Token标识不同平台，权限不同，如web链接访问无删除权限</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/049f30fc-6e24-495a-89c4-42fa29568d14.png"></p>
-<h3 id="2-2、权限分级及加密存储"><a href="#2-2、权限分级及加密存储" class="headerlink" title="2.2、权限分级及加密存储"></a>2.2、权限分级及加密存储</h3><ul>
-<li>平台账户分级，不同权限可访问界面不同<br><img src="https://files.mdnice.com/user/17335/fe427fd0-fdc9-42d6-a6e5-a897fa2c720f.png"></li>
-<li>账户密码加密存储<br><img src="https://files.mdnice.com/user/17335/be9e298a-a9c3-4660-8848-ad38239bd1b4.png"></li>
-</ul>
-<h2 id="3、远程登录"><a href="#3、远程登录" class="headerlink" title="3、远程登录"></a>3、远程登录</h2><h3 id="3-1、Ansible实现"><a href="#3-1、Ansible实现" class="headerlink" title="3.1、Ansible实现"></a>3.1、Ansible实现</h3><ul>
-<li>安装<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 安装Ansible</span></span></span><br><span class="line">    yum install -y ansible</span><br><span class="line">    yum install -y sshpass</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## 修改配置，忽略告警</span></span></span><br><span class="line">    vim /etc/ansible/ansible.cfg</span><br><span class="line">    </span><br><span class="line">    [defaults]</span><br><span class="line"></span><br><span class="line">host_key_checking = False # 第一次远程ssh主机需要将机器指纹添加到known_hosts，此设置忽略该步骤</span><br><span class="line">    command_warnings=False  #忽略ansible执行命令的告警信息</span><br><span class="line">    deprecation_warnings=False</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## 增加test用户组</span></span></span><br><span class="line">    vim /etc/ansible/hosts</span><br><span class="line">    </span><br><span class="line">    [test]</span><br><span class="line">    127.0.0.1 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=xxx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## 执行命令,验证功能</span></span></span><br><span class="line">  ansible test -m shell -a &#x27;lspci&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 批量机器登录 + 执行shell命令</span></span></span><br><span class="line">1. ip列表写入ip_list.ini</span><br><span class="line">2. 执行脚本</span><br><span class="line">    sh auto_ssh.sh $Password</span><br></pre></td></tr></table></figure></li>
-<li>auto_ssh.sh<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">if [ -s ./result.ini ] ; then</span><br><span class="line">    &gt; result.ini</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">Password=$1</span><br><span class="line">sed -i &#x27;/ansible_ssh/d&#x27; /etc/ansible/hosts</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加机器信息</span></span><br><span class="line">for Ip in $(cat ip_list.ini)</span><br><span class="line">  do</span><br><span class="line"></span><br><span class="line">      Username=&quot;root&quot;</span><br><span class="line">      echo -e &quot;$Ip ansible_ssh_user=$Username ansible_ssh_port=22 ansible_ssh_pass=$Password&quot; &gt;&gt; /etc/ansible/hosts</span><br><span class="line"></span><br><span class="line">  done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">[<span class="built_in">test</span>]用户组 执行命令</span></span><br><span class="line">ansible test -m shell -a &#x27;lspci&#x27; &gt; result.ini</span><br><span class="line">echo &quot;All Hosts Ansible Done , please check result.ini ! ! !&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="3-2、Expect实现"><a href="#3-2、Expect实现" class="headerlink" title="3.2、Expect实现"></a>3.2、Expect实现</h3><ul>
-<li>安装<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 安装expect</span></span></span><br><span class="line">  yum install -y expect</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 单台机器登录</span></span></span><br><span class="line">  sh login.sh $Ip $Pwd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 单台机器登录 + 执行shell命令</span></span></span><br><span class="line">1. 执行命令写入execute_cmd.ini</span><br><span class="line">2. 执行脚本</span><br><span class="line">  sh cmd_login.sh $Ip $Pwd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 批量机器登录 + 执行shell命令</span></span></span><br><span class="line">1. ip列表加入ip_list.ini</span><br><span class="line">2. 执行命令写入execute_cmd.ini</span><br><span class="line">3. 执行脚本</span><br><span class="line">sh list_cmd_login.sh $Pwd</span><br></pre></td></tr></table></figure></li>
-<li>auto_ssh.sh<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/usr/bin/expect</span></span><br><span class="line"></span><br><span class="line">set user &quot;root&quot;</span><br><span class="line">set host [lindex $argv 0]</span><br><span class="line">set port &quot;22&quot;</span><br><span class="line">set password [lindex $argv 1]</span><br><span class="line"></span><br><span class="line">spawn ssh -p$port $user@$host</span><br><span class="line">expect &#123;</span><br><span class="line">     &quot;*yes/no&quot; &#123; send &quot;yes\r&quot;; exp_continue &#125;</span><br><span class="line">     &quot;*assword:&quot; &#123; send &quot;$&#123;password&#125;\r&quot; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">interact</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><ul>
-<li>欢迎关注，感谢支持！</li>
-</ul>
+<h3 id="3-2、系统信息表"><a href="#3-2、系统信息表" class="headerlink" title="3.2、系统信息表"></a>3.2、系统信息表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_meta_info` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `BusinessIp` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;业务IP&#x27;</span>,</span><br><span class="line">    `SN` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;序列号&#x27;</span>,</span><br><span class="line">    `Brand` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;品牌&#x27;</span>,</span><br><span class="line">    `Model` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;型号&#x27;</span>,</span><br><span class="line">    `CpuModel` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;CPU型号&#x27;</span>,</span><br><span class="line">    `CpuNumber` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;CPU数量&#x27;</span>,</span><br><span class="line">    `Memory` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;内存&#x27;</span>,</span><br><span class="line">    `PlatformType` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;平台类型&#x27;</span>,</span><br><span class="line">    `UseFor` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;用途&#x27;</span>,</span><br><span class="line">    `MacAddress` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;MAC地址&#x27;</span>,</span><br><span class="line">    `LogicDisk` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;逻辑磁盘&#x27;</span>,</span><br><span class="line">    `PCIDevices` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;PCI设备&#x27;</span>,</span><br><span class="line">    `Program` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;应用程序&#x27;</span>,</span><br><span class="line">    `LoginInfo` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;登录日志&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`),</span><br><span class="line">    <span class="keyword">UNIQUE</span> KEY `business` (`BusinessIp`,`SN`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+<h3 id="3-3、逻辑磁盘表"><a href="#3-3、逻辑磁盘表" class="headerlink" title="3.3、逻辑磁盘表"></a>3.3、逻辑磁盘表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_logicaldisk` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `BusinessIp` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;业务IP&#x27;</span>,</span><br><span class="line">    `SN` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;序列号&#x27;</span>,</span><br><span class="line">    `Filesystem` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;系统盘&#x27;</span>,</span><br><span class="line">    `Size` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;大小&#x27;</span>,</span><br><span class="line">    `Used` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;已使用&#x27;</span>,</span><br><span class="line">    `Avail` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;可使用&#x27;</span>,</span><br><span class="line">    `UsePercent` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;使用百分比&#x27;</span>,</span><br><span class="line">    `Mounted` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;挂载点&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+<h3 id="3-4、视图表"><a href="#3-4、视图表" class="headerlink" title="3.4、视图表"></a>3.4、视图表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> es_meatinfoview <span class="keyword">AS</span> <span class="keyword">SELECT</span></span><br><span class="line">    es_meta_info.BusinessIp,</span><br><span class="line">    es_meta_info.SN,</span><br><span class="line">    es_meta_info.Brand,</span><br><span class="line">    es_meta_info.Model,</span><br><span class="line">    es_meta_info.CPUModel,</span><br><span class="line">    es_meta_info.CPUNumber,</span><br><span class="line">    es_meta_info.Memory,</span><br><span class="line">    es_meta_info.PlatformType,</span><br><span class="line">    es_meta_info.UseFor,</span><br><span class="line">    CONCAT_WS(<span class="string">&#x27;---&#x27;</span>,es_logicaldisk.Filesystem, es_logicaldisk.Size, es_logicaldisk.UsePercent, es_logicaldisk.Mounted) <span class="keyword">as</span> FileSystem,</span><br><span class="line">    es_macaddress.MacAddress,</span><br><span class="line">    es_pcidevice.PCIDevice,</span><br><span class="line">    es_product.Program,</span><br><span class="line">    es_product.PORT,</span><br><span class="line">    es_meta_info.CreatedAt</span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">    es_meta_info</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_logicaldisk <span class="keyword">ON</span> es_logicaldisk.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_logicaldisk.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_macaddress <span class="keyword">ON</span> es_macaddress.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_macaddress.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_pcidevice <span class="keyword">ON</span> es_pcidevice.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_pcidevice.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_product <span class="keyword">ON</span> es_product.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_product.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">    es_logicaldisk.Filesystem <span class="keyword">NOT</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%tmpfs%&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4、数据展示"><a href="#4、数据展示" class="headerlink" title="4、数据展示"></a>4、数据展示</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分表数据，作为参考，数据IP为之前腾讯云测试公网IP，现已弃用，请勿访问！</p>
+</blockquote>
+<h3 id="4-1、PCI设备信息"><a href="#4-1、PCI设备信息" class="headerlink" title="4.1、PCI设备信息"></a>4.1、PCI设备信息</h3><p><img src="https://files.mdnice.com/user/17335/bf1170f4-b442-49c6-a598-37b6d68756a7.png"></p>
+<h3 id="4-2、逻辑磁盘信息"><a href="#4-2、逻辑磁盘信息" class="headerlink" title="4.2、逻辑磁盘信息"></a>4.2、逻辑磁盘信息</h3><p><img src="https://files.mdnice.com/user/17335/405c7c37-eabc-4a20-acc4-ecc472fa8f41.png"></p>
+<h3 id="4-3、历史记录信息"><a href="#4-3、历史记录信息" class="headerlink" title="4.3、历史记录信息"></a>4.3、历史记录信息</h3><p><img src="https://files.mdnice.com/user/17335/47d67db9-e72b-45bc-9a55-1cf60000908c.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
 <p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://rendong3.github.io/2024/02/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/" data-id="cls9wmzl3000rmcvhff8m9kpz" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://rendong3.github.io/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/" data-id="cls9wmzl0000mmcvh884w9ruf" data-title="服务器管理平台（2）- 数据库表设计" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/" rel="tag">服务器管理平台</a></li></ul>
+
     </footer>
   </div>
   
@@ -942,7 +1167,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E5%88%9B/" rel="tag">信创</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" rel="tag">日常运维实例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" rel="tag">服务器硬件科普</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/" rel="tag">服务器管理平台</a></li></ul>
     </div>
   </div>
 
@@ -952,7 +1177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E4%BF%A1%E5%88%9B/" style="font-size: 20px;">信创</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a>
+      <a href="/tags/%E4%BF%A1%E5%88%9B/" style="font-size: 20px;">信创</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E8%BF%90%E7%BB%B4%E5%AE%9E%E4%BE%8B/" style="font-size: 13.33px;">日常运维实例</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE/" style="font-size: 20px;">服务器硬件科普</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/" style="font-size: 16.67px;">服务器管理平台</a>
     </div>
   </div>
 
@@ -961,7 +1186,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li></ul>
     </div>
   </div>
 
@@ -982,7 +1207,7 @@
           </li>
         
           <li>
-            <a href="/2024/02/11/%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/">腾--PK生态主导者</a>
+            <a href="/2024/02/11/%E9%A3%9E%E8%85%BE--PK%E7%94%9F%E6%80%81%E4%B8%BB%E5%AF%BC%E8%80%85/">飞腾--PK生态主导者</a>
           </li>
         
           <li>
