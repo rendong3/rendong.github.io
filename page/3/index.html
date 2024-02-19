@@ -152,19 +152,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-服务器管理平台（1）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-服务器管理平台（3）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/">服务器管理平台（1）- 概述</a>
+      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/">服务器管理平台（3）- Web服务端</a>
     </h1>
   
 
         
-        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/" class="archive-article-date">
+        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/" class="archive-article-date">
   	<time datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-14</time>
 </a>
         
@@ -172,84 +172,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="什么是SRE"><a href="#什么是SRE" class="headerlink" title="什么是SRE?"></a>什么是SRE?</h2><blockquote>
-<p>SRE即Site Reliability Engineering（网站可靠性工程），是一种源于Google的工作理念和方法。它旨在确保产品和服务的高可用性和可靠性。</p>
+        <h1 id="Web服务端"><a href="#Web服务端" class="headerlink" title="Web服务端"></a>Web服务端</h1><blockquote>
+<p>整体架构采用前后端分离形式，后端使用Golang实现，参考Gin框架</p>
 </blockquote>
-<p><img src="https://files.mdnice.com/user/17335/c1ff8726-7b7e-46fc-8c3b-74a387376a9f.png"></p>
+<h2 id="1、后端服务"><a href="#1、后端服务" class="headerlink" title="1、后端服务"></a>1、后端服务</h2><h3 id="1-1、服务端架构"><a href="#1-1、服务端架构" class="headerlink" title="1.1、服务端架构"></a>1.1、服务端架构</h3><p><img src="https://files.mdnice.com/user/17335/45615db1-bf6d-449b-8c09-b6c5a168b563.png"></p>
 <ul>
-<li><p>SRE团队的成员通常是拥有软件开发背景的工程师，他们不仅设计和实施自动化工具和流程，还参与构建、部署和运行大规模复杂系统。SRE需要同时具备运维能力和开发能力</p>
+<li>代码可参考Github开源项目：<a target="_blank" rel="noopener" href="https://github.com/pbrong/hrms">https://github.com/pbrong/hrms</a></li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/aee7ec54-2ad3-4175-8460-dd0428fea35a.png"></p>
+<h3 id="1-2、服务地址"><a href="#1-2、服务地址" class="headerlink" title="1.2、服务地址"></a>1.2、服务地址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http://x.x.x.x:8000/api/v1/meta/info</span><br><span class="line">http://x.x.x.x:8000/api/v1/logicDisk</span><br><span class="line">http://x.x.x.x:8000/api/v1/pciDevice</span><br><span class="line">http://x.x.x.x:8000/api/v1/macAddress</span><br><span class="line">http://x.x.x.x:8000/api/v1/product</span><br><span class="line">http:// x.x.x.x:8000/api/v1/loginInfo</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>后端接口使用Token鉴权，shell脚本、web访问使用不同Token名称</p>
 </li>
-<li><p>运维方面：之前文章已经介绍过服务器基础 、CPU、内存、硬盘等相关的硬件知识，感兴趣可以去看下历史文章，其他运维实例将在后续文章发布</p>
-</li>
-<li><p>开发方面：本人之前在某某云厂商用Go开发过数据平台，用于对批量云计算服务器进行全流程信息统计；因此计划更新简化版服务器管理平台开发实战教程，本篇文章会先对该平台进行整体介绍</p>
+<li><p>为防止数据误删，Shell脚本、Web访问调用Delete接口，默认返回调用成功，但并不做删除操作，如需删除可由管理员操作（删除前需做备份，按照clone日期命名）</p>
 </li>
 </ul>
-<h1 id="1、背景需求"><a href="#1、背景需求" class="headerlink" title="1、背景需求"></a>1、背景需求</h1><ul>
-<li>针对机房服务器采集操作系统等相关数据，如CPU、内存、PCI设备、登录日志、机器位置等信息，解决故障服务器定位难、服务器信息监控不完善等痛点</li>
-<li>实现定时采集、自主上报、落地存储、报表展示、界面可视化curd的全链路流程一体化，构建自动化运维告警监控工具，即服务器数据管理平台</li>
+<h2 id="2、代码架构"><a href="#2、代码架构" class="headerlink" title="2、代码架构"></a>2、代码架构</h2><p><img src="https://files.mdnice.com/user/17335/e30e5922-7500-46a0-91b2-8b14b6d2a4c5.png"></p>
+<h3 id="2-1、API目录"><a href="#2-1、API目录" class="headerlink" title="2.1、API目录"></a>2.1、API目录</h3><blockquote>
+<p>该目录功能为启动Http服务，暴露服务地址，并对各接口实现get、post、put、delete等功能</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/d23b7a38-4d78-4b1e-bd33-375f3e403981.png"></p>
+<h3 id="2-2、config目录"><a href="#2-2、config目录" class="headerlink" title="2.2、config目录"></a>2.2、config目录</h3><blockquote>
+<p>该目录功能为web后端服务配置，包括数据库地址、端口、密码、后端服务接口等信息</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/f8946940-69aa-4b12-b550-dcd7024c7c95.png"></p>
+<h3 id="2-3、model目录"><a href="#2-3、model目录" class="headerlink" title="2.3、model目录"></a>2.3、model目录</h3><blockquote>
+<p>该目录为实体层，功能为数据库结构解析，记录MySQL数据库表</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/6b0e782c-d660-4e66-8d0f-aac5d0be5b69.png"></p>
+<h3 id="2-4、其他目录"><a href="#2-4、其他目录" class="headerlink" title="2.4、其他目录"></a>2.4、其他目录</h3><p><img src="https://files.mdnice.com/user/17335/6287f9f5-8d28-41f8-9830-c7cdf66f2836.png"></p>
+<ul>
+<li>notify目录对接钉钉，实现告警检测及告警通知功能</li>
+<li>service为中间服务层</li>
+<li>shell目录则对应相关脚本，如CPU、内存等相关信息采集脚本、告警信息模版等</li>
+<li>ssh目录为ansible和expect进行批量服务器ssh登录，实现批量命令执行等</li>
+<li>util为工具包目录，提供时间戳转换、结构体差异对比等必要功能</li>
+<li>README.md 项目说明</li>
+<li>go.mod 为go依赖列表文件</li>
+<li>go.sum 为 go依赖校验文件</li>
+<li>sql 为所用到的sql文件</li>
 </ul>
-<p><img src="https://files.mdnice.com/user/17335/bd5dd2e6-23fb-4f89-a6b2-d4607f4f82c3.png"></p>
-<h1 id="2、整体架构"><a href="#2、整体架构" class="headerlink" title="2、整体架构"></a>2、整体架构</h1><h2 id="2-1、架构图"><a href="#2-1、架构图" class="headerlink" title="2.1、架构图"></a>2.1、架构图</h2><p><img src="https://files.mdnice.com/user/17335/032fa5b7-7112-4978-b0d0-48c86c822b75.png"></p>
-<h3 id="2-2、设计思路"><a href="#2-2、设计思路" class="headerlink" title="2.2、设计思路"></a>2.2、设计思路</h3><ol>
-<li><p><strong>定时上报：</strong>Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知</p>
-</li>
-<li><p><strong>稳定后端</strong>：Go-web后端借鉴Gin框架，后台服务更稳定、更轻量</p>
-</li>
-<li><p><strong>落地存储</strong>：MySQL单库多表进行永久化数据存储</p>
-</li>
-<li><p><strong>报表展示</strong>：Grafana定制化模版多样数据展示</p>
-</li>
-<li><p><strong>可视化curd：</strong>layUI框架搭建前端系统，界面可视化增删改查操作</p>
-</li>
-<li><p><strong>钉钉告警：</strong>SQL配置告警规则，定时轮询进行钉钉告警</p>
-</li>
-<li><p><strong>文件存储</strong>：HTTPD文件服务器稳定上传下载</p>
-</li>
+<h2 id="3、接口功能测试"><a href="#3、接口功能测试" class="headerlink" title="3、接口功能测试"></a>3、接口功能测试</h2><ol>
+<li>按照sql文件建立更新数据库，数据库表必须含有create_at、update_at、deleted_at三个字段</li>
+<li>更新conf配置文件</li>
+<li>sh build.sh 执行脚本编译可执行文件执行 或 直接启动main.go运行<br><img src="https://files.mdnice.com/user/17335/23b05b19-f910-4ab1-b4e8-64d11d1a6c0c.png"></li>
 </ol>
-<h2 id="2-3、选型指南"><a href="#2-3、选型指南" class="headerlink" title="2.3、选型指南"></a>2.3、选型指南</h2><h3 id="Gin框架"><a href="#Gin框架" class="headerlink" title="Gin框架"></a><a target="_blank" rel="noopener" href="https://gin-gonic.com/">Gin框架</a></h3><ul>
-<li><p>Go开源轻量级Web框架、简单易用</p>
-</li>
-<li><p>官方文档齐全、社区活跃</p>
-</li>
-<li><p>支持中间件、路由分组</p>
-</li>
-<li><p>支持JSON验证、错误分级管理</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/7442dbf3-95d0-4ff6-bc57-6e723f9a62d7.png"></p>
-<h3 id="LayUI"><a href="#LayUI" class="headerlink" title="LayUI"></a><a target="_blank" rel="noopener" href="https://layui.itze.cn/">LayUI</a></h3><ul>
-<li><p>开源模块化前端UI框架、拿来即用</p>
-</li>
-<li><p>遵循原生态的 HTML&#x2F;CSS&#x2F;JavaScript 开发模式</p>
-</li>
-<li><p>只需面向浏览器本身、无需涉足各类构建工具</p>
-</li>
-<li><p>文档齐全、示例众多</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/73fe051b-0ec6-482e-992e-dcd48fc76b67.png"></p>
-<h3 id="Postman调试工具"><a href="#Postman调试工具" class="headerlink" title="Postman调试工具"></a><a target="_blank" rel="noopener" href="https://www.postman.com/">Postman调试工具</a></h3><ul>
-<li><p>自动化API接口调试工具</p>
-</li>
-<li><p>模拟HTTP Request如GET、POST 、DELETE等请求</p>
-</li>
-<li><p>模拟发送文件(图片、TXT等) 等特定接口测试</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/57355918-c034-4ea3-9744-0b4810b72d25.png"></p>
-<h1 id="3、环境准备"><a href="#3、环境准备" class="headerlink" title="3、环境准备"></a>3、环境准备</h1><h2 id="3-1、环境参数"><a href="#3-1、环境参数" class="headerlink" title="3.1、环境参数"></a>3.1、环境参数</h2><figure class="highlight plaintext"><figcaption><span>Text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Centos7.9</span><br><span class="line">MySQL8.0.20</span><br><span class="line">go1.19.3</span><br><span class="line">Gin</span><br><span class="line">Grafana8.3.3</span><br><span class="line">httpd</span><br><span class="line">LayUI2.8.11</span><br><span class="line">GoLand2022.2</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="3-2、安装教程"><a href="#3-2、安装教程" class="headerlink" title="3.2、安装教程"></a>3.2、安装教程</h2><h3 id="HTTPD文件服务器"><a href="#HTTPD文件服务器" class="headerlink" title="HTTPD文件服务器"></a>HTTPD文件服务器</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/stalin_/article/details/90200173">https://blog.csdn.net/stalin_&#x2F;article&#x2F;details&#x2F;90200173</a></p>
-<h3 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/super_xyo/article/details/128210788">https://blog.csdn.net/super_xyo&#x2F;article&#x2F;details&#x2F;128210788</a></p>
-<h3 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h3><p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15735145/5546596">https://blog.51cto.com/u_15735145/5546596</a></p>
-<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36539042/article/details/125385002">https://blog.csdn.net/qq_36539042&#x2F;article&#x2F;details&#x2F;125385002</a></p>
-<h3 id="LayUI-1"><a href="#LayUI-1" class="headerlink" title="LayUI"></a>LayUI</h3><p><a target="_blank" rel="noopener" href="https://layui.dev/">https://layui.dev/</a></p>
-<h3 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Shyllin/article/details/123690458">https://blog.csdn.net/Shyllin/article/details/123690458</a></p>
-<h1 id="4、成品简介"><a href="#4、成品简介" class="headerlink" title="4、成品简介"></a>4、成品简介</h1><h2 id="Grafana-1"><a href="#Grafana-1" class="headerlink" title="Grafana"></a>Grafana</h2><p><img src="https://files.mdnice.com/user/17335/97fe1552-ed3b-4910-aca5-1dfc22793f85.png"></p>
-<h2 id="LayUI-2"><a href="#LayUI-2" class="headerlink" title="LayUI"></a>LayUI</h2><p><img src="https://files.mdnice.com/user/17335/a5180f6c-a589-4bb2-b54f-63c6cd163280.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/97aa2788-0526-402f-87f6-16523cd2d985.png"></p>
-<h2 id="钉钉"><a href="#钉钉" class="headerlink" title="钉钉"></a>钉钉</h2><p><img src="https://files.mdnice.com/user/17335/e0c85da8-e16e-4436-ae43-a996312eed46.png"></p>
+<h3 id="3-1、GET"><a href="#3-1、GET" class="headerlink" title="3.1、GET"></a>3.1、GET</h3><p><img src="https://files.mdnice.com/user/17335/e7e66ca2-a0f1-4149-b565-1adfd9104995.png"></p>
+<h3 id="3-2、POST"><a href="#3-2、POST" class="headerlink" title="3.2、POST"></a>3.2、POST</h3><p><img src="https://files.mdnice.com/user/17335/93d0c004-3406-4d06-b04c-addf9b49291a.png"></p>
+<h3 id="3-3、PUT"><a href="#3-3、PUT" class="headerlink" title="3.3、PUT"></a>3.3、PUT</h3><p><img src="https://files.mdnice.com/user/17335/c7dd3da7-3d77-4faa-a03e-9d36e4286621.png"></p>
+<h3 id="3-4、DELETE"><a href="#3-4、DELETE" class="headerlink" title="3.4、DELETE"></a>3.4、DELETE</h3><p><img src="https://files.mdnice.com/user/17335/dc32b068-a2da-43dd-b3cc-5a759b63aa93.png"></p>
 <h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
 <p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
 
@@ -275,110 +246,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-服务器管理平台（4）- 信息采集上报" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/">服务器管理平台（4）- 信息采集上报</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" class="archive-article-date">
-  	<time datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="信息采集上报"><a href="#信息采集上报" class="headerlink" title="信息采集上报"></a>信息采集上报</h1><ol>
-<li>通过Shell脚本实现服务器CPU、内存、PCI设备、登录日志等信息定时采集和自主上报</li>
-<li>Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知</li>
-</ol>
-<h2 id="1、定时上报"><a href="#1、定时上报" class="headerlink" title="1、定时上报"></a>1、定时上报</h2><blockquote>
-<p>搭建httpd文件服务器后，将采集脚本上传至对应目录，待采集服务器下载执行即可实现自主上报</p>
-</blockquote>
-<ul>
-<li>被采集服务器可使用curl或者wget进行脚本文件下载和执行</li>
-<li>被采集服务器可使用crontab进行定时任务，指定每天12点定时执行脚本，并把执行脚本的日志写入指定文件</li>
-<li>crontab使用方式可自行Google</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">脚本下载方式</span></span><br><span class="line">wget http://101.43.144.88/get_info.sh | bash</span><br><span class="line">或curl –O http://101.43.144.88/get_info.sh | bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开定时任务配置文件</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">指定每天12点定时执行脚本，并把执行脚本的日志写入对应文件 test.log</span></span><br><span class="line">0 12 * * * sh demo.sh &gt; result.log</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="2、数据采集"><a href="#2、数据采集" class="headerlink" title="2、数据采集"></a>2、数据采集</h2><h3 id="2-1、系统基础信息采集"><a href="#2-1、系统基础信息采集" class="headerlink" title="2.1、系统基础信息采集"></a>2.1、系统基础信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用于开发测试环境操作系统相关信息采集</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取系统基础信息</span></span><br><span class="line">function getSystemInfo() &#123;</span><br><span class="line"></span><br><span class="line">    Brand=$(dmidecode -s system-manufacturer | tail -n 1)     # 品牌    Tencent Cloud</span><br><span class="line">    Model=$(dmidecode -s system-product-name | tail -n 1)     # 型号    CVM</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)       # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    #    UseFor=&quot;xxx产品&quot;                  # 用户填写</span><br><span class="line">    CpuModel=$(cat /proc/cpuinfo | grep -i &quot;model name&quot;| head -n 1 | awk -F&#x27;:&#x27; &#x27;&#123;print $2&#125;&#x27; | sed &#x27;s/ //g&#x27;)     # CPU型号 Intel(R)Xeon(R)Platinum8255CCPU@2.50GHz</span><br><span class="line">    CpuNumber=$(cat /proc/cpuinfo | grep -i &quot;model name&quot; | wc -l)                        # CPU数量 2</span><br><span class="line">    free -h</span><br><span class="line">    if [ $? -eq 0 ]; then</span><br><span class="line">        Memory=$(free -h |grep Mem| awk -F &quot;:  *&quot; &#x27;&#123;print $2&#125;&#x27;|awk -F &quot;  *&quot; &#x27;&#123;print $1&#125;&#x27;)       # 最大内存</span><br><span class="line">    else</span><br><span class="line">        # 适配Centos6</span><br><span class="line">        number=$(free | grep Mem| awk -F &quot;:  *&quot; &#x27;&#123;print $2&#125;&#x27;| awk -F &quot;  *&quot; &#x27;&#123;print $1&#125;&#x27;)       # 最大内存</span><br><span class="line">        Reverse $&#123;number&#125; &gt; temp.ini</span><br><span class="line">        Memory=$(cat temp.ini)</span><br><span class="line">    fi</span><br><span class="line">    dmidecode -s system-product-name | tail -n 1 | grep -i &quot;VM&quot;                          # 平台类型 KVM</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # 2. 上报基础环境信息</span><br><span class="line">    body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;Brand\&quot;:\&quot;$Brand\&quot;, \&quot;Model\&quot;:\&quot;$Model\&quot;, \&quot;Memory\&quot;:\&quot;$Memory\&quot;, \&quot;PlatformType\&quot;:\&quot;$PlatformType\&quot;, \&quot;CpuModel\&quot;:\&quot;$CpuModel\&quot;, \&quot;CpuNumber\&quot;:\&quot;$CpuNumber\&quot;&#125;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="built_in">echo</span> <span class="string">&quot;JSON body :&quot;</span> <span class="variable">$body</span></span></span><br><span class="line"></span><br><span class="line">    ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/meta/info&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="built_in">echo</span> <span class="string">&quot;MetaInfo result:&quot;</span> <span class="variable">$ret</span></span></span><br><span class="line"></span><br><span class="line">    # 错误码不是0就表示失败，0代表成功</span><br><span class="line">    ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">    if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">        echo &quot;error| up MetaInfo to server error $ret&quot;</span><br><span class="line">        exit 1</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="2-2、登陆日志采集"><a href="#2-2、登陆日志采集" class="headerlink" title="2.2、登陆日志采集"></a>2.2、登陆日志采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取设备登录日志</span></span><br><span class="line">function getLoginINfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)  # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    last -f /var/log/wtmp | head -3 | sed -e &#x27;/reboot/d&#x27; &gt; temp.ini          #  root  pts/1   123.149.240.130  Mon May 29 13:48 - 16:07  (02:18)</span><br><span class="line">    cat temp.ini | while read line</span><br><span class="line">    do</span><br><span class="line">        UserName=$(echo $&#123;line&#125; | awk &#x27;&#123;print $1&#125;&#x27;)                                     # 登录用户名</span><br><span class="line">        UserIp=$(echo $&#123;line&#125; | awk &#x27;&#123;print $3&#125;&#x27;)                                       # 登录源IP</span><br><span class="line">        StartTime=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5,$6,$7&#125;&#x27; | sed &#x27;s/:/ /g&#x27;)              # 登录时间</span><br><span class="line">        EndTime=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5,$6,$9&#125;&#x27; | sed &#x27;s/:/ /g&#x27;)                # 结束时间</span><br><span class="line">        Duration=$(echo $&#123;line&#125; | awk &#x27;&#123;print $10&#125;&#x27; | sed &#x27;s/(//g&#x27; | sed &#x27;s/)//g&#x27;)      # 持续时长</span><br><span class="line"></span><br><span class="line">        body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;UserName\&quot;:\&quot;$UserName\&quot;, \&quot;UserIp\&quot;:\&quot;$UserIp\&quot;, \&quot;StartTime\&quot;:\&quot;$StartTime\&quot;, \&quot;EndTime\&quot;:\&quot;$EndTime\&quot;, \&quot;Duration\&quot;:\&quot;$Duration\&quot;&#125;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">       <span class="built_in">echo</span> <span class="string">&quot;JSON body :&quot;</span> <span class="variable">$body</span></span></span><br><span class="line"></span><br><span class="line">        ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/loginInfo&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">       <span class="built_in">echo</span> <span class="string">&quot;result:&quot;</span> <span class="variable">$ret</span></span></span><br><span class="line"></span><br><span class="line">        ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">        if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">            echo &quot;error| up Login Info to server error $ret&quot;</span><br><span class="line">            exit 1</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3、PCI设备信息采集"><a href="#2-3、PCI设备信息采集" class="headerlink" title="2.3、PCI设备信息采集"></a>2.3、PCI设备信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取PCI设备信息</span></span><br><span class="line">function getPCINfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)   # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    lspci -nn</span><br><span class="line">    if [ $? -ne 0 ]; then</span><br><span class="line">        echo &quot;skip lspci info &quot;</span><br><span class="line">    else</span><br><span class="line">        lspci -nn &gt; temp.ini                      # PCI设备 00:00.0 Host bridge [0600]: Intel Corporation 440FX - 82441FX PMC [Natoma] [8086:1237] (rev 02)</span><br><span class="line">        cat temp.ini | while read line</span><br><span class="line">        do</span><br><span class="line">            PCIDevice=$&#123;line&#125;</span><br><span class="line">            body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;PCIDevice\&quot;:\&quot;$PCIDevice\&quot;&#125;&quot;</span><br><span class="line">    #        echo &quot;JSON body :&quot; $body</span><br><span class="line"></span><br><span class="line">            ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/pciDevice&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line">    #        echo &quot;result:&quot; $ret</span><br><span class="line"></span><br><span class="line">            ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">            if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">                echo &quot;error| up PCIDevice Info to server error $ret&quot;</span><br><span class="line">                exit 1</span><br><span class="line">            fi</span><br><span class="line">            sleep 0.1</span><br><span class="line">        done</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="2-4、逻辑磁盘信息采集"><a href="#2-4、逻辑磁盘信息采集" class="headerlink" title="2.4、逻辑磁盘信息采集"></a>2.4、逻辑磁盘信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取逻辑磁盘信息</span></span><br><span class="line">function getLogicDiskInfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)    # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    df -h</span><br><span class="line">    if [ $? -ne 0 ]; then</span><br><span class="line">        echo &quot;skip logicDisk info &quot;</span><br><span class="line">    else</span><br><span class="line">        df -h  &gt; temp.ini                          # 逻辑磁盘 /dev/vda1        59G   16G   42G  28% /</span><br><span class="line">        sed -i &#x27;1d&#x27; temp.ini</span><br><span class="line"></span><br><span class="line">        cat temp.ini | while read line</span><br><span class="line">        do</span><br><span class="line"></span><br><span class="line">            Filesystem=$(echo $&#123;line&#125; | awk &#x27;&#123;print $1&#125;&#x27;)</span><br><span class="line">            Size=$(echo $&#123;line&#125; | awk &#x27;&#123;print $2&#125;&#x27;)</span><br><span class="line">            Used=$(echo $&#123;line&#125; | awk &#x27;&#123;print $3&#125;&#x27;)</span><br><span class="line">            Avail=$(echo $&#123;line&#125; | awk &#x27;&#123;print $4&#125;&#x27;)</span><br><span class="line">            UsePercent=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5&#125;&#x27;)</span><br><span class="line">            Mounted=$(echo $&#123;line&#125; | awk &#x27;&#123;print $6&#125;&#x27;)</span><br><span class="line">            body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;Filesystem\&quot;:\&quot;$Filesystem\&quot;, \&quot;Size\&quot;:\&quot;$Size\&quot;, \&quot;Used\&quot;:\&quot;$Used\&quot;, \&quot;Avail\&quot;:\&quot;$Avail\&quot;, \&quot;UsePercent\&quot;:\&quot;$UsePercent\&quot;, \&quot;Mounted\&quot;:\&quot;$Mounted\&quot;&#125;&quot;</span><br><span class="line">    #        echo &quot;JSON body :&quot; $body</span><br><span class="line"></span><br><span class="line">            ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/logicDisk&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line">    #        echo &quot;result:&quot; $ret</span><br><span class="line"></span><br><span class="line">            ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">            if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">                echo &quot;error| up LogicalDisk Info to server error $ret&quot;</span><br><span class="line">                exit 1</span><br><span class="line">            fi</span><br><span class="line">            sleep 0.1</span><br><span class="line">        done</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-5、Centos6老旧系统适配"><a href="#2-5、Centos6老旧系统适配" class="headerlink" title="2.5、Centos6老旧系统适配"></a>2.5、Centos6老旧系统适配</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">dmidecode 显示格式适配</span></span><br><span class="line">dmidecode -s system-manufacturer | tail -n 1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">/dev/mem访问权限问题</span></span><br><span class="line">sudo chmod 777 /dev/mem</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">内存显示</span></span><br><span class="line">free 得到数值后进行换算</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="3、功能测试"><a href="#3、功能测试" class="headerlink" title="3、功能测试"></a>3、功能测试</h2><ul>
-<li>sh执行采集脚本文件，出现success标志，同时数据库中多个表出现对应数据，create时间和脚本执行时间一致</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/4d245c3b-52ad-4e50-b976-ab37fbb711be.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/7728d36e-a176-4be2-9f1c-82614f5b64db.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/bf1170f4-b442-49c6-a598-37b6d68756a7.png"></p>
-<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">服务器管理平台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/">展开全文 >></a>
         </p>
       
 
@@ -544,130 +412,6 @@
 
 
   
-    <article id="post-服务器网卡介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/">服务器网卡介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-  	<time datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>本篇文章对服务器网卡进行基础介绍，包括基本概念、网卡厂商及网卡绑定策略等。</p>
-</blockquote>
-<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器网卡（Network Interface Card）是一种用于连接服务器与网络之间的硬件设备。它允许服务器通过网络与其他设备进行通信，包括传输数据、接收数据和处理网络请求。</p>
-<p>以下是一些关于服务器网卡的重要概念和特点：</p>
-<ol>
-<li><p>速度和带宽：服务器网卡的速度指的是其数据传输速率，通常以千兆位每秒（Gbps）或万兆位每秒（10 Gbps）为单位。较高的速度可以提供更快的数据传输和响应速度。带宽指的是网卡能够处理的数据量，通常以每秒传输的数据量（Mbps或Gbps）来衡量。</p>
-</li>
-<li><p>接口类型：服务器网卡通常使用不同类型的接口来连接到服务器主板。常见的接口类型包括PCIe（Peripheral Component Interconnect Express）和PCI（Peripheral Component Interconnect）。PCIe接口通常提供更高的带宽和更快的数据传输速度。</p>
-</li>
-<li><p>支持的协议：服务器网卡通常支持多种网络协议，如Ethernet、TCP&#x2F;IP、UDP等。这些协议允许服务器与其他设备进行通信，并实现数据传输和网络连接。</p>
-</li>
-<li><p>冗余和负载均衡：一些服务器网卡支持冗余配置，即在一个网卡故障时，其他网卡可以继续工作，确保服务器的稳定性和可靠性。此外，一些服务器网卡还支持负载均衡，即将网络流量分配到多个网卡上，以提高网络性能和可靠性。</p>
-</li>
-<li><p>硬件加速：一些高级服务器网卡具有硬件加速功能，可以在网卡上处理一些网络任务，如数据包过滤、数据包分析和加密解密等。这可以减轻服务器的负担，提高网络性能。</p>
-</li>
-<li><p>远程管理：一些服务器网卡具有远程管理功能，允许管理员通过远程访问服务器网卡来监控和管理服务器。这对于远程维护和故障排除非常有用。</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/3bcca0ba-7482-475f-98bd-7f93cab544e9.png"></p>
-<h3 id="1-1、网卡分类"><a href="#1-1、网卡分类" class="headerlink" title="1.1、网卡分类"></a>1.1、网卡分类</h3><p><img src="https://files.mdnice.com/user/17335/281cae61-6c16-409d-99ac-799ee13eb11a.png"></p>
-<h3 id="1-2、网卡功能"><a href="#1-2、网卡功能" class="headerlink" title="1.2、网卡功能"></a>1.2、网卡功能</h3><p><img src="https://files.mdnice.com/user/17335/d18184bd-e7ed-430a-98da-06ec85d68a21.png"></p>
-<h3 id="1-3、网卡接口"><a href="#1-3、网卡接口" class="headerlink" title="1.3、网卡接口"></a>1.3、网卡接口</h3><p><img src="https://files.mdnice.com/user/17335/33d96b6a-c7fc-42c5-b7a2-fce0b14af995.png"></p>
-<h2 id="2、服务器网卡"><a href="#2、服务器网卡" class="headerlink" title="2、服务器网卡"></a>2、服务器网卡</h2><p><img src="https://files.mdnice.com/user/17335/4e247fdd-d8d9-47d1-8eb5-f6f71f087e98.png"></p>
-<h3 id="2-1、服务器专用网卡-VS-普通网卡"><a href="#2-1、服务器专用网卡-VS-普通网卡" class="headerlink" title="2.1、服务器专用网卡 VS 普通网卡"></a>2.1、服务器专用网卡 VS 普通网卡</h3><p><img src="https://files.mdnice.com/user/17335/3d04a0bd-e96e-48d8-9c2b-f74d117e1104.png"></p>
-<h3 id="2-3、网卡主流厂商"><a href="#2-3、网卡主流厂商" class="headerlink" title="2.3、网卡主流厂商"></a>2.3、网卡主流厂商</h3><p><img src="https://files.mdnice.com/user/17335/5026838f-2dee-4816-953f-54cfd48d566d.png"></p>
-<h2 id="3、网卡绑定（bond）"><a href="#3、网卡绑定（bond）" class="headerlink" title="3、网卡绑定（bond）"></a>3、网卡绑定（bond）</h2><p>服务器bond是一种网络连接聚合技术，通过将多个网络接口绑定在一起，形成一个虚拟的网络接口，提供更高的带宽和冗余。服务器bond可以提高服务器的网络性能和可靠性。</p>
-<p><img src="https://files.mdnice.com/user/17335/e434395f-866b-4b02-8470-4f61ece4afc5.png"></p>
-<blockquote>
-<p>这里仅简单介绍下bond0和bond1这两种最常用的网卡绑定方式，其他方式如有需要可自行Google</p>
-</blockquote>
-<p><img src="https://files.mdnice.com/user/17335/0907ccf5-cb21-4721-a658-01958a180615.png"></p>
-<h3 id="3-1、Bond0-轮询策略"><a href="#3-1、Bond0-轮询策略" class="headerlink" title="3.1、Bond0 轮询策略"></a>3.1、Bond0 轮询策略</h3><p><img src="https://files.mdnice.com/user/17335/ea604609-9a04-48b9-82a6-66f4197774c4.png"></p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E9%93%BE%E8%B7%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">链路负载均衡</a>，增加带宽，支持容错，一条链路故障会自动切换正常链路。交换机需要配置聚合口，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%80%9D%E7%A7%91&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">思科</a>叫port channel</p>
-</li>
-<li><p>特点：传输数据包顺序是依次传输（即：第1个包走<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=eth0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">eth0</a>，下一个包就走eth1….一直循环下去，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%9B%B4%E5%88%B0%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">直到最后一个</a>传输完毕），此模式提供<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B4%9F%E8%BD%BD%E5%B9%B3%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">负载平衡</a>和容错能力；但是我们知道如果一个连接 或者会话的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%95%B0%E6%8D%AE%E5%8C%85&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">数据包</a>从不同的接口发出的话，中途再经过不同的链路，在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%AE%A2%E6%88%B7%E7%AB%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">客户端</a>很有可能会出现数据包<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%97%A0%E5%BA%8F%E5%88%B0%E8%BE%BE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">无序到达</a>的问题，而无序到达的数据包需要重新要求被发送，这样网络的吞吐量就会下降</p>
-</li>
-</ul>
-<h3 id="3-2、Bond1-主备策略"><a href="#3-2、Bond1-主备策略" class="headerlink" title="3.2、Bond1 主备策略"></a>3.2、Bond1 主备策略</h3><p><img src="https://files.mdnice.com/user/17335/e3785d34-8bb4-42e4-961c-f3e9be597f26.png"></p>
-<ul>
-<li><p>主备模式，只有一块网卡是active，另一块是备用的standby，所有流量都在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=active%E9%93%BE%E8%B7%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">active链路</a>上处理，交换机配置的是捆绑的话将不能工作，因为交换机往两块<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E5%8D%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网卡</a>发包，有一半包是丢弃的。</p>
-</li>
-<li><p>特点：只有一个设备处于活动状态，当一个宕掉另一个马上由备份转换为主设备。mac地址是外部可见得，从外面看来，bond的MAC地址是唯一的，以避免switch(交换机)发生混乱。此模式只提供了容错能力；由此可见此<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%AE%97%E6%B3%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">算法</a>的优点是可以提供高<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络连接</a>的可用性，但是它的资源利用率较低，只有一个接口处于工作状态，在有 N 个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络接口</a>的情况下，资源利用率为1&#x2F;N</p>
-</li>
-</ul>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
-<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
-<li>点“在看”支持我吧!</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">服务器硬件科普</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-服务器管理平台（6）- Utils" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -799,6 +543,233 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-服务器管理平台（4）- 信息采集上报" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/">服务器管理平台（4）- 信息采集上报</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" class="archive-article-date">
+  	<time datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="信息采集上报"><a href="#信息采集上报" class="headerlink" title="信息采集上报"></a>信息采集上报</h1><ol>
+<li>通过Shell脚本实现服务器CPU、内存、PCI设备、登录日志等信息定时采集和自主上报</li>
+<li>Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知</li>
+</ol>
+<h2 id="1、定时上报"><a href="#1、定时上报" class="headerlink" title="1、定时上报"></a>1、定时上报</h2><blockquote>
+<p>搭建httpd文件服务器后，将采集脚本上传至对应目录，待采集服务器下载执行即可实现自主上报</p>
+</blockquote>
+<ul>
+<li>被采集服务器可使用curl或者wget进行脚本文件下载和执行</li>
+<li>被采集服务器可使用crontab进行定时任务，指定每天12点定时执行脚本，并把执行脚本的日志写入指定文件</li>
+<li>crontab使用方式可自行Google</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">脚本下载方式</span></span><br><span class="line">wget http://101.43.144.88/get_info.sh | bash</span><br><span class="line">或curl –O http://101.43.144.88/get_info.sh | bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开定时任务配置文件</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">指定每天12点定时执行脚本，并把执行脚本的日志写入对应文件 test.log</span></span><br><span class="line">0 12 * * * sh demo.sh &gt; result.log</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2、数据采集"><a href="#2、数据采集" class="headerlink" title="2、数据采集"></a>2、数据采集</h2><h3 id="2-1、系统基础信息采集"><a href="#2-1、系统基础信息采集" class="headerlink" title="2.1、系统基础信息采集"></a>2.1、系统基础信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用于开发测试环境操作系统相关信息采集</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取系统基础信息</span></span><br><span class="line">function getSystemInfo() &#123;</span><br><span class="line"></span><br><span class="line">    Brand=$(dmidecode -s system-manufacturer | tail -n 1)     # 品牌    Tencent Cloud</span><br><span class="line">    Model=$(dmidecode -s system-product-name | tail -n 1)     # 型号    CVM</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)       # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    #    UseFor=&quot;xxx产品&quot;                  # 用户填写</span><br><span class="line">    CpuModel=$(cat /proc/cpuinfo | grep -i &quot;model name&quot;| head -n 1 | awk -F&#x27;:&#x27; &#x27;&#123;print $2&#125;&#x27; | sed &#x27;s/ //g&#x27;)     # CPU型号 Intel(R)Xeon(R)Platinum8255CCPU@2.50GHz</span><br><span class="line">    CpuNumber=$(cat /proc/cpuinfo | grep -i &quot;model name&quot; | wc -l)                        # CPU数量 2</span><br><span class="line">    free -h</span><br><span class="line">    if [ $? -eq 0 ]; then</span><br><span class="line">        Memory=$(free -h |grep Mem| awk -F &quot;:  *&quot; &#x27;&#123;print $2&#125;&#x27;|awk -F &quot;  *&quot; &#x27;&#123;print $1&#125;&#x27;)       # 最大内存</span><br><span class="line">    else</span><br><span class="line">        # 适配Centos6</span><br><span class="line">        number=$(free | grep Mem| awk -F &quot;:  *&quot; &#x27;&#123;print $2&#125;&#x27;| awk -F &quot;  *&quot; &#x27;&#123;print $1&#125;&#x27;)       # 最大内存</span><br><span class="line">        Reverse $&#123;number&#125; &gt; temp.ini</span><br><span class="line">        Memory=$(cat temp.ini)</span><br><span class="line">    fi</span><br><span class="line">    dmidecode -s system-product-name | tail -n 1 | grep -i &quot;VM&quot;                          # 平台类型 KVM</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # 2. 上报基础环境信息</span><br><span class="line">    body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;Brand\&quot;:\&quot;$Brand\&quot;, \&quot;Model\&quot;:\&quot;$Model\&quot;, \&quot;Memory\&quot;:\&quot;$Memory\&quot;, \&quot;PlatformType\&quot;:\&quot;$PlatformType\&quot;, \&quot;CpuModel\&quot;:\&quot;$CpuModel\&quot;, \&quot;CpuNumber\&quot;:\&quot;$CpuNumber\&quot;&#125;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="built_in">echo</span> <span class="string">&quot;JSON body :&quot;</span> <span class="variable">$body</span></span></span><br><span class="line"></span><br><span class="line">    ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/meta/info&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="built_in">echo</span> <span class="string">&quot;MetaInfo result:&quot;</span> <span class="variable">$ret</span></span></span><br><span class="line"></span><br><span class="line">    # 错误码不是0就表示失败，0代表成功</span><br><span class="line">    ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">    if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">        echo &quot;error| up MetaInfo to server error $ret&quot;</span><br><span class="line">        exit 1</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-2、登陆日志采集"><a href="#2-2、登陆日志采集" class="headerlink" title="2.2、登陆日志采集"></a>2.2、登陆日志采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取设备登录日志</span></span><br><span class="line">function getLoginINfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)  # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    last -f /var/log/wtmp | head -3 | sed -e &#x27;/reboot/d&#x27; &gt; temp.ini          #  root  pts/1   123.149.240.130  Mon May 29 13:48 - 16:07  (02:18)</span><br><span class="line">    cat temp.ini | while read line</span><br><span class="line">    do</span><br><span class="line">        UserName=$(echo $&#123;line&#125; | awk &#x27;&#123;print $1&#125;&#x27;)                                     # 登录用户名</span><br><span class="line">        UserIp=$(echo $&#123;line&#125; | awk &#x27;&#123;print $3&#125;&#x27;)                                       # 登录源IP</span><br><span class="line">        StartTime=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5,$6,$7&#125;&#x27; | sed &#x27;s/:/ /g&#x27;)              # 登录时间</span><br><span class="line">        EndTime=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5,$6,$9&#125;&#x27; | sed &#x27;s/:/ /g&#x27;)                # 结束时间</span><br><span class="line">        Duration=$(echo $&#123;line&#125; | awk &#x27;&#123;print $10&#125;&#x27; | sed &#x27;s/(//g&#x27; | sed &#x27;s/)//g&#x27;)      # 持续时长</span><br><span class="line"></span><br><span class="line">        body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;UserName\&quot;:\&quot;$UserName\&quot;, \&quot;UserIp\&quot;:\&quot;$UserIp\&quot;, \&quot;StartTime\&quot;:\&quot;$StartTime\&quot;, \&quot;EndTime\&quot;:\&quot;$EndTime\&quot;, \&quot;Duration\&quot;:\&quot;$Duration\&quot;&#125;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">       <span class="built_in">echo</span> <span class="string">&quot;JSON body :&quot;</span> <span class="variable">$body</span></span></span><br><span class="line"></span><br><span class="line">        ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/loginInfo&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">       <span class="built_in">echo</span> <span class="string">&quot;result:&quot;</span> <span class="variable">$ret</span></span></span><br><span class="line"></span><br><span class="line">        ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">        if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">            echo &quot;error| up Login Info to server error $ret&quot;</span><br><span class="line">            exit 1</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3、PCI设备信息采集"><a href="#2-3、PCI设备信息采集" class="headerlink" title="2.3、PCI设备信息采集"></a>2.3、PCI设备信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取PCI设备信息</span></span><br><span class="line">function getPCINfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)   # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    lspci -nn</span><br><span class="line">    if [ $? -ne 0 ]; then</span><br><span class="line">        echo &quot;skip lspci info &quot;</span><br><span class="line">    else</span><br><span class="line">        lspci -nn &gt; temp.ini                      # PCI设备 00:00.0 Host bridge [0600]: Intel Corporation 440FX - 82441FX PMC [Natoma] [8086:1237] (rev 02)</span><br><span class="line">        cat temp.ini | while read line</span><br><span class="line">        do</span><br><span class="line">            PCIDevice=$&#123;line&#125;</span><br><span class="line">            body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;PCIDevice\&quot;:\&quot;$PCIDevice\&quot;&#125;&quot;</span><br><span class="line">    #        echo &quot;JSON body :&quot; $body</span><br><span class="line"></span><br><span class="line">            ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/pciDevice&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line">    #        echo &quot;result:&quot; $ret</span><br><span class="line"></span><br><span class="line">            ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">            if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">                echo &quot;error| up PCIDevice Info to server error $ret&quot;</span><br><span class="line">                exit 1</span><br><span class="line">            fi</span><br><span class="line">            sleep 0.1</span><br><span class="line">        done</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-4、逻辑磁盘信息采集"><a href="#2-4、逻辑磁盘信息采集" class="headerlink" title="2.4、逻辑磁盘信息采集"></a>2.4、逻辑磁盘信息采集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取逻辑磁盘信息</span></span><br><span class="line">function getLogicDiskInfo() &#123;</span><br><span class="line">    SN=$(dmidecode -s system-serial-number | tail -n 1)    # 序列号  8541d005-a671-4736-902a-bd9b3e9a1afd</span><br><span class="line">    df -h</span><br><span class="line">    if [ $? -ne 0 ]; then</span><br><span class="line">        echo &quot;skip logicDisk info &quot;</span><br><span class="line">    else</span><br><span class="line">        df -h  &gt; temp.ini                          # 逻辑磁盘 /dev/vda1        59G   16G   42G  28% /</span><br><span class="line">        sed -i &#x27;1d&#x27; temp.ini</span><br><span class="line"></span><br><span class="line">        cat temp.ini | while read line</span><br><span class="line">        do</span><br><span class="line"></span><br><span class="line">            Filesystem=$(echo $&#123;line&#125; | awk &#x27;&#123;print $1&#125;&#x27;)</span><br><span class="line">            Size=$(echo $&#123;line&#125; | awk &#x27;&#123;print $2&#125;&#x27;)</span><br><span class="line">            Used=$(echo $&#123;line&#125; | awk &#x27;&#123;print $3&#125;&#x27;)</span><br><span class="line">            Avail=$(echo $&#123;line&#125; | awk &#x27;&#123;print $4&#125;&#x27;)</span><br><span class="line">            UsePercent=$(echo $&#123;line&#125; | awk &#x27;&#123;print $5&#125;&#x27;)</span><br><span class="line">            Mounted=$(echo $&#123;line&#125; | awk &#x27;&#123;print $6&#125;&#x27;)</span><br><span class="line">            body=&quot;&#123;\&quot;SN\&quot;:\&quot;$SN\&quot;, \&quot;Filesystem\&quot;:\&quot;$Filesystem\&quot;, \&quot;Size\&quot;:\&quot;$Size\&quot;, \&quot;Used\&quot;:\&quot;$Used\&quot;, \&quot;Avail\&quot;:\&quot;$Avail\&quot;, \&quot;UsePercent\&quot;:\&quot;$UsePercent\&quot;, \&quot;Mounted\&quot;:\&quot;$Mounted\&quot;&#125;&quot;</span><br><span class="line">    #        echo &quot;JSON body :&quot; $body</span><br><span class="line"></span><br><span class="line">            ret=$(curl -H &quot;System:api-gateway&quot; -H &quot;Token:czc27be93ecsz53a53fc2a8443aeebe0&quot; &quot;http://127.0.0.1:8000/api/v1/config/esunny/logicDisk&quot; -XPOST -d &quot;$body&quot; -H &quot;Content-Type: application/json&quot;)</span><br><span class="line">    #        echo &quot;result:&quot; $ret</span><br><span class="line"></span><br><span class="line">            ErrCode=$(echo $ret  | sed &#x27;s/,/\n/g&#x27; | grep &quot;ErrCode&quot; | sed &#x27;s/:/\n/g&#x27; | sed &#x27;1d&#x27;)</span><br><span class="line">            if [[ x&quot;0&quot; != x&quot;$ErrCode&quot; ]]; then</span><br><span class="line">                echo &quot;error| up LogicalDisk Info to server error $ret&quot;</span><br><span class="line">                exit 1</span><br><span class="line">            fi</span><br><span class="line">            sleep 0.1</span><br><span class="line">        done</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-5、Centos6老旧系统适配"><a href="#2-5、Centos6老旧系统适配" class="headerlink" title="2.5、Centos6老旧系统适配"></a>2.5、Centos6老旧系统适配</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">dmidecode 显示格式适配</span></span><br><span class="line">dmidecode -s system-manufacturer | tail -n 1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">/dev/mem访问权限问题</span></span><br><span class="line">sudo chmod 777 /dev/mem</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">内存显示</span></span><br><span class="line">free 得到数值后进行换算</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3、功能测试"><a href="#3、功能测试" class="headerlink" title="3、功能测试"></a>3、功能测试</h2><ul>
+<li>sh执行采集脚本文件，出现success标志，同时数据库中多个表出现对应数据，create时间和脚本执行时间一致</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/4d245c3b-52ad-4e50-b976-ab37fbb711be.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/7728d36e-a176-4be2-9f1c-82614f5b64db.png"></p>
+<p><img src="https://files.mdnice.com/user/17335/bf1170f4-b442-49c6-a598-37b6d68756a7.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">服务器管理平台</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-服务器网卡介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/">服务器网卡介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
+  	<time datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>本篇文章对服务器网卡进行基础介绍，包括基本概念、网卡厂商及网卡绑定策略等。</p>
+</blockquote>
+<h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>服务器网卡（Network Interface Card）是一种用于连接服务器与网络之间的硬件设备。它允许服务器通过网络与其他设备进行通信，包括传输数据、接收数据和处理网络请求。</p>
+<p>以下是一些关于服务器网卡的重要概念和特点：</p>
+<ol>
+<li><p>速度和带宽：服务器网卡的速度指的是其数据传输速率，通常以千兆位每秒（Gbps）或万兆位每秒（10 Gbps）为单位。较高的速度可以提供更快的数据传输和响应速度。带宽指的是网卡能够处理的数据量，通常以每秒传输的数据量（Mbps或Gbps）来衡量。</p>
+</li>
+<li><p>接口类型：服务器网卡通常使用不同类型的接口来连接到服务器主板。常见的接口类型包括PCIe（Peripheral Component Interconnect Express）和PCI（Peripheral Component Interconnect）。PCIe接口通常提供更高的带宽和更快的数据传输速度。</p>
+</li>
+<li><p>支持的协议：服务器网卡通常支持多种网络协议，如Ethernet、TCP&#x2F;IP、UDP等。这些协议允许服务器与其他设备进行通信，并实现数据传输和网络连接。</p>
+</li>
+<li><p>冗余和负载均衡：一些服务器网卡支持冗余配置，即在一个网卡故障时，其他网卡可以继续工作，确保服务器的稳定性和可靠性。此外，一些服务器网卡还支持负载均衡，即将网络流量分配到多个网卡上，以提高网络性能和可靠性。</p>
+</li>
+<li><p>硬件加速：一些高级服务器网卡具有硬件加速功能，可以在网卡上处理一些网络任务，如数据包过滤、数据包分析和加密解密等。这可以减轻服务器的负担，提高网络性能。</p>
+</li>
+<li><p>远程管理：一些服务器网卡具有远程管理功能，允许管理员通过远程访问服务器网卡来监控和管理服务器。这对于远程维护和故障排除非常有用。</p>
+</li>
+</ol>
+<p><img src="https://files.mdnice.com/user/17335/3bcca0ba-7482-475f-98bd-7f93cab544e9.png"></p>
+<h3 id="1-1、网卡分类"><a href="#1-1、网卡分类" class="headerlink" title="1.1、网卡分类"></a>1.1、网卡分类</h3><p><img src="https://files.mdnice.com/user/17335/281cae61-6c16-409d-99ac-799ee13eb11a.png"></p>
+<h3 id="1-2、网卡功能"><a href="#1-2、网卡功能" class="headerlink" title="1.2、网卡功能"></a>1.2、网卡功能</h3><p><img src="https://files.mdnice.com/user/17335/d18184bd-e7ed-430a-98da-06ec85d68a21.png"></p>
+<h3 id="1-3、网卡接口"><a href="#1-3、网卡接口" class="headerlink" title="1.3、网卡接口"></a>1.3、网卡接口</h3><p><img src="https://files.mdnice.com/user/17335/33d96b6a-c7fc-42c5-b7a2-fce0b14af995.png"></p>
+<h2 id="2、服务器网卡"><a href="#2、服务器网卡" class="headerlink" title="2、服务器网卡"></a>2、服务器网卡</h2><p><img src="https://files.mdnice.com/user/17335/4e247fdd-d8d9-47d1-8eb5-f6f71f087e98.png"></p>
+<h3 id="2-1、服务器专用网卡-VS-普通网卡"><a href="#2-1、服务器专用网卡-VS-普通网卡" class="headerlink" title="2.1、服务器专用网卡 VS 普通网卡"></a>2.1、服务器专用网卡 VS 普通网卡</h3><p><img src="https://files.mdnice.com/user/17335/3d04a0bd-e96e-48d8-9c2b-f74d117e1104.png"></p>
+<h3 id="2-3、网卡主流厂商"><a href="#2-3、网卡主流厂商" class="headerlink" title="2.3、网卡主流厂商"></a>2.3、网卡主流厂商</h3><p><img src="https://files.mdnice.com/user/17335/5026838f-2dee-4816-953f-54cfd48d566d.png"></p>
+<h2 id="3、网卡绑定（bond）"><a href="#3、网卡绑定（bond）" class="headerlink" title="3、网卡绑定（bond）"></a>3、网卡绑定（bond）</h2><p>服务器bond是一种网络连接聚合技术，通过将多个网络接口绑定在一起，形成一个虚拟的网络接口，提供更高的带宽和冗余。服务器bond可以提高服务器的网络性能和可靠性。</p>
+<p><img src="https://files.mdnice.com/user/17335/e434395f-866b-4b02-8470-4f61ece4afc5.png"></p>
+<blockquote>
+<p>这里仅简单介绍下bond0和bond1这两种最常用的网卡绑定方式，其他方式如有需要可自行Google</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/0907ccf5-cb21-4721-a658-01958a180615.png"></p>
+<h3 id="3-1、Bond0-轮询策略"><a href="#3-1、Bond0-轮询策略" class="headerlink" title="3.1、Bond0 轮询策略"></a>3.1、Bond0 轮询策略</h3><p><img src="https://files.mdnice.com/user/17335/ea604609-9a04-48b9-82a6-66f4197774c4.png"></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E9%93%BE%E8%B7%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">链路负载均衡</a>，增加带宽，支持容错，一条链路故障会自动切换正常链路。交换机需要配置聚合口，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%80%9D%E7%A7%91&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">思科</a>叫port channel</p>
+</li>
+<li><p>特点：传输数据包顺序是依次传输（即：第1个包走<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=eth0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">eth0</a>，下一个包就走eth1….一直循环下去，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%9B%B4%E5%88%B0%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">直到最后一个</a>传输完毕），此模式提供<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B4%9F%E8%BD%BD%E5%B9%B3%E8%A1%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">负载平衡</a>和容错能力；但是我们知道如果一个连接 或者会话的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%95%B0%E6%8D%AE%E5%8C%85&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">数据包</a>从不同的接口发出的话，中途再经过不同的链路，在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%AE%A2%E6%88%B7%E7%AB%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">客户端</a>很有可能会出现数据包<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%97%A0%E5%BA%8F%E5%88%B0%E8%BE%BE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">无序到达</a>的问题，而无序到达的数据包需要重新要求被发送，这样网络的吞吐量就会下降</p>
+</li>
+</ul>
+<h3 id="3-2、Bond1-主备策略"><a href="#3-2、Bond1-主备策略" class="headerlink" title="3.2、Bond1 主备策略"></a>3.2、Bond1 主备策略</h3><p><img src="https://files.mdnice.com/user/17335/e3785d34-8bb4-42e4-961c-f3e9be597f26.png"></p>
+<ul>
+<li><p>主备模式，只有一块网卡是active，另一块是备用的standby，所有流量都在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=active%E9%93%BE%E8%B7%AF&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">active链路</a>上处理，交换机配置的是捆绑的话将不能工作，因为交换机往两块<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E5%8D%A1&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网卡</a>发包，有一半包是丢弃的。</p>
+</li>
+<li><p>特点：只有一个设备处于活动状态，当一个宕掉另一个马上由备份转换为主设备。mac地址是外部可见得，从外面看来，bond的MAC地址是唯一的，以避免switch(交换机)发生混乱。此模式只提供了容错能力；由此可见此<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%AE%97%E6%B3%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">算法</a>的优点是可以提供高<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络连接</a>的可用性，但是它的资源利用率较低，只有一个接口处于工作状态，在有 N 个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22352814803%22%7D">网络接口</a>的情况下，资源利用率为1&#x2F;N</p>
+</li>
+</ul>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><ul>
+<li>公众号平台更改了推送规则，如果不想错过内容，记得读完点一下“在看”，加个“星标”，这样每次新文章推送才会第一时间出现在你的订阅列表里。</li>
+<li>点“在看”支持我吧!</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">服务器硬件科普</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%8D%A1%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
         </p>
       
 
