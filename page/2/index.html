@@ -152,127 +152,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-服务器如何重置密码？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/">服务器重置密码</a>
-    </h1>
-  
-
-        
-        <a href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/" class="archive-article-date">
-  	<time datetime="2024-01-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="服务器重置密码"><a href="#服务器重置密码" class="headerlink" title="服务器重置密码"></a>服务器重置密码</h1><blockquote>
-<p>服务器存在多种操作系统，本篇文章仅以RedHat、银河麒麟、Win Server系统作为举例！</p>
-</blockquote>
-<ul>
-<li>如果想了解更多服务器操作系统相关知识，请参看历史文章《服务器操作系统介绍》</li>
-</ul>
-<h2 id="银河麒麟破解密码"><a href="#银河麒麟破解密码" class="headerlink" title="银河麒麟破解密码"></a>银河麒麟破解密码</h2><blockquote>
-<p>银河麒麟为国产Linux系统，UOS为国产Windows系统</p>
-</blockquote>
-<ol>
-<li>开机进入引导界面，按<code>e</code>，输入用户名<code>root</code>密码<code>Kylin123123</code> ，进入内核编译界面<code>linux /vmlinuz</code>行添加<code>init=/bin/bash console=tty0</code>参数；</li>
-<li>ctrl+x 进入<strong>单用户模式</strong></li>
-<li><code>passwd  root</code>进行重置密码，两次输入确认</li>
-<li><code>init 6</code>命令进行重启，重启后使用重置后密码登录即可</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/d7781d32-66c2-4b48-a49b-03eccf37d7f8.png"></p>
-<h2 id="RedHat破解密码"><a href="#RedHat破解密码" class="headerlink" title="RedHat破解密码"></a>RedHat破解密码</h2><blockquote>
-<p>RedHat破解密码为RHCSA科目必考试题</p>
-</blockquote>
-<p><img src="https://files.mdnice.com/user/17335/b9193cb1-bdeb-454d-9e71-60106b9f5273.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/a6d15230-39d8-4f8f-9f16-c4c5df2d196e.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/566d880c-9305-4d0a-9ffe-0e434c1e5625.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/43302cba-efcd-4119-a1a2-383ee5000b79.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/cf462881-448a-4849-80ec-f862da9a772b.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/f092e035-3913-4691-935b-08164ee17307.png"></p>
-<p>重启完成后可以使用账户及密码进行登录验证</p>
-<h2 id="win系列重置密码"><a href="#win系列重置密码" class="headerlink" title="win系列重置密码"></a>win系列重置密码</h2><blockquote>
-<p>此处以PC端Windows系统重置密码操作举例，Win Server系统类似</p>
-</blockquote>
-<ol>
-<li><p>将U盘插入我们忘记密码的电脑并打开电脑，按下电源键后我们还需要做一件事:狂按Delete进入<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=BIOS&spm=1001.2101.3001.7020">BIOS</a>(不同主板按键可能不同,具体可以自行上网查阅)</p>
-</li>
-<li><p>进入BIOS后通过方向键将光标移动至”启动”菜单，选择U盘启动项，点击进入</p>
-</li>
-<li><p>进入PE后，打开桌面上的“Windows密码修改”工具。</p>
-</li>
-</ol>
-<p><img src="https://files.mdnice.com/user/17335/eaa85a78-fd62-4e3d-84ba-071a9ebecdec.png"></p>
-<ol start="4">
-<li><p>打开C:\WINDOWS\SYSTEM32\CONFIG\SAM 可列出本地全部的账户。</p>
-</li>
-<li><p>选中要修改的账户，点击解锁或更改密码，按照提示完成操作即可。</p>
-</li>
-<li><p>服务区系统win server也可使用PE工具进行密码重置</p>
-</li>
-</ol>
-<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
-<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">日常运维实例</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/01/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81%EF%BC%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-服务器机房上架交付流程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1334,19 +1213,19 @@
 
 
   
-    <article id="post-服务器管理平台（1）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-服务器管理平台（3）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/">服务器管理平台（1）- 概述</a>
+      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/">服务器管理平台（3）- Web服务端</a>
     </h1>
   
 
         
-        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/" class="archive-article-date">
+        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/" class="archive-article-date">
   	<time datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-14</time>
 </a>
         
@@ -1354,84 +1233,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="什么是SRE"><a href="#什么是SRE" class="headerlink" title="什么是SRE?"></a>什么是SRE?</h2><blockquote>
-<p>SRE即Site Reliability Engineering（网站可靠性工程），是一种源于Google的工作理念和方法。它旨在确保产品和服务的高可用性和可靠性。</p>
+        <h1 id="Web服务端"><a href="#Web服务端" class="headerlink" title="Web服务端"></a>Web服务端</h1><blockquote>
+<p>整体架构采用前后端分离形式，后端使用Golang实现，参考Gin框架</p>
 </blockquote>
-<p><img src="https://files.mdnice.com/user/17335/c1ff8726-7b7e-46fc-8c3b-74a387376a9f.png"></p>
+<h2 id="1、后端服务"><a href="#1、后端服务" class="headerlink" title="1、后端服务"></a>1、后端服务</h2><h3 id="1-1、服务端架构"><a href="#1-1、服务端架构" class="headerlink" title="1.1、服务端架构"></a>1.1、服务端架构</h3><p><img src="https://files.mdnice.com/user/17335/45615db1-bf6d-449b-8c09-b6c5a168b563.png"></p>
 <ul>
-<li><p>SRE团队的成员通常是拥有软件开发背景的工程师，他们不仅设计和实施自动化工具和流程，还参与构建、部署和运行大规模复杂系统。SRE需要同时具备运维能力和开发能力</p>
+<li>代码可参考Github开源项目：<a target="_blank" rel="noopener" href="https://github.com/pbrong/hrms">https://github.com/pbrong/hrms</a></li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/aee7ec54-2ad3-4175-8460-dd0428fea35a.png"></p>
+<h3 id="1-2、服务地址"><a href="#1-2、服务地址" class="headerlink" title="1.2、服务地址"></a>1.2、服务地址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http://x.x.x.x:8000/api/v1/meta/info</span><br><span class="line">http://x.x.x.x:8000/api/v1/logicDisk</span><br><span class="line">http://x.x.x.x:8000/api/v1/pciDevice</span><br><span class="line">http://x.x.x.x:8000/api/v1/macAddress</span><br><span class="line">http://x.x.x.x:8000/api/v1/product</span><br><span class="line">http:// x.x.x.x:8000/api/v1/loginInfo</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>后端接口使用Token鉴权，shell脚本、web访问使用不同Token名称</p>
 </li>
-<li><p>运维方面：之前文章已经介绍过服务器基础 、CPU、内存、硬盘等相关的硬件知识，感兴趣可以去看下历史文章，其他运维实例将在后续文章发布</p>
-</li>
-<li><p>开发方面：本人之前在某某云厂商用Go开发过数据平台，用于对批量云计算服务器进行全流程信息统计；因此计划更新简化版服务器管理平台开发实战教程，本篇文章会先对该平台进行整体介绍</p>
+<li><p>为防止数据误删，Shell脚本、Web访问调用Delete接口，默认返回调用成功，但并不做删除操作，如需删除可由管理员操作（删除前需做备份，按照clone日期命名）</p>
 </li>
 </ul>
-<h1 id="1、背景需求"><a href="#1、背景需求" class="headerlink" title="1、背景需求"></a>1、背景需求</h1><ul>
-<li>针对机房服务器采集操作系统等相关数据，如CPU、内存、PCI设备、登录日志、机器位置等信息，解决故障服务器定位难、服务器信息监控不完善等痛点</li>
-<li>实现定时采集、自主上报、落地存储、报表展示、界面可视化curd的全链路流程一体化，构建自动化运维告警监控工具，即服务器数据管理平台</li>
+<h2 id="2、代码架构"><a href="#2、代码架构" class="headerlink" title="2、代码架构"></a>2、代码架构</h2><p><img src="https://files.mdnice.com/user/17335/e30e5922-7500-46a0-91b2-8b14b6d2a4c5.png"></p>
+<h3 id="2-1、API目录"><a href="#2-1、API目录" class="headerlink" title="2.1、API目录"></a>2.1、API目录</h3><blockquote>
+<p>该目录功能为启动Http服务，暴露服务地址，并对各接口实现get、post、put、delete等功能</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/d23b7a38-4d78-4b1e-bd33-375f3e403981.png"></p>
+<h3 id="2-2、config目录"><a href="#2-2、config目录" class="headerlink" title="2.2、config目录"></a>2.2、config目录</h3><blockquote>
+<p>该目录功能为web后端服务配置，包括数据库地址、端口、密码、后端服务接口等信息</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/f8946940-69aa-4b12-b550-dcd7024c7c95.png"></p>
+<h3 id="2-3、model目录"><a href="#2-3、model目录" class="headerlink" title="2.3、model目录"></a>2.3、model目录</h3><blockquote>
+<p>该目录为实体层，功能为数据库结构解析，记录MySQL数据库表</p>
+</blockquote>
+<p><img src="https://files.mdnice.com/user/17335/6b0e782c-d660-4e66-8d0f-aac5d0be5b69.png"></p>
+<h3 id="2-4、其他目录"><a href="#2-4、其他目录" class="headerlink" title="2.4、其他目录"></a>2.4、其他目录</h3><p><img src="https://files.mdnice.com/user/17335/6287f9f5-8d28-41f8-9830-c7cdf66f2836.png"></p>
+<ul>
+<li>notify目录对接钉钉，实现告警检测及告警通知功能</li>
+<li>service为中间服务层</li>
+<li>shell目录则对应相关脚本，如CPU、内存等相关信息采集脚本、告警信息模版等</li>
+<li>ssh目录为ansible和expect进行批量服务器ssh登录，实现批量命令执行等</li>
+<li>util为工具包目录，提供时间戳转换、结构体差异对比等必要功能</li>
+<li>README.md 项目说明</li>
+<li>go.mod 为go依赖列表文件</li>
+<li>go.sum 为 go依赖校验文件</li>
+<li>sql 为所用到的sql文件</li>
 </ul>
-<p><img src="https://files.mdnice.com/user/17335/bd5dd2e6-23fb-4f89-a6b2-d4607f4f82c3.png"></p>
-<h1 id="2、整体架构"><a href="#2、整体架构" class="headerlink" title="2、整体架构"></a>2、整体架构</h1><h2 id="2-1、架构图"><a href="#2-1、架构图" class="headerlink" title="2.1、架构图"></a>2.1、架构图</h2><p><img src="https://files.mdnice.com/user/17335/032fa5b7-7112-4978-b0d0-48c86c822b75.png"></p>
-<h3 id="2-2、设计思路"><a href="#2-2、设计思路" class="headerlink" title="2.2、设计思路"></a>2.2、设计思路</h3><ol>
-<li><p><strong>定时上报：</strong>Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知</p>
-</li>
-<li><p><strong>稳定后端</strong>：Go-web后端借鉴Gin框架，后台服务更稳定、更轻量</p>
-</li>
-<li><p><strong>落地存储</strong>：MySQL单库多表进行永久化数据存储</p>
-</li>
-<li><p><strong>报表展示</strong>：Grafana定制化模版多样数据展示</p>
-</li>
-<li><p><strong>可视化curd：</strong>layUI框架搭建前端系统，界面可视化增删改查操作</p>
-</li>
-<li><p><strong>钉钉告警：</strong>SQL配置告警规则，定时轮询进行钉钉告警</p>
-</li>
-<li><p><strong>文件存储</strong>：HTTPD文件服务器稳定上传下载</p>
-</li>
+<h2 id="3、接口功能测试"><a href="#3、接口功能测试" class="headerlink" title="3、接口功能测试"></a>3、接口功能测试</h2><ol>
+<li>按照sql文件建立更新数据库，数据库表必须含有create_at、update_at、deleted_at三个字段</li>
+<li>更新conf配置文件</li>
+<li>sh build.sh 执行脚本编译可执行文件执行 或 直接启动main.go运行<br><img src="https://files.mdnice.com/user/17335/23b05b19-f910-4ab1-b4e8-64d11d1a6c0c.png"></li>
 </ol>
-<h2 id="2-3、选型指南"><a href="#2-3、选型指南" class="headerlink" title="2.3、选型指南"></a>2.3、选型指南</h2><h3 id="Gin框架"><a href="#Gin框架" class="headerlink" title="Gin框架"></a><a target="_blank" rel="noopener" href="https://gin-gonic.com/">Gin框架</a></h3><ul>
-<li><p>Go开源轻量级Web框架、简单易用</p>
-</li>
-<li><p>官方文档齐全、社区活跃</p>
-</li>
-<li><p>支持中间件、路由分组</p>
-</li>
-<li><p>支持JSON验证、错误分级管理</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/7442dbf3-95d0-4ff6-bc57-6e723f9a62d7.png"></p>
-<h3 id="LayUI"><a href="#LayUI" class="headerlink" title="LayUI"></a><a target="_blank" rel="noopener" href="https://layui.itze.cn/">LayUI</a></h3><ul>
-<li><p>开源模块化前端UI框架、拿来即用</p>
-</li>
-<li><p>遵循原生态的 HTML&#x2F;CSS&#x2F;JavaScript 开发模式</p>
-</li>
-<li><p>只需面向浏览器本身、无需涉足各类构建工具</p>
-</li>
-<li><p>文档齐全、示例众多</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/73fe051b-0ec6-482e-992e-dcd48fc76b67.png"></p>
-<h3 id="Postman调试工具"><a href="#Postman调试工具" class="headerlink" title="Postman调试工具"></a><a target="_blank" rel="noopener" href="https://www.postman.com/">Postman调试工具</a></h3><ul>
-<li><p>自动化API接口调试工具</p>
-</li>
-<li><p>模拟HTTP Request如GET、POST 、DELETE等请求</p>
-</li>
-<li><p>模拟发送文件(图片、TXT等) 等特定接口测试</p>
-</li>
-</ul>
-<p><img src="https://files.mdnice.com/user/17335/57355918-c034-4ea3-9744-0b4810b72d25.png"></p>
-<h1 id="3、环境准备"><a href="#3、环境准备" class="headerlink" title="3、环境准备"></a>3、环境准备</h1><h2 id="3-1、环境参数"><a href="#3-1、环境参数" class="headerlink" title="3.1、环境参数"></a>3.1、环境参数</h2><figure class="highlight plaintext"><figcaption><span>Text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Centos7.9</span><br><span class="line">MySQL8.0.20</span><br><span class="line">go1.19.3</span><br><span class="line">Gin</span><br><span class="line">Grafana8.3.3</span><br><span class="line">httpd</span><br><span class="line">LayUI2.8.11</span><br><span class="line">GoLand2022.2</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="3-2、安装教程"><a href="#3-2、安装教程" class="headerlink" title="3.2、安装教程"></a>3.2、安装教程</h2><h3 id="HTTPD文件服务器"><a href="#HTTPD文件服务器" class="headerlink" title="HTTPD文件服务器"></a>HTTPD文件服务器</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/stalin_/article/details/90200173">https://blog.csdn.net/stalin_&#x2F;article&#x2F;details&#x2F;90200173</a></p>
-<h3 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/super_xyo/article/details/128210788">https://blog.csdn.net/super_xyo&#x2F;article&#x2F;details&#x2F;128210788</a></p>
-<h3 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h3><p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15735145/5546596">https://blog.51cto.com/u_15735145/5546596</a></p>
-<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36539042/article/details/125385002">https://blog.csdn.net/qq_36539042&#x2F;article&#x2F;details&#x2F;125385002</a></p>
-<h3 id="LayUI-1"><a href="#LayUI-1" class="headerlink" title="LayUI"></a>LayUI</h3><p><a target="_blank" rel="noopener" href="https://layui.dev/">https://layui.dev/</a></p>
-<h3 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Shyllin/article/details/123690458">https://blog.csdn.net/Shyllin/article/details/123690458</a></p>
-<h1 id="4、成品简介"><a href="#4、成品简介" class="headerlink" title="4、成品简介"></a>4、成品简介</h1><h2 id="Grafana-1"><a href="#Grafana-1" class="headerlink" title="Grafana"></a>Grafana</h2><p><img src="https://files.mdnice.com/user/17335/97fe1552-ed3b-4910-aca5-1dfc22793f85.png"></p>
-<h2 id="LayUI-2"><a href="#LayUI-2" class="headerlink" title="LayUI"></a>LayUI</h2><p><img src="https://files.mdnice.com/user/17335/a5180f6c-a589-4bb2-b54f-63c6cd163280.png"></p>
-<p><img src="https://files.mdnice.com/user/17335/97aa2788-0526-402f-87f6-16523cd2d985.png"></p>
-<h2 id="钉钉"><a href="#钉钉" class="headerlink" title="钉钉"></a>钉钉</h2><p><img src="https://files.mdnice.com/user/17335/e0c85da8-e16e-4436-ae43-a996312eed46.png"></p>
+<h3 id="3-1、GET"><a href="#3-1、GET" class="headerlink" title="3.1、GET"></a>3.1、GET</h3><p><img src="https://files.mdnice.com/user/17335/e7e66ca2-a0f1-4149-b565-1adfd9104995.png"></p>
+<h3 id="3-2、POST"><a href="#3-2、POST" class="headerlink" title="3.2、POST"></a>3.2、POST</h3><p><img src="https://files.mdnice.com/user/17335/93d0c004-3406-4d06-b04c-addf9b49291a.png"></p>
+<h3 id="3-3、PUT"><a href="#3-3、PUT" class="headerlink" title="3.3、PUT"></a>3.3、PUT</h3><p><img src="https://files.mdnice.com/user/17335/c7dd3da7-3d77-4faa-a03e-9d36e4286621.png"></p>
+<h3 id="3-4、DELETE"><a href="#3-4、DELETE" class="headerlink" title="3.4、DELETE"></a>3.4、DELETE</h3><p><img src="https://files.mdnice.com/user/17335/dc32b068-a2da-43dd-b3cc-5a759b63aa93.png"></p>
 <h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
 <p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
 
@@ -1457,7 +1307,268 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%881%EF%BC%89/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%883%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-服务器管理平台（2）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/">服务器管理平台（2）- 数据库表设计</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2023-12-14T05:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库表设计"><a href="#数据库表设计" class="headerlink" title="数据库表设计"></a>数据库表设计</h1><blockquote>
+<p>本篇文章主要对数据管理平台数据库表设计进行介绍，包括单库多表设计、SQL语句、视图构造等</p>
+</blockquote>
+<h2 id="1、整体设计"><a href="#1、整体设计" class="headerlink" title="1、整体设计"></a>1、整体设计</h2><ul>
+<li><p>设备品牌、序列号、型号等使用业务主表进行记录，逻辑磁盘、PCI设备可能出现1对N的情况，分别使用PCI设备表、Mac地址表、逻辑磁盘表、应用程序表、登录日志表进行记录</p>
+</li>
+<li><p>构建虚拟视图统一查询，多表联合，使用业务IP+SN序列号作为设备唯一标识</p>
+</li>
+<li><p>增加历史记录表，对所有表数据的更新删除操作进行记录，方便回溯</p>
+</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/17335/e0222c2d-2e89-4b64-b141-d6caf5f03208.png"></p>
+<h2 id="2、库表设计"><a href="#2、库表设计" class="headerlink" title="2、库表设计"></a>2、库表设计</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分表结构设计</p>
+</blockquote>
+<h3 id="2-1、业务主表"><a href="#2-1、业务主表" class="headerlink" title="2.1、业务主表"></a>2.1、业务主表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>int</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>Brand</td>
+<td>string</td>
+<td>品牌</td>
+</tr>
+<tr>
+<td>Model</td>
+<td>string</td>
+<td>型号</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>timestamp</td>
+<td>CPU</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>timestamp</td>
+<td>内存</td>
+</tr>
+<tr>
+<td>PlatformType</td>
+<td>string</td>
+<td>平台类型</td>
+</tr>
+<tr>
+<td>UseFor</td>
+<td>string</td>
+<td>用途</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h3 id="2-2、PCI设备表"><a href="#2-2、PCI设备表" class="headerlink" title="2.2、PCI设备表"></a>2.2、PCI设备表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>string</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>PCIDevice</td>
+<td>string</td>
+<td>PCI设备表</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h3 id="2-3、MAC地址表"><a href="#2-3、MAC地址表" class="headerlink" title="2.3、MAC地址表"></a>2.3、MAC地址表</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字段名称</td>
+<td>字段类型</td>
+<td>解释</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>BusinessIp</td>
+<td>string</td>
+<td>业务Ip地址</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>string</td>
+<td>序列号</td>
+</tr>
+<tr>
+<td>MacAddress</td>
+<td>string</td>
+<td>MAC地址</td>
+</tr>
+<tr>
+<td>CreatedAt</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>UpdatedAt</td>
+<td>timestamp</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h2 id="3、SQL设计"><a href="#3、SQL设计" class="headerlink" title="3、SQL设计"></a>3、SQL设计</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分建表SQL，作为参考</p>
+</blockquote>
+<h3 id="3-1、历史记录表"><a href="#3-1、历史记录表" class="headerlink" title="3.1、历史记录表"></a>3.1、历史记录表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_history` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `Object` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `PK` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `Key` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `OpKind` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `PrevModify` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `NextModify` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `Version` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;索引&#x27;</span>,</span><br><span class="line">    `Operator` <span class="type">varchar</span>(<span class="number">64</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;BOM前缀&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2、系统信息表"><a href="#3-2、系统信息表" class="headerlink" title="3.2、系统信息表"></a>3.2、系统信息表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_meta_info` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `BusinessIp` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;业务IP&#x27;</span>,</span><br><span class="line">    `SN` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;序列号&#x27;</span>,</span><br><span class="line">    `Brand` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;品牌&#x27;</span>,</span><br><span class="line">    `Model` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;型号&#x27;</span>,</span><br><span class="line">    `CpuModel` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;CPU型号&#x27;</span>,</span><br><span class="line">    `CpuNumber` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;CPU数量&#x27;</span>,</span><br><span class="line">    `Memory` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;内存&#x27;</span>,</span><br><span class="line">    `PlatformType` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;平台类型&#x27;</span>,</span><br><span class="line">    `UseFor` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;用途&#x27;</span>,</span><br><span class="line">    `MacAddress` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;MAC地址&#x27;</span>,</span><br><span class="line">    `LogicDisk` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;逻辑磁盘&#x27;</span>,</span><br><span class="line">    `PCIDevices` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;PCI设备&#x27;</span>,</span><br><span class="line">    `Program` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;应用程序&#x27;</span>,</span><br><span class="line">    `LoginInfo` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;登录日志&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`),</span><br><span class="line">    <span class="keyword">UNIQUE</span> KEY `business` (`BusinessIp`,`SN`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+<h3 id="3-3、逻辑磁盘表"><a href="#3-3、逻辑磁盘表" class="headerlink" title="3.3、逻辑磁盘表"></a>3.3、逻辑磁盘表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `es_logicaldisk` (</span><br><span class="line">    `Id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;自增ID&#x27;</span>,</span><br><span class="line">    `BusinessIp` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;业务IP&#x27;</span>,</span><br><span class="line">    `SN` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;序列号&#x27;</span>,</span><br><span class="line">    `Filesystem` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;系统盘&#x27;</span>,</span><br><span class="line">    `Size` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;大小&#x27;</span>,</span><br><span class="line">    `Used` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;已使用&#x27;</span>,</span><br><span class="line">    `Avail` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;可使用&#x27;</span>,</span><br><span class="line">    `UsePercent` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;使用百分比&#x27;</span>,</span><br><span class="line">    `Mounted` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;挂载点&#x27;</span>,</span><br><span class="line">    `CreatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    `UpdatedAt` <span class="type">timestamp</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (`Id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8mb4_0900_ai_ci</span><br></pre></td></tr></table></figure>
+<h3 id="3-4、视图表"><a href="#3-4、视图表" class="headerlink" title="3.4、视图表"></a>3.4、视图表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> es_meatinfoview <span class="keyword">AS</span> <span class="keyword">SELECT</span></span><br><span class="line">    es_meta_info.BusinessIp,</span><br><span class="line">    es_meta_info.SN,</span><br><span class="line">    es_meta_info.Brand,</span><br><span class="line">    es_meta_info.Model,</span><br><span class="line">    es_meta_info.CPUModel,</span><br><span class="line">    es_meta_info.CPUNumber,</span><br><span class="line">    es_meta_info.Memory,</span><br><span class="line">    es_meta_info.PlatformType,</span><br><span class="line">    es_meta_info.UseFor,</span><br><span class="line">    CONCAT_WS(<span class="string">&#x27;---&#x27;</span>,es_logicaldisk.Filesystem, es_logicaldisk.Size, es_logicaldisk.UsePercent, es_logicaldisk.Mounted) <span class="keyword">as</span> FileSystem,</span><br><span class="line">    es_macaddress.MacAddress,</span><br><span class="line">    es_pcidevice.PCIDevice,</span><br><span class="line">    es_product.Program,</span><br><span class="line">    es_product.PORT,</span><br><span class="line">    es_meta_info.CreatedAt</span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">    es_meta_info</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_logicaldisk <span class="keyword">ON</span> es_logicaldisk.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_logicaldisk.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_macaddress <span class="keyword">ON</span> es_macaddress.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_macaddress.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_pcidevice <span class="keyword">ON</span> es_pcidevice.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_pcidevice.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> es_product <span class="keyword">ON</span> es_product.BusinessIp <span class="operator">=</span> es_meta_info.BusinessIp</span><br><span class="line">    <span class="keyword">AND</span> es_product.SN <span class="operator">=</span> es_meta_info.SN</span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">    es_logicaldisk.Filesystem <span class="keyword">NOT</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%tmpfs%&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4、数据展示"><a href="#4、数据展示" class="headerlink" title="4、数据展示"></a>4、数据展示</h2><blockquote>
+<p>涉及数据库表较多，此处仅展示部分表数据，作为参考，数据IP为之前腾讯云测试公网IP，现已弃用，请勿访问！</p>
+</blockquote>
+<h3 id="4-1、PCI设备信息"><a href="#4-1、PCI设备信息" class="headerlink" title="4.1、PCI设备信息"></a>4.1、PCI设备信息</h3><p><img src="https://files.mdnice.com/user/17335/bf1170f4-b442-49c6-a598-37b6d68756a7.png"></p>
+<h3 id="4-2、逻辑磁盘信息"><a href="#4-2、逻辑磁盘信息" class="headerlink" title="4.2、逻辑磁盘信息"></a>4.2、逻辑磁盘信息</h3><p><img src="https://files.mdnice.com/user/17335/405c7c37-eabc-4a20-acc4-ecc472fa8f41.png"></p>
+<h3 id="4-3、历史记录信息"><a href="#4-3、历史记录信息" class="headerlink" title="4.3、历史记录信息"></a>4.3、历史记录信息</h3><p><img src="https://files.mdnice.com/user/17335/47d67db9-e72b-45bc-9a55-1cf60000908c.png"></p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>公众号平台更改了推送规则，如果不想错过内容，请点击  “在看”  和 “赞”，感谢支持！</p>
+<p><img src="https://files.mdnice.com/user/17335/d74ef8ef-f9e5-47f3-ab0f-1406aa0ffe50.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">服务器管理平台</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/">展开全文 >></a>
         </p>
       
 
@@ -1584,15 +1695,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">日常运维实例</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">信创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">日常运维实例</a>
               </li>
              
               <li class="article-tag-list-item">
