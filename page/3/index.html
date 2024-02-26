@@ -18,7 +18,7 @@
   
     <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="https://rendong3.github.io/page/3/index.html">
+<meta property="og:url" content="http://rendong3.github.io/page/3/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="ren dong">
@@ -304,15 +304,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/" target="_self">
-          服务器管理平台（6）- Utils
+        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" target="_self">
+          服务器管理平台（4）- 信息采集上报
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" target="_self">
         <div>
-          Utils 本篇为服务器管理平台的结篇，讲述一些必要的Util，如钉钉告警、安全加密、远程登录等功能的实现  1、钉钉告警1.1、SQL配置告警规则 逻辑磁盘容量已使用比例超过90%  超过30天未登录            字段名称 字段类型 解释   Id int 自增ID   Table string 监测表名   Metric string 监测指标   Template string 告
+          信息采集上报 通过Shell脚本实现服务器CPU、内存、PCI设备、登录日志等信息定时采集和自主上报 Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知  1、定时上报 搭建httpd文件服务器后，将采集脚本上传至对应目录，待采集服务器下载执行即可实现自主上报   被采集服务器可使用curl或者wget进行脚本文件下载和执行 被采集服务器可使用cr
         </div>
       </a>
 
@@ -344,15 +344,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" target="_self">
-          服务器管理平台（4）- 信息采集上报
+        <a href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/" target="_self">
+          服务器管理平台（6）- Utils
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%884%EF%BC%89-%20%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E4%B8%8A%E6%8A%A5/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%886%EF%BC%89-%20Utils/" target="_self">
         <div>
-          信息采集上报 通过Shell脚本实现服务器CPU、内存、PCI设备、登录日志等信息定时采集和自主上报 Shell脚本比Agent更加轻量化，无侵入式实现定时采集、自主上报，对业务几乎无影响，用户侧无感知  1、定时上报 搭建httpd文件服务器后，将采集脚本上传至对应目录，待采集服务器下载执行即可实现自主上报   被采集服务器可使用curl或者wget进行脚本文件下载和执行 被采集服务器可使用cr
+          Utils 本篇为服务器管理平台的结篇，讲述一些必要的Util，如钉钉告警、安全加密、远程登录等功能的实现  1、钉钉告警1.1、SQL配置告警规则 逻辑磁盘容量已使用比例超过90%  超过30天未登录            字段名称 字段类型 解释   Id int 自增ID   Table string 监测表名   Metric string 监测指标   Template string 告
         </div>
       </a>
 
