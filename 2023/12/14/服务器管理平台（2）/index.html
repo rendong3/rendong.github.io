@@ -20,7 +20,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器管理平台（2）- 数据库表设计">
 <meta property="og:url" content="http://rendong3.github.io/2023/12/14/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%EF%BC%882%EF%BC%89/index.html">
-<meta property="og:site_name" content="Blog">
+<meta property="og:site_name" content="rendong&#39;s Blog">
 <meta property="og:description" content="数据库表设计 本篇文章主要对数据管理平台数据库表设计进行介绍，包括单库多表设计、SQL语句、视图构造等  1、整体设计 设备品牌、序列号、型号等使用业务主表进行记录，逻辑磁盘、PCI设备可能出现1对N的情况，分别使用PCI设备表、Mac地址表、逻辑磁盘表、应用程序表、登录日志表进行记录  构建虚拟视图统一查询，多表联合，使用业务IP+SN序列号作为设备唯一标识  增加历史记录表，对所有表数据的更新">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://files.mdnice.com/user/17335/e0222c2d-2e89-4b64-b141-d6caf5f03208.png">
@@ -37,7 +37,7 @@
   
   
   
-  <title>服务器管理平台（2）- 数据库表设计 - Blog</title>
+  <title>服务器管理平台（2）- 数据库表设计 - rendong&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
